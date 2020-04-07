@@ -1,12 +1,16 @@
 import React, {useState} from "react";
+import CreationSidebar from "./creationsidebar";
+import SchedulePreview from "./schedulepreview";
+import TaskCreator from "./taskcreator";
+import BackHeader from "../backheader";
 
 function Main() {
   return (
     <React.Fragment>
-      <div class="backHeader"> </div>
-      <div id="creationSidebar" class="sidebar"></div>
-      <div id="schedulePreview"></div>
-      <div id="taskCreator"></div>
+      <BackHeader />
+      <CreationSidebar />
+      <SchedulePreview />
+      <TaskCreator />
     </React.Fragment>
   );
 }
