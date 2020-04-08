@@ -58,3 +58,14 @@
 .right {
   float: right;
 }
+
+@media only screen and (max-width: 950px) {
+  .schedulepreviewcontainer {
+    column-count: 1;
+    margin-bottom: 1.5em;
+  }
+
+  .schedulepreview {
+    min-height: 71vh;
+  }
+}
