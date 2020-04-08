@@ -7,10 +7,16 @@ import BackHeader from "../backheader";
 function Main() {
   return (
     <React.Fragment>
-      <BackHeader />
-      <CreationSidebar />
-      <SchedulePreview />
-      <TaskCreator />
+      <div class="doubler">
+        <div>
+          <CreationSidebar />
+        </div>
+        <div class="content">
+          <BackHeader />
+          <SchedulePreview />
+          <TaskCreator />
+        </div>
+      </div>
     </React.Fragment>
   );
 }
