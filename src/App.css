@@ -39,7 +39,7 @@
   border-style: solid;
   border-width: 1px;
   min-height: 145vh;
-  overflow-y: scroll;
+  overflow-y: none;
 }
 
 .schedulepreviewcontainer {
@@ -68,5 +68,6 @@
 
   .schedulepreview {
     min-height: 71vh;
+    overflow-y: scroll;
   }
 }
