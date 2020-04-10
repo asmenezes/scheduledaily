@@ -60,6 +60,20 @@
   float: right;
 }
 
+.tasknameinput {
+  font-size: 1.5em;
+  padding: .5em;
+  margin: .25em;
+}
+
+.taskcreationinput {
+  border-style: solid;
+  border-color: rgb(184, 219, 217);
+  border-radius: 0px;
+  border-width: thin;
+  background-color: rgb(244, 244, 249);
+}
+
 @media only screen and (max-width: 950px) {
   .schedulepreviewcontainer {
     column-count: 1;
