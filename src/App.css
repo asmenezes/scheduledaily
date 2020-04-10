@@ -61,8 +61,8 @@
 }
 
 .tasknameinput {
-  font-size: 1.5em;
-  padding: .5em;
+  font-size: 1.4em;
+  padding: .3em;
   margin: .25em;
 }
 
@@ -72,6 +72,22 @@
   border-radius: 0px;
   border-width: thin;
   background-color: rgb(244, 244, 249);
+}
+
+.tasknotesinput {
+  display: inline-block;
+  resize: none;
+  overflow-y: scroll;
+  vertical-align: top;
+  margin: .25em;
+  width: calc(100% - 33em);
+}
+
+.timeinput {
+  padding: .5em 0;
+  font-size: .9em;
+  margin-right: .5em;
+  width: 7em;
 }
 
 @media only screen and (max-width: 950px) {
