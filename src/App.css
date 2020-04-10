@@ -38,7 +38,7 @@
   border-color: rgb(184, 219, 217);
   border-style: solid;
   border-width: 1px;
-  min-height: 143vh;
+  min-height: 140vh;
   overflow-y: none;
 }
 
@@ -97,7 +97,7 @@
   }
 
   .schedulepreview {
-    min-height: 71vh;
+    min-height: 65vh;
     overflow-y: scroll;
   }
 
