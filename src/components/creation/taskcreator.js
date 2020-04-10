@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function TaskCreator() {
   return (
@@ -23,7 +23,7 @@ function TaskCreator() {
           class="tasknotesinput taskcreationinput"
           placeholder="Task Notes"
         >
-          Task Notes:
+          Notes:
         </textarea>
         <div class="sub class input inserter component here"></div>
       </div>

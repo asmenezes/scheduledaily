@@ -80,6 +80,7 @@
   overflow-y: scroll;
   vertical-align: top;
   margin: .25em;
+  padding: .3em;
   width: calc(100% - 33em);
 }
 
