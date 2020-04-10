@@ -100,4 +100,8 @@
     min-height: 71vh;
     overflow-y: scroll;
   }
+
+  .tasknotesinput {
+    width: 25em;
+  }
 }
