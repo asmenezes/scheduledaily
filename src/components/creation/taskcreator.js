@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 function TaskCreator() {
   return (
@@ -17,15 +17,10 @@ function TaskCreator() {
         />
         <label for="endtime"></label>
         <input class="taskcreationinput timeinput" type="time" name="endtime" />
-        <textarea
-          cols="28"
-          rows="6"
-          class="tasknotesinput taskcreationinput"
-          placeholder="Task Notes"
-        >
+        <textarea cols="28" rows="6" class="tasknotesinput taskcreationinput">
           Notes:
         </textarea>
-        <div class="sub class input inserter component here"></div>
+        <div class="create container for subtask creator and connect"></div>
       </div>
     </React.Fragment>
   );

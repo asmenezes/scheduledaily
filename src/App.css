@@ -1,8 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #D8EBEA;
   font-family: sans-serif;
+  border-style: none;
+}
+
+body {
+  background-color: #D8EBEA;
 }
 
 .doubler {
@@ -16,8 +20,9 @@
   min-width: 210px;
   max-width: 250px;
   padding: 1.5em;
-  margin: -3em 0;
+  margin: 0;
   position: fixed;
+  z-index: 0;
 }
 
 .backheader {
@@ -91,6 +96,34 @@
   width: 7em;
 }
 
+.lighttext {
+  color: white;
+  background-color: rgb(0, 121, 145);
+}
+
+#createpresetbutton {
+  width: 100%;
+  padding: 1em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: .8em;
+  border-color: rgb(184, 219, 217);
+  background-color: rgb(184, 219, 217);
+}
+
+.presetschedules {
+  background-color: transparent;
+}
+
+#presetschedulelist {
+  background-color: transparent;
+}
+
+.hide {
+  display: none;
+}
+
 @media only screen and (max-width: 950px) {
   .schedulepreviewcontainer {
     column-count: 1;
@@ -106,3 +139,5 @@
     width: 25em;
   }
 }
+
+@media only screen and (max-width: 790px) {}
