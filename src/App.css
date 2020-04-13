@@ -159,7 +159,7 @@ body {
     width: calc(100% - 4em);
   }
 
-  #taskcreator, .lineup {
+  #taskcreator {
     grid-template-columns: 1fr;
   }
 }
