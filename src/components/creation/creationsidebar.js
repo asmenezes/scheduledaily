@@ -17,7 +17,9 @@ function CreationSidebar() {
           <p className="lighttext">Un-Times Tasks:</p>
           <div className="sidebarlist"></div>
         </div>
-        <div className="dayNotes"></div>
+        <textarea cols="28" rows="6" className="dayNotes">
+          Day Notes:
+        </textarea>
       </div>
     </React.Fragment>
   );
