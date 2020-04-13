@@ -1,26 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function TaskCreator() {
   return (
     <React.Fragment>
       <div id="taskcreator">
         <input
-          class="tasknameinput taskcreationinput"
+          className="tasknameinput taskcreationinput"
           placeholder="Task Name"
           type="text"
         />
         <label for="starttime"></label>
         <input
-          class="taskcreationinput timeinput"
+          className="taskcreationinput timeinput"
           type="time"
           name="starttime"
         />
         <label for="endtime"></label>
-        <input class="taskcreationinput timeinput" type="time" name="endtime" />
+        <input
+          className="taskcreationinput timeinput"
+          type="time"
+          name="endtime"
+        />
         <textarea cols="28" rows="6" class="tasknotesinput taskcreationinput">
           Notes:
         </textarea>
-        <div class="create container for subtask creator and connect"></div>
+        <div className="create list of subtasks"></div>
+        <div className="creater of subtasks"></div>
       </div>
     </React.Fragment>
   );

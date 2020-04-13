@@ -112,12 +112,19 @@ body {
   background-color: rgb(184, 219, 217);
 }
 
-.presetschedules {
-  background-color: transparent;
+.sidebarlist, .dayNotes {
+  width: 100%;
+  border-style: solid;
+  border-color: rgb(184, 219, 217);
+  border-radius: 5px;
+  border-width: thin;
+  background-color: rgb(244, 244, 249);
+  margin: .5em 0;
+  height: calc(22vh - 2em);
 }
 
-#presetschedulelist {
-  background-color: transparent;
+.sidebarlabel {
+  margin: .5em;
 }
 
 .hide {

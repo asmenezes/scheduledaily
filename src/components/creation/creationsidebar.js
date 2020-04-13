@@ -1,17 +1,23 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function CreationSidebar() {
   return (
     <React.Fragment>
-      <div class="sidebar" id="creationsidebar">
-        <div id="presetschedules">
-          <p class="lighttext">Preset Schedules:</p>
-          <div id="presetschedulelist" class="hide"></div>
+      <div className="sidebar" id="creationsidebar">
+        <div className="sidebarlabel">
+          <p className="lighttext">Preset Schedules:</p>
+          <div className="sidebarlist"></div>
           <button id="createpresetbutton">Create Preset From Current</button>
         </div>
-        <div class="hide">presettasks</div>
-        <div class="hide">untimedtasks</div>
-        <div class="hide">daynotes</div>
+        <div className="sidebarlabel">
+          <p className="lighttext">Preset Tasks:</p>
+          <div className="sidebarlist"></div>
+        </div>
+        <div className="sidebarlabel">
+          <p className="lighttext">Un-Times Tasks:</p>
+          <div className="sidebarlist"></div>
+        </div>
+        <div className="dayNotes"></div>
       </div>
     </React.Fragment>
   );
