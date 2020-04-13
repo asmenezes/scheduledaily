@@ -59,6 +59,8 @@ body {
   border-style: solid;
   border-width: 1px;
   min-height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .right {
@@ -86,7 +88,15 @@ body {
   vertical-align: top;
   margin: .25em;
   padding: .3em;
-  width: calc(100% - 33em);
+  width: calc(100% - 4em);
+}
+
+.subtasknameinput {}
+
+.lineup {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
 }
 
 .timeinput {
@@ -146,7 +156,11 @@ body {
   }
 
   .tasknotesinput {
-    width: 25em;
+    width: calc(100% - 4em);
+  }
+
+  #taskcreator, .lineup {
+    grid-template-columns: 1fr;
   }
 }
 
