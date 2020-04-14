@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #D8EBEA;
+  background-color: #d8ebea;
 }
 
 .doubler {
@@ -69,8 +69,8 @@ body {
 
 .tasknameinput {
   font-size: 1.4em;
-  padding: .3em;
-  margin: .25em;
+  padding: 0.3em;
+  margin: 0.25em;
 }
 
 .taskcreationinput {
@@ -86,12 +86,17 @@ body {
   resize: none;
   overflow-y: scroll;
   vertical-align: top;
-  margin: .25em;
-  padding: .3em;
+  margin: 0.25em;
+  padding: 0.3em;
   width: calc(100% - 4em);
 }
 
-.subtasknameinput {}
+.subtasknameinput {
+  padding: 0.3em;
+  min-width: 14em;
+  margin: 0.25em;
+  font-size: 1em;
+}
 
 .lineup {
   display: grid;
@@ -100,10 +105,11 @@ body {
 }
 
 .timeinput {
-  padding: .5em 0;
-  font-size: .9em;
-  margin-right: .5em;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  margin-right: 0.5em;
   width: 7em;
+  margin-top: 0.25em;
 }
 
 .lighttext {
@@ -113,16 +119,18 @@ body {
 
 #createpresetbutton {
   width: 100%;
-  padding: 1em;
+  padding: 0.8em;
   border-style: solid;
   border-radius: 5px;
   border-width: thin;
-  font-size: .85em;
+  font-size: 0.85em;
   border-color: rgb(184, 219, 217);
   background-color: rgb(184, 219, 217);
+  margin-bottom: 0.5em;
 }
 
-.sidebarlist, .dayNotes {
+.sidebarlist,
+.dayNotes {
   resize: none;
   width: 100%;
   max-width: 100%;
@@ -131,19 +139,79 @@ body {
   border-radius: 5px;
   border-width: thin;
   background-color: rgb(244, 244, 249);
-  margin: .5em 0;
+  margin: 0.5em 0;
   height: calc(22vh - 2em);
   overflow-y: scroll;
-}
-
-.sidebarlabel {
-  margin: .5em;
 }
 
 .hide {
   display: none;
 }
 
+/* task cards */
+.task {
+  background-color: #d8ebea;
+  width: 100%;
+  padding: 0.5em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: 0.85em;
+  border-color: rgb(184, 219, 217);
+}
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  background-color: #d8ebea;
+  right: 0;
+  bottom: 0;
+  border-color: rgb(184, 219, 217);
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 29px;
+  left: 4px;
+  bottom: 3px;
+  background-color: rgb(0, 121, 145);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+}
+
+/* <label class="switch">
+  <input type="checkbox" checked>
+  <span class="slider"></span>
+</label> */
+/* Responsiveness  */
 @media only screen and (max-width: 950px) {
   .schedulepreviewcontainer {
     column-count: 1;
@@ -164,4 +232,5 @@ body {
   }
 }
 
-@media only screen and (max-width: 790px) {}
+@media only screen and (max-width: 790px) {
+}

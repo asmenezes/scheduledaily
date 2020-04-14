@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function CreationSidebar() {
   return (
@@ -14,7 +14,7 @@ function CreationSidebar() {
           <div className="sidebarlist"></div>
         </div>
         <div className="sidebarlabel">
-          <p className="lighttext">Un-Times Tasks:</p>
+          <p className="lighttext">Un-Timed Tasks:</p>
           <div className="sidebarlist"></div>
         </div>
         <textarea cols="28" rows="6" className="dayNotes">

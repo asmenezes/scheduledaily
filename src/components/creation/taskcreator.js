@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 function TaskCreator() {
   return (
@@ -37,7 +37,7 @@ function TaskCreator() {
             </div>
           </div>
         </div>
-        <textarea cols="28" rows="6" class="tasknotesinput taskcreationinput">
+        <textarea cols="28" rows="5" class="tasknotesinput taskcreationinput">
           Notes:
         </textarea>
         <div></div>
