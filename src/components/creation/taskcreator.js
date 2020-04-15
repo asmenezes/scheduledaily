@@ -12,7 +12,7 @@ function TaskCreator() {
               type="text"
             />
           </div>
-          <div>
+          <div >
             <label for="starttime"></label>
             <input
               className="taskcreationinput timeinput"
@@ -34,11 +34,18 @@ function TaskCreator() {
                 placeholder="Subtask Name"
                 type="text"
               />
+
             </div>
           </div>
+          <div className="secondpart">
+          <label class="switch" id="typeselector">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        indicator</div>
         </div>
         <textarea cols="28" rows="5" class="tasknotesinput taskcreationinput">
-          Notes:
+          Notes: 
         </textarea>
         <div></div>
       </div>

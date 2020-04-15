@@ -89,6 +89,7 @@ body {
   margin: 0.25em;
   padding: 0.3em;
   width: calc(100% - 4em);
+  margin-top: 0.4em;
 }
 
 .subtasknameinput {
@@ -109,11 +110,11 @@ body {
   font-size: 0.9em;
   margin-right: 0.5em;
   width: 7em;
-  margin-top: 0.25em;
+  margin-top: 0.4em;
 }
 
 .lighttext {
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   background-color: rgb(0, 121, 145);
 }
 
@@ -149,15 +150,61 @@ body {
 }
 
 /* task cards */
-.task {
+.taskblock {
   background-color: #d8ebea;
-  width: 100%;
+  width: 91%;
+  margin: 2.5%;
   padding: 0.5em;
   border-style: solid;
   border-radius: 5px;
   border-width: thin;
   font-size: 0.85em;
   border-color: rgb(184, 219, 217);
+  display: grid;
+  grid-template-columns: 0.9em auto max-content;
+  grid-template-rows: max-content max-content;
+  grid-template-areas: "deletebutton taskname time" "deletebutton subtask subtask";
+}
+
+.deletebutton {
+  grid-area: deletebutton;
+  height: auto;
+  font-size: 1em;
+  float: left;
+  margin: -0.5em;
+  background-color: transparent;
+  color: transparent;
+}
+
+.taskname {
+  grid-area: taskname;
+  padding: 0.5em;
+  padding-top: 1em;
+  font-size: 1.3em;
+}
+
+.time {
+  grid-area: time;
+  height: auto;
+  padding: 0.25em;
+}
+.stime {
+  margin-bottom: 1.25em;
+}
+
+.subtask {
+  grid-area: subtask;
+  padding: 0.25em;
+  padding-left: 2.4em;
+  background-color: rgb(184, 219, 217);
+  margin-bottom: -0.5em;
+  margin-left: -1.4em;
+  margin-right: -0.5em;
+}
+
+.deletebutton:hover {
+  color: black;
+  background-color: rgb(184, 219, 217);
 }
 /* Toggle Switch */
 .switch {
