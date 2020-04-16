@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 
-function TaskBlock() {
+function TaskBlock(props) {
   return <div className= "taskblock">
     <button className = "deletebutton">x</button>
-    <p className = "taskname">TaskName</p>
+    <p className = "taskname">{props.taskname}</p>
     <div className = "time">
-    <p className = "stime">StartTime</p>
-    <p>EndTime</p>
+    <p className = "stime">{props.starttime}</p>
+    <p>{props.endtime}</p>
     </div>
     <div className = "subtask"><span>SubTasks</span></div>
   </div>;

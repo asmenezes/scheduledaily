@@ -38,18 +38,24 @@ body {
 }
 
 .schedulepreview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   background-color: rgb(244, 244, 249);
   border-radius: 5px;
   border-color: rgb(184, 219, 217);
   border-style: solid;
   border-width: 1px;
-  min-height: 140vh;
-  overflow-y: none;
+  max-height: 140vh;
+  overflow-y: scroll;
 }
 
 .schedulepreviewcontainer {
-  column-count: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 70vh;
   margin-bottom: 1.5em;
+  /* overflow-y: scroll; */
+  /* overflow-x: none; */
 }
 
 #taskcreator {
@@ -96,7 +102,12 @@ body {
   padding: 0.3em;
   min-width: 14em;
   margin: 0.25em;
+  margin-left: 0.3em;
   font-size: 1em;
+}
+
+.secondpart {
+  padding-top: 0.4em;
 }
 
 .lineup {
@@ -128,6 +139,24 @@ body {
   border-color: rgb(184, 219, 217);
   background-color: rgb(184, 219, 217);
   margin-bottom: 0.5em;
+}
+/* Creation Selections */
+.creationselection {
+  background-color: #d8ebea;
+  width: 88%;
+  margin: 2.5%;
+  padding: 0.5em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: 0.85em;
+  border-color: rgb(184, 219, 217);
+  display: grid;
+  grid-template-columns: 0.75em auto;
+}
+
+.selectionname {
+  margin-left: 0.5em;
 }
 
 .sidebarlist,
@@ -167,7 +196,7 @@ body {
 }
 
 .deletebutton {
-  grid-area: deletebutton;
+  /* grid-area: deletebutton; */
   height: auto;
   font-size: 1em;
   float: left;
@@ -210,8 +239,8 @@ body {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 54px;
+  height: 26px;
 }
 
 .switch input {
@@ -238,10 +267,10 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 25px;
-  width: 29px;
-  left: 4px;
-  bottom: 3px;
+  height: 26px;
+  width: 26px;
+  /* left: 4px; */
+  /* bottom: 3px; */
   background-color: rgb(0, 121, 145);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -249,9 +278,9 @@ body {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(21px);
-  -ms-transform: translateX(21px);
-  transform: translateX(21px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* <label class="switch">
@@ -268,6 +297,7 @@ input:checked + .slider:before {
   .schedulepreview {
     min-height: 65vh;
     overflow-y: scroll;
+    grid-template-columns: 1fr;
   }
 
   .tasknotesinput {
