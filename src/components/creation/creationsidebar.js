@@ -27,7 +27,7 @@ function CreationSidebar() {
           </div>
         </div>
         <textarea cols="28" rows="6" className="dayNotes">
-          Day Notes:
+          Day Notes: 
         </textarea>
       </div>
     </React.Fragment>

@@ -8,21 +8,12 @@
 body {
   background-color: #d8ebea;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .doubler {
   display: grid;
-}
-
-.sidebar {
-  background-color: rgb(0, 121, 145);
-  height: 100vh;
-  width: 20vw;
-  min-width: 210px;
-  max-width: 250px;
-  padding: 1.5em;
-  margin: 0;
-  position: fixed;
-  z-index: 0;
 }
 
 .backheader {
@@ -58,6 +49,118 @@ body {
   /* overflow-x: none; */
 }
 
+.secondpart {
+  padding-top: 0.4em;
+}
+
+.lineup {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
+}
+
+.hide {
+  display: none;
+}
+.lighttext {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgb(0, 121, 145);
+}
+/* Sidebar */
+.sidebar {
+  background-color: rgb(0, 121, 145);
+  height: 100vh;
+  width: 20vw;
+  min-width: 210px;
+  max-width: 250px;
+  padding: 1.5em;
+  margin: 0;
+  position: fixed;
+  z-index: 0;
+}
+#createpresetbutton {
+  width: 100%;
+  padding: 0.8em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: 0.85em;
+  border-color: rgb(184, 219, 217);
+  background-color: rgb(184, 219, 217);
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+#createpresetbutton:active {
+  background-color: rgb(0, 121, 145);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Sidebar Selection Containers */
+.sidebarlist,
+.dayNotes {
+  resize: none;
+  width: 100%;
+  max-width: 100%;
+  border-style: solid;
+  border-color: rgb(184, 219, 217);
+  border-radius: 5px;
+  border-width: thin;
+  background-color: rgb(244, 244, 249);
+  margin: 0.5em 0;
+  height: calc(22vh - 2em);
+  overflow-y: scroll;
+}
+/* Creation Selections */
+.creationselection {
+  background-color: #d8ebea;
+  width: 88%;
+  margin: 2.5%;
+  padding: 0.5em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: 0.85em;
+  border-color: rgb(184, 219, 217);
+  display: grid;
+  grid-template-columns: 0.75em auto;
+}
+
+.selectionname {
+  margin-left: 0.5em;
+}
+
+/* task cards */
+.taskblock {
+  background-color: #d8ebea;
+  width: 91%;
+  margin: 2.5%;
+  padding: 0.5em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  font-size: 0.85em;
+  border-color: rgb(184, 219, 217);
+  display: grid;
+  grid-template-columns: 0.9em auto max-content;
+  grid-template-rows: max-content max-content;
+  grid-template-areas: "deletebutton taskname time" "deletebutton subtask subtask";
+}
+
+.deletebutton {
+  /* grid-area: deletebutton; */
+  height: auto;
+  font-size: 1em;
+  float: left;
+  margin: -0.5em;
+  background-color: transparent;
+  color: transparent;
+}
+.deletebutton:hover {
+  color: black;
+  background-color: rgb(184, 219, 217);
+}
+/* Task Creator */
 #taskcreator {
   background-color: rgb(244, 244, 249);
   border-radius: 5px;
@@ -105,106 +208,6 @@ body {
   margin-left: 0.3em;
   font-size: 1em;
 }
-
-.secondpart {
-  padding-top: 0.4em;
-}
-
-.lineup {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  grid-template-rows: max-content;
-}
-
-.timeinput {
-  padding: 0.5em 0;
-  font-size: 0.9em;
-  margin-right: 0.5em;
-  width: 7em;
-  margin-top: 0.4em;
-}
-
-.lighttext {
-  color: rgba(255, 255, 255, 0.95);
-  background-color: rgb(0, 121, 145);
-}
-
-#createpresetbutton {
-  width: 100%;
-  padding: 0.8em;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: thin;
-  font-size: 0.85em;
-  border-color: rgb(184, 219, 217);
-  background-color: rgb(184, 219, 217);
-  margin-bottom: 0.5em;
-}
-/* Creation Selections */
-.creationselection {
-  background-color: #d8ebea;
-  width: 88%;
-  margin: 2.5%;
-  padding: 0.5em;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: thin;
-  font-size: 0.85em;
-  border-color: rgb(184, 219, 217);
-  display: grid;
-  grid-template-columns: 0.75em auto;
-}
-
-.selectionname {
-  margin-left: 0.5em;
-}
-
-.sidebarlist,
-.dayNotes {
-  resize: none;
-  width: 100%;
-  max-width: 100%;
-  border-style: solid;
-  border-color: rgb(184, 219, 217);
-  border-radius: 5px;
-  border-width: thin;
-  background-color: rgb(244, 244, 249);
-  margin: 0.5em 0;
-  height: calc(22vh - 2em);
-  overflow-y: scroll;
-}
-
-.hide {
-  display: none;
-}
-
-/* task cards */
-.taskblock {
-  background-color: #d8ebea;
-  width: 91%;
-  margin: 2.5%;
-  padding: 0.5em;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: thin;
-  font-size: 0.85em;
-  border-color: rgb(184, 219, 217);
-  display: grid;
-  grid-template-columns: 0.9em auto max-content;
-  grid-template-rows: max-content max-content;
-  grid-template-areas: "deletebutton taskname time" "deletebutton subtask subtask";
-}
-
-.deletebutton {
-  /* grid-area: deletebutton; */
-  height: auto;
-  font-size: 1em;
-  float: left;
-  margin: -0.5em;
-  background-color: transparent;
-  color: transparent;
-}
-
 .taskname {
   grid-area: taskname;
   padding: 0.5em;
@@ -217,6 +220,17 @@ body {
   height: auto;
   padding: 0.25em;
 }
+.timeinput {
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+  width: 7em;
+  margin-top: 0.4em;
+}
+.timeinput:hover {
+  cursor: text;
+}
+
 .stime {
   margin-bottom: 1.25em;
 }
@@ -231,10 +245,6 @@ body {
   margin-right: -0.5em;
 }
 
-.deletebutton:hover {
-  color: black;
-  background-color: rgb(184, 219, 217);
-}
 /* Toggle Switch */
 .switch {
   position: relative;
@@ -269,8 +279,6 @@ body {
   content: "";
   height: 26px;
   width: 26px;
-  /* left: 4px; */
-  /* bottom: 3px; */
   background-color: rgb(0, 121, 145);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -287,6 +295,7 @@ input:checked + .slider:before {
   <input type="checkbox" checked>
   <span class="slider"></span>
 </label> */
+
 /* Responsiveness  */
 @media only screen and (max-width: 950px) {
   .schedulepreviewcontainer {
