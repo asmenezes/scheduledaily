@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+
+function ScheduleHeader() {
+  let today = new Date();
+  today = today.toDateString();
+  return(
+    <React.Fragment>
+        <div class="scheduleheader">
+        <div className = "timegroup">
+          <span>12:00</span>
+          <span id="currenttimedisplay">12:30</span>
+          <span>12:45</span>
+        </div>
+        <div className = "baseline">
+          <span>{today}</span>
+          <a className="right" href="/">Schedule Creator</a>
+          </div>
+          <div id = "progressbar">
+            <div id = "progress">
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+
+}
+
+export default ScheduleHeader;

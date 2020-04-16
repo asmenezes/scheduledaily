@@ -7,7 +7,7 @@ function BackHeader() {
     <React.Fragment>
       <div class="backheader">
         <span>{today}</span>
-        <span class="right">Schedule</span>
+        <a className="right" href="/schedule">Schedule</a>
       </div>
     </React.Fragment>
   );
