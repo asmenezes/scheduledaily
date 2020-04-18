@@ -37,7 +37,7 @@ a:hover {
 }
 
 #currenttimedisplay {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .baseline {
@@ -66,12 +66,12 @@ a:hover {
 #schedulegrid {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 3fr 1.3fr;
   gap: 2em 1em;
   grid-template-areas: ". ." ". .";
   padding: 1em;
 }
-
+/* Current Main Display */
 #currentdisplay {
   height: 55vh;
   width: 100%;
@@ -81,6 +81,29 @@ a:hover {
   border-width: thin;
   border-color: rgb(184, 219, 217);
 }
+
+/* UpcomingList display */
+#upcominglist {
+  height: 55vh;
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(244, 244, 249);
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(184, 219, 217);
+}
+
+#daynotes,
+#booleanlist {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(244, 244, 249);
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(184, 219, 217);
+}
+
 /* end */
 
 .content {
