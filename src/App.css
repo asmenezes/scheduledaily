@@ -80,8 +80,28 @@ a:hover {
   border-style: solid;
   border-width: thin;
   border-color: rgb(184, 219, 217);
+  grid-template-columns: 1fr;
 }
-
+#currentdisplayname {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 3em;
+  font-weight: lighter;
+  display: inline;
+}
+#currenttasktop {
+  padding: 1em;
+}
+#nexttaskbutt {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.2em;
+  display: inline;
+  padding: 1.2em;
+  align: right;
+  float: right;
+  margin: -0.75em;
+  font-weight: lighter;
+}
 /* UpcomingList display */
 #upcominglist {
   height: 55vh;
