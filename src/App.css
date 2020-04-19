@@ -3,10 +3,15 @@
   padding: 0;
   font-family: sans-serif;
   border-style: none;
+  font-weight: lighter;
 }
 
 body {
   background-color: #d8ebea;
+}
+
+button {
+  font-weight: normal;
 }
 button:hover {
   cursor: pointer;
@@ -14,6 +19,7 @@ button:hover {
 a {
   color: rgba(0, 0, 0, 0.95);
   text-decoration: none;
+  font-weight: normal;
 }
 a:hover {
   color: black;
@@ -27,7 +33,6 @@ a:hover {
 }
 
 .lightlabel {
-  font-weight: lighter;
   color: rgba(0, 0, 0, 0.95);
   padding: 0.75em;
   padding-bottom: 0;
@@ -45,7 +50,6 @@ a:hover {
   text-align: center;
   display: block;
   font-size: 1.3em;
-  font-weight: lighter;
 }
 
 .fillup.dayNotes {
@@ -111,7 +115,6 @@ a:hover {
 #currentdisplayname {
   color: rgba(255, 255, 255, 0.95);
   font-size: 3em;
-  font-weight: lighter;
   display: inline;
 }
 #currentdisplay.finished {
@@ -130,7 +133,6 @@ a:hover {
   align: right;
   float: right;
   margin: -0.75em;
-  font-weight: lighter;
 }
 #currentdiplaysub {
   grid-area: sub;
@@ -223,8 +225,6 @@ a:hover {
   grid-template-columns: 1fr;
   height: 70vh;
   margin-bottom: 1.5em;
-  /* overflow-y: scroll; */
-  /* overflow-x: none; */
 }
 
 .secondpart {
@@ -397,6 +397,9 @@ a:hover {
   grid-area: time;
   height: auto;
   padding: 0.25em;
+}
+.time p {
+  font-weight: normal;
 }
 .timeinput {
   padding: 0.5em 0;
