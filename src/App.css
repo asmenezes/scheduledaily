@@ -135,6 +135,7 @@ a:hover {
   grid-template-columns: 1em 80% 1fr;
   grid-column-gap: 0.5em;
 }
+
 .subtaskdisplay.finished {
   background-color: rgb(184, 219, 217);
 }
