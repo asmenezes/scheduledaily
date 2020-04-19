@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function DayNotes() {
-  return <div id="daynotes"></div>;
+  return <textarea id="daynotes">Task Notes:</textarea>;
 }
 
 export default DayNotes;
