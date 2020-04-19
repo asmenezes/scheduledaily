@@ -5,7 +5,7 @@ function SubtaskDisplay() {
     <div class="subtaskdisplay">
       <input type="checkbox" class="check" />
       <p>Subtask Name</p>
-      <p>Indication Placeholder</p>
+      <p>Indic Placeholder</p>
     </div>
   );
 }

@@ -22,6 +22,17 @@ a:hover {
   display: grid;
 }
 
+.scroll {
+  overflow-y: auto;
+}
+
+.lightlabel {
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.95);
+  padding: 0.75em;
+  padding-bottom: 0;
+}
+
 .backheader {
   display: inline;
 }
