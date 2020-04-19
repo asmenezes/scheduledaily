@@ -136,7 +136,7 @@ a:hover {
   border-style: solid;
   border-width: thin;
   display: grid;
-  grid-template-columns: 1em 80% 1fr;
+  grid-template-columns: 1em 8fr max-content;
   grid-column-gap: 0.5em;
 }
 
