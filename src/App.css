@@ -33,7 +33,14 @@ a:hover {
 .timegroup {
   text-align: center;
   display: block;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+
+.fillup.dayNotes {
+  min-height: 0px;
+  max-height: calc(100% - 3em);
+  overflow-y: scroll;
 }
 
 #currenttimedisplay {
@@ -71,7 +78,7 @@ a:hover {
   grid-template-areas: ". ." ". .";
   padding: 1em;
 }
-/* Current Main Display */
+/* Current Main Display add iff statement for when there is no subtasks to fix grid of notes */
 #currentdisplay {
   height: 55vh;
   width: 100%;
@@ -80,7 +87,12 @@ a:hover {
   border-style: solid;
   border-width: thin;
   border-color: rgb(184, 219, 217);
+  display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content minmax(min-content 40%) minmax(
+      1fr max-content
+    );
+  grid-template-areas: "top" "sub" "note";
 }
 #currentdisplayname {
   color: rgba(255, 255, 255, 0.95);
@@ -88,8 +100,12 @@ a:hover {
   font-weight: lighter;
   display: inline;
 }
+#currentdisplay.finished {
+  color: rgba(184, 219, 217, 0.95);
+}
 #currenttasktop {
   padding: 1em;
+  grid-area: top;
 }
 #nexttaskbutt {
   background-color: transparent;
@@ -101,6 +117,32 @@ a:hover {
   float: right;
   margin: -0.75em;
   font-weight: lighter;
+}
+#currentdiplaysub {
+  grid-area: sub;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+.subtaskdisplay {
+  background-color: rgb(244, 244, 249);
+  padding: 0.75em;
+  margin: 0.5em 1em;
+  border-radius: 5px;
+  border-color: rgb(184, 219, 217);
+  border-style: solid;
+  border-width: thin;
+  display: grid;
+  grid-template-columns: 1em 80% 2em;
+}
+.subtaskdisplay.finished {
+  background-color: rgb(184, 219, 217);
+}
+
+#currentdisplaynotes {
+  padding: 1em;
+  grid-area: note;
+  height: 100%;
+  /* overflow-y: scroll; */
 }
 /* UpcomingList display */
 #upcominglist {
