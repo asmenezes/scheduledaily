@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function BackHeader() {
   let today = new Date();
@@ -7,7 +7,9 @@ function BackHeader() {
     <React.Fragment>
       <div class="backheader">
         <span>{today}</span>
-        <a className="right" href="/schedule">Schedule</a>
+        <a className="right" href="./schedule">
+          Schedule
+        </a>
       </div>
     </React.Fragment>
   );
