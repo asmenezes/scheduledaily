@@ -11,8 +11,8 @@ export const scheduleReducer = (state, action) => {
           id: uuidv4(),
         },
       ];
-    case "REMOVE_BOOK":
-      return state.filter((book) => book.id !== action.id);
+    case "REMOVE_TASK":
+      return state.filter((task) => task.id !== action.id);
     default:
       return state;
   }

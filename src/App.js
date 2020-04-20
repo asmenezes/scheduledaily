@@ -11,6 +11,9 @@ function App() {
         <Route path="/schedule">
           <ScheduleMain />
         </Route>
+        <Route path="build/schedule">
+          <ScheduleMain />
+        </Route>
         <Route path="/">
           <Main />
         </Route>
