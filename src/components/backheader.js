@@ -7,7 +7,7 @@ function BackHeader() {
   return (
     <div class="backheader">
       <span>{today}</span>
-      <Link className="right" to="/schedule">
+      <Link className="right" to="/dayschedule">
         Schedule
       </Link>
     </div>

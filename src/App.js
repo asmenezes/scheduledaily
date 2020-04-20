@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/schedule">
+        <Route path="/dayschedule">
           <ScheduleMain />
         </Route>
         <Route path="/">
