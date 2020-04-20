@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <Router baseline="{process.env.PUBLIC_URL + '/'}">
       <Switch>
         <Route path="/dayschedule">
           <ScheduleMain />

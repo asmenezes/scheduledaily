@@ -5,7 +5,7 @@ function BackHeader() {
   let today = new Date();
   today = today.toDateString();
   return (
-    <div class="backheader">
+    <div className="backheader">
       <span>{today}</span>
       <Link className="right" to="/dayschedule">
         Schedule

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function TaskCreator() {
   return (
     <React.Fragment>
       <div id="taskcreator">
-        <div class="lineup">
+        <div className="lineup">
           <div>
             <input
               className="tasknameinput taskcreationinput"
@@ -12,14 +12,14 @@ function TaskCreator() {
               type="text"
             />
           </div>
-          <div >
-            <label for="starttime"></label>
+          <div>
+            <label htmlFor="starttime"></label>
             <input
               className="taskcreationinput timeinput"
               type="time"
               name="starttime"
             />
-            <label for="endtime"></label>
+            <label htmlFor="endtime"></label>
             <input
               className="taskcreationinput timeinput"
               type="time"
@@ -34,19 +34,22 @@ function TaskCreator() {
                 placeholder="Subtask Name"
                 type="text"
               />
-
             </div>
           </div>
           <div className="secondpart">
-          <label class="switch" id="typeselector">
-            <input type="checkbox" />
-            <span class="slider"></span>
-          </label>
-        indicator</div>
+            <label className="switch" id="typeselector">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+            indicator
+          </div>
         </div>
-        <textarea cols="28" rows="5" class="tasknotesinput taskcreationinput">
-          Notes: 
-        </textarea>
+        <textarea
+          cols="28"
+          rows="5"
+          className="tasknotesinput taskcreationinput"
+          defaultValue="Notes: "
+        ></textarea>
         <div></div>
       </div>
     </React.Fragment>
