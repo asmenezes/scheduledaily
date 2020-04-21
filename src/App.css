@@ -494,7 +494,9 @@ input:checked + .slider:before {
   .schedulepreview {
     min-height: 65vh;
     overflow-y: scroll;
-    grid-template-columns: 1fr;
+    display: block;
+    /* grid-template-columns: 1fr;
+    grid-template-rows: 1fr; */
   }
 
   .tasknotesinput {
