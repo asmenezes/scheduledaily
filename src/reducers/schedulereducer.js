@@ -1,18 +1,21 @@
-import { v4 as uuidv4 } from "uuid";
-
 export const scheduleReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
       return [
         ...state,
         {
-          title: action.day.task.taskname,
-          author: action.day.task.tid,
-          id: uuidv4(),
+          taskName: action.task.taskName,
+          tID: action.task.tID,
+          pID: action.task.pID,
+          startTime: action.task.startTime,
+          endTime: action.task.endTime,
+          isComplete: action.task.isComplete,
+          taskNotes: action.task.taskNotes,
+          subtasks: action.task.subtasks,
         },
       ];
     case "REMOVE_TASK":
-      return state.filter((task) => task.id !== action.id);
+      return state.filter((task) => task.tID !== action.id);
     default:
       return state;
   }

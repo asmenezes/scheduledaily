@@ -2,8 +2,8 @@ import SubTask from "./subtaskmodel";
 export class Task {
   taskName: string;
   pID: number;
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
   isComplete: boolean;
   taskNotes: string;
   tID: number;

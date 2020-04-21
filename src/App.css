@@ -329,6 +329,7 @@ a:hover {
   grid-template-columns: 0.9em auto max-content;
   grid-template-rows: max-content max-content;
   grid-template-areas: "deletebutton taskname time" "deletebutton subtask subtask";
+  height: min-content;
 }
 
 .deletebutton {
