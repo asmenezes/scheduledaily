@@ -1,6 +1,8 @@
-// PID: int FOREIGN KEY
-// stType: Boolean
-// stName: VarChar
-// goal: int
-// value: int
-// TID: int FOREIGN KEY
+export class SubTask {
+  stName: string;
+  pID: number;
+  goal: number;
+  value: number;
+  stType: boolean;
+  tID: number;
+}

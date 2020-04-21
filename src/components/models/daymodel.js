@@ -1,3 +1,7 @@
-// PID: int FOREIGN KEY
-// date: Date UNIQUE PRIMARY KEY
-// dayNotes: VarChar
+import Task from "./taskmodel";
+export class Day {
+  pID: number;
+  date: Date;
+  dayNotes: string;
+  tasks: Task[];
+}

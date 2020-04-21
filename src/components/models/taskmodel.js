@@ -1,8 +1,11 @@
-// TaskName: Varchar
-// PID: int Foreign Key
-// startTime: Date
-// endTime: Date
-// complete: Boolean
-// taskNotes: VarChar
-// TID: int PRIMARY KEY UNIQUE INC
-// subtaks: subtask[]
+import SubTask from "./subtaskmodel";
+export class Task {
+  taskName: string;
+  pID: number;
+  startTime: Date;
+  endTime: Date;
+  isComplete: boolean;
+  taskNotes: string;
+  tID: number;
+  subtasks: subtask[];
+}
