@@ -333,7 +333,6 @@ a:hover {
 }
 
 .deletebutton {
-  /* grid-area: deletebutton; */
   height: auto;
   font-size: 1em;
   float: left;
@@ -478,11 +477,6 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
-/* <label class="switch">
-  <input type="checkbox" checked>
-  <span class="slider"></span>
-</label> */
 
 /* Responsiveness  */
 @media only screen and (max-width: 950px) {

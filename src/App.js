@@ -3,13 +3,16 @@ import "./App.css";
 import Main from "./components/creation/main.js";
 import ScheduleMain from "./components/schedule/schedulemain.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ScheduleContextProvider from "./contexts/ScheduleContext";
 
 function App() {
   return (
     <Router baseline="{process.env.PUBLIC_URL + '/'}">
       <Switch>
         <Route path="/dayschedule">
-          <ScheduleMain />
+          <ScheduleContextProvider>
+            <ScheduleMain />
+          </ScheduleContextProvider>
         </Route>
         <Route path="/">
           <Main />
