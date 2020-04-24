@@ -114,9 +114,7 @@ a:hover {
   border-color: rgb(184, 219, 217);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content minmax(min-content 40%) minmax(
-      1fr max-content
-    );
+  grid-template-rows: min-content minmax(min-content 40%) max-content;
   grid-template-areas: "top" "sub" "note";
 }
 #currentdisplayname {
@@ -217,6 +215,7 @@ a:hover {
 .schedulepreview {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content;
   background-color: rgb(244, 244, 249);
   border-radius: 5px;
   border-color: rgb(184, 219, 217);

@@ -1,25 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import CreationSidebar from "./creationsidebar";
 import SchedulePreview from "./schedulepreview";
 import TaskCreator from "./taskcreator";
 import BackHeader from "../backheader";
-import ScheduleContextProvider from "../../contexts/ScheduleContext";
+import ScheduleContextProvider, {
+  ScheduleContext,
+} from "../../contexts/ScheduleContext";
 
 function Main() {
+  const { tasks, dispatch } = useContext(ScheduleContext);
   return (
     <React.Fragment>
-      <ScheduleContextProvider>
-        <div className="doubler">
-          <div>
-            <CreationSidebar />
-          </div>
-          <div className="content">
-            <BackHeader />
-            <SchedulePreview />
-            <TaskCreator />
-          </div>
+      <div className="doubler">
+        <div>
+          <CreationSidebar />
         </div>
-      </ScheduleContextProvider>
+        <div className="content">
+          <ScheduleContextProvider>
+            <BackHeader />
+            <SchedulePreview props={tasks} />
+            <TaskCreator props={tasks} />
+          </ScheduleContextProvider>
+        </div>
+      </div>
     </React.Fragment>
   );
 }

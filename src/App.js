@@ -15,7 +15,9 @@ function App() {
           </ScheduleContextProvider>
         </Route>
         <Route path="/">
-          <Main />
+          <ScheduleContextProvider>
+            <Main />
+          </ScheduleContextProvider>
         </Route>
       </Switch>
     </Router>

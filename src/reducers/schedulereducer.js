@@ -5,17 +5,17 @@ export const scheduleReducer = (state, action) => {
         ...state,
         {
           taskName: action.task.taskName,
-          tID: action.task.tID,
-          pID: action.task.pID,
+          tID: Math.random() * 900000,
+          pID: 1,
           startTime: action.task.startTime,
           endTime: action.task.endTime,
-          isComplete: action.task.isComplete,
+          isComplete: false,
           taskNotes: action.task.taskNotes,
           subtasks: action.task.subtasks,
         },
       ];
     case "REMOVE_TASK":
-      return state.filter((task) => task.tID !== action.id);
+      return state.filter((task) => task.tID !== action.tID);
     default:
       return state;
   }

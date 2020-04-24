@@ -1,12 +1,12 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { scheduleReducer } from "../reducers/schedulereducer";
+import ReactDOM from "react-dom";
 
 export const ScheduleContext = createContext();
 
 const ScheduleContextProvider = (props) => {
   const [tasks, dispatch] = useReducer(scheduleReducer, [], () => {
     const localData = localStorage.getItem("tasks");
-    console.log(JSON.parse(localData));
     return localData ? JSON.parse(localData) : [];
   });
   useEffect(() => {

@@ -1,35 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import TaskBlock from "../taskblock";
-import { ScheduleContext } from "../../contexts/ScheduleContext";
+import ScheduleContextProvider, {
+  ScheduleContext,
+} from "../../contexts/ScheduleContext";
 import Task from "../models/taskmodel";
 
-const SchedulePreview = () => {
+const SchedulePreview = (props) => {
   const { tasks } = useContext(ScheduleContext);
-  return tasks.length ? (
+  console.log(tasks);
+
+  return (
     <React.Fragment>
       <div className="schedulepreviewcontainer">
-        <div className="schedulepreview">
-          {tasks.map((task) => {
-            return (
-              <TaskBlock
-                taskName={task.taskName}
-                startTime={task.startTime}
-                endTime={task.endTime}
-                tID={task.tID}
-                key={task.tID}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <div className="schedulepreviewcontainer">
-        <div className="schedulepreview"></div>
+        <ScheduleContextProvider value={tasks}>
+          <div className="schedulepreview">
+            {tasks.length
+              ? tasks.map((task) => {
+                  return <TaskBlock tID={task.tID} key={task.tID} />;
+                })
+              : null}
+          </div>
+        </ScheduleContextProvider>
       </div>
     </React.Fragment>
   );
 };
-
+// {tasks.length ? (
+//   tasks.map((task) => {
+//     return <TaskBlock tID={task.tID} key={task.tID} />;
+//   })
+// ) : (
+//   <div></div>
+// )}
 export default SchedulePreview;
