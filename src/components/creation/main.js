@@ -10,20 +10,21 @@ import ScheduleContextProvider, {
 function Main() {
   const { tasks, dispatch } = useContext(ScheduleContext);
   return (
-    <React.Fragment>
-      <div className="doubler">
-        <div>
-          <CreationSidebar />
-        </div>
-        <div className="content">
-          <ScheduleContextProvider>
+    <ScheduleContextProvider>
+      <React.Fragment>
+        <div className="doubler">
+          <div>
+            <CreationSidebar />
+          </div>
+
+          <div className="content">
             <BackHeader />
-            <SchedulePreview props={tasks} />
-            <TaskCreator props={tasks} />
-          </ScheduleContextProvider>
+            <SchedulePreview tasks={tasks} />
+            <TaskCreator />
+          </div>
         </div>
-      </div>
-    </React.Fragment>
+      </React.Fragment>
+    </ScheduleContextProvider>
   );
 }
 

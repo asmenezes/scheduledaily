@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { ScheduleContext } from "../../contexts/ScheduleContext";
 
-function TaskCreator(props) {
+function TaskCreator() {
   const { tasks, dispatch } = useContext(ScheduleContext);
   const [taskName, setName] = useState("");
   const [startTime, setStartTime] = useState("");

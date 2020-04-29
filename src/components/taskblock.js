@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { ScheduleContext } from "../contexts/ScheduleContext";
 
-function TaskBlock(props) {
-  const { tasks, dispatch } = useContext(ScheduleContext);
-  const task = tasks.find((task) => task.tID === props.tID);
+function TaskBlock({ task, tasks }, props) {
+  const { dispatch } = useContext(ScheduleContext);
+  console.log(`key is ${task.tID}`);
+  const task2 = tasks.find((task1) => task1.tID === task.tID);
+
   return task ? (
     <div className="taskblock">
       <button
         className="deletebutton"
-        onClick={() => dispatch({ type: "REMOVE_TASK", tID: task.tID })}
+        onClick={() => dispatch({ type: "REMOVE_TASK", tID: task2.tID })}
       >
         x
       </button>

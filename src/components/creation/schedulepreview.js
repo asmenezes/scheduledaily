@@ -5,24 +5,34 @@ import ScheduleContextProvider, {
 } from "../../contexts/ScheduleContext";
 import Task from "../models/taskmodel";
 
-const SchedulePreview = (props) => {
+const SchedulePreview = () => {
   const { tasks } = useContext(ScheduleContext);
   console.log(tasks);
 
-  return (
+  return tasks.length ? (
     <React.Fragment>
-      <div className="schedulepreviewcontainer">
-        <ScheduleContextProvider value={tasks}>
+      <ScheduleContextProvider>
+        <div className="schedulepreviewcontainer">
           <div className="schedulepreview">
-            {tasks.length
-              ? tasks.map((task) => {
-                  return <TaskBlock tID={task.tID} key={task.tID} />;
-                })
-              : null}
+            {tasks.map((task) => {
+              console.log(task.tID);
+              return (
+                <TaskBlock
+                  task={task}
+                  tID={task.tID}
+                  tasks={tasks}
+                  key={task.tID}
+                />
+              );
+            })}
           </div>
-        </ScheduleContextProvider>
-      </div>
+        </div>
+      </ScheduleContextProvider>
     </React.Fragment>
+  ) : (
+    <div className="schedulepreviewcontainer">
+      <div className="schedulepreview"></div>
+    </div>
   );
 };
 // {tasks.length ? (

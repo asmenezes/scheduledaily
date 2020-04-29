@@ -1,8 +1,24 @@
-export const scheduleReducer = (state, action) => {
+export const scheduleReducer = (tasks, action) => {
   switch (action.type) {
     case "ADD_TASK":
+      // localStorage.setItem(
+      //   "tasks",
+      //   JSON.stringify([
+      //     ...tasks,
+      //     {
+      //       taskName: action.task.taskName,
+      //       tID: Math.random() * 900000,
+      //       pID: 1,
+      //       startTime: action.task.startTime,
+      //       endTime: action.task.endTime,
+      //       isComplete: false,
+      //       taskNotes: action.task.taskNotes,
+      //       subtasks: action.task.subtasks,
+      //     },
+      //   ])
+      // );
       return [
-        ...state,
+        ...tasks,
         {
           taskName: action.task.taskName,
           tID: Math.random() * 900000,
@@ -15,9 +31,9 @@ export const scheduleReducer = (state, action) => {
         },
       ];
     case "REMOVE_TASK":
-      return state.filter((task) => task.tID !== action.tID);
+      return tasks.filter((task) => task.tID != action.tID);
     default:
-      return state;
+      return tasks;
   }
 };
 // Complete current task
