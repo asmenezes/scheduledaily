@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import TaskBlock from "../taskblock";
-import { ScheduleContext } from "../../contexts/ScheduleContext";
+import { ScheduleContext } from "../../contexts/schedulecontext";
 
 function UpcomingList(props) {
   const { tasks } = useContext(ScheduleContext);

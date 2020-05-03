@@ -5,7 +5,7 @@ import TaskCreator from "./taskcreator";
 import BackHeader from "../backheader";
 import ScheduleContextProvider, {
   ScheduleContext,
-} from "../../contexts/ScheduleContext";
+} from "../../contexts/schedulecontext";
 
 function Main() {
   const { tasks, dispatch } = useContext(ScheduleContext);

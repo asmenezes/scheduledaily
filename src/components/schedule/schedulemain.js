@@ -6,7 +6,7 @@ import UpcomingList from "./upcominglist";
 import DayNotes from "./daynotes";
 import ScheduleContextProvider, {
   ScheduleContext,
-} from "../../contexts/ScheduleContext";
+} from "../../contexts/schedulecontext";
 
 function ScheduleMain() {
   const { tasks } = useContext(ScheduleContext);

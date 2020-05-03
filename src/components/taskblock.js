@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ScheduleContext } from "../contexts/ScheduleContext";
+import { ScheduleContext } from "../contexts/schedulecontext";
 
 function TaskBlock({ task }) {
   const { dispatch } = useContext(ScheduleContext);

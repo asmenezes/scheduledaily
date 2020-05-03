@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import TaskBlock from "../taskblock";
 import ScheduleContextProvider, {
   ScheduleContext,
-} from "../../contexts/ScheduleContext";
+} from "../../contexts/schedulecontext";
 import Task from "../models/taskmodel";
 
 const SchedulePreview = () => {
