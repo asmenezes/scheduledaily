@@ -9,30 +9,16 @@ const SchedulePreview = () => {
   const { tasks } = useContext(ScheduleContext);
   console.log(tasks);
 
-  return tasks.length ? (
-    <React.Fragment>
-      <ScheduleContextProvider>
-        <div className="schedulepreviewcontainer">
-          <div className="schedulepreview">
-            {tasks.map((task) => {
-              console.log(task.tID);
-              return (
-                <TaskBlock
-                  task={task}
-                  tID={task.tID}
-                  tasks={tasks}
-                  key={task.tID}
-                />
-              );
-            })}
-          </div>
+  return (
+    <ScheduleContextProvider>
+      <div className="schedulepreviewcontainer">
+        <div className="schedulepreview">
+          {tasks.map((task) => {
+            return <TaskBlock task={task} key={task.tID} />;
+          })}
         </div>
-      </ScheduleContextProvider>
-    </React.Fragment>
-  ) : (
-    <div className="schedulepreviewcontainer">
-      <div className="schedulepreview"></div>
-    </div>
+      </div>
+    </ScheduleContextProvider>
   );
 };
 // {tasks.length ? (
