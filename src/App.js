@@ -3,7 +3,7 @@ import "./App.css";
 import Main from "./components/creation/main.js";
 import ScheduleMain from "./components/schedule/schedulemain.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ScheduleContextProvider from "./contexts/ScheduleContext";
+import ScheduleContextProvider from "./contexts/schedulecontext";
 
 function App() {
   return (
