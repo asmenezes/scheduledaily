@@ -85,9 +85,8 @@ function TaskCreator() {
             onChange={(e) => setNotes(e.target.value)}
             value={taskNotes}
           ></textarea>
-          <div>
-            <input type="submit" value="Add" />
-          </div>
+
+          <input type="submit" value="+" id="creatoradd" />
         </div>
       </form>
     </React.Fragment>
