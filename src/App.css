@@ -461,11 +461,12 @@ a:hover {
 }
 .timeLabel {
   /* padding: 0 0.1em; */
-  margin-bottom: -0.5em;
+  margin-bottom: -0.4em;
   margin-top: 0.25em;
-  font-size: 0.75em;
+  font-size: 0.7em;
   display: block;
   color: black;
+  font-weight: normal;
 }
 
 input:focus + #tasknamelabel,
