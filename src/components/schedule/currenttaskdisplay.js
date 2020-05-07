@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import SubtaskDisplay from "./subtaskdisplay";
 
 function CurrentDisplay(props) {

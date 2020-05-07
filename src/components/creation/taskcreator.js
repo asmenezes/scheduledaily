@@ -1,8 +1,8 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 
 function TaskCreator() {
-  const { tasks, dispatch } = useContext(ScheduleContext);
+  const { dispatch } = useContext(ScheduleContext);
   const [taskName, setName] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -39,26 +39,36 @@ function TaskCreator() {
                 type="text"
                 value={taskName}
                 onChange={(e) => setName(e.target.value)}
+                name="taskName"
                 required
               />
+              <label htmlFor="taskName">Task Name</label>
             </div>
-            <div>
-              <label htmlFor="starttime"></label>
-              <input
-                className="taskcreationinput timeinput"
-                type="time"
-                name="starttime"
-                onChange={(e) => setStartTime(e.target.value)}
-                value={startTime}
-              />
-              <label htmlFor="endtime"></label>
-              <input
-                className="taskcreationinput timeinput"
-                type="time"
-                name="endtime"
-                onChange={(e) => setEndTime(e.target.value)}
-                value={endTime}
-              />
+            <div className="double">
+              <div>
+                <label htmlFor="starttime" className="timeLabel">
+                  Start Time
+                </label>
+                <input
+                  className="taskcreationinput timeinput"
+                  type="time"
+                  name="starttime"
+                  onChange={(e) => setStartTime(e.target.value)}
+                  value={startTime}
+                />
+              </div>
+              <div>
+                <label htmlFor="endtime" className="timeLabel">
+                  End Time
+                </label>
+                <input
+                  className="taskcreationinput timeinput"
+                  type="time"
+                  name="endtime"
+                  onChange={(e) => setEndTime(e.target.value)}
+                  value={endTime}
+                />
+              </div>
             </div>
             <div>
               <div className="create list of subtasks"></div>

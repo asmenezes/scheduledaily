@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 
 function BackHeader() {
   let today = new Date();
@@ -15,8 +15,3 @@ function BackHeader() {
 }
 
 export default BackHeader;
-
-// <a className="right" href="/schedule">
-//
-//   Schedule
-// </a>

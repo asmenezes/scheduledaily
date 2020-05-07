@@ -1,6 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { scheduleReducer } from "../reducers/schedulereducer";
-import ReactDOM from "react-dom";
 
 export const ScheduleContext = createContext();
 

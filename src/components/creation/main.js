@@ -8,7 +8,7 @@ import ScheduleContextProvider, {
 } from "../../contexts/schedulecontext";
 
 function Main() {
-  const { tasks, dispatch } = useContext(ScheduleContext);
+  const { tasks } = useContext(ScheduleContext);
   return (
     <ScheduleContextProvider>
       <React.Fragment>

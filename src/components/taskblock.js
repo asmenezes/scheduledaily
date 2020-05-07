@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { ScheduleContext } from "../contexts/schedulecontext";
 
-function TaskBlock({ task }) {
+function TaskBlock(props) {
   const { dispatch } = useContext(ScheduleContext);
+  const task = props.task;
   console.log(`key is ${task.tID}`);
-  // const task2 = tasks.find((task1) => task1.tID === task.tID);
 
   return task ? (
     <div className="taskblock">
