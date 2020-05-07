@@ -451,7 +451,7 @@ a:hover {
 
 #tasknamelabel {
   color: transparent;
-  font-size: 15px;
+  font-size: 1em;
   font-weight: normal;
   display: none;
   pointer-events: none;
@@ -463,13 +463,14 @@ a:hover {
   /* padding: 0 0.1em; */
   margin-bottom: -0.5em;
   margin-top: 0.25em;
+  font-size: 0.75em;
   display: block;
   color: black;
 }
 
 input:focus + #tasknamelabel,
 input:valid + #tasknamelabel {
-  font-size: 14px;
+  font-size: 0.75em;
   color: black;
   display: block;
   position: relative;
