@@ -9,7 +9,7 @@ const SchedulePreview = () => {
   return (
     <div className="schedulepreviewcontainer">
       <div className="schedulepreview">
-        <ul>
+        <ul id="previewlist">
           {tasks.map((task) => {
             return <TaskBlock task={task} key={task.tID} />;
           })}

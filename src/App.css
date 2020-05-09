@@ -217,7 +217,7 @@ a:hover {
 
 .schedulepreview {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: min-content;
   background-color: rgb(244, 244, 249);
   border-radius: 5px;
@@ -233,6 +233,11 @@ a:hover {
   grid-template-columns: 1fr;
   height: 70vh;
   margin-bottom: 1.5em;
+}
+
+#previewlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .secondpart {
