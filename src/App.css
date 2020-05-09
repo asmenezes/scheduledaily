@@ -29,6 +29,12 @@ ul {
   grid-template-columns: 1fr;
   max-height: inherit;
 }
+input[name="indicval"] {
+  border-style: none;
+  width: 3em;
+  margin-left: 1.5em;
+  font-size: 1.2em;
+}
 ::-webkit-scrollbar {
   background-color: transparent;
 }

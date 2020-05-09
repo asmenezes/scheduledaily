@@ -108,6 +108,7 @@ function TaskCreator() {
                   onChange={(e) => setIndicVal(e.target.value)}
                   value={indicVal}
                   min={1}
+                  max={999}
                 />
               ) : (
                 <input type="checkbox" name="indicval" unchecked />
