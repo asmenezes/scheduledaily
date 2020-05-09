@@ -8,6 +8,8 @@ function TaskCreator() {
   const [endTime, setEndTime] = useState("");
   const [taskNotes, setNotes] = useState("");
   const [subtasks, setSubtasks] = useState("");
+  const [indic, setIndic] = useState(false);
+  const [indicVal, setIndicVal] = useState(2);
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
@@ -25,6 +27,8 @@ function TaskCreator() {
     setEndTime("");
     setNotes("Notes: ");
     setSubtasks([]);
+    setIndic(false);
+    setIndicVal(2);
   };
   //hh%3Amm <- time format
   return (
@@ -89,10 +93,28 @@ function TaskCreator() {
             </div>
             <div className="secondpart">
               <label className="switch" id="typeselector">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  name="indication"
+                  onChange={(e) => setIndic(!indic)}
+                  className="check"
+                />
                 <span className="slider"></span>
               </label>
-              indicator
+              {indic ? (
+                <input
+                  type="number"
+                  name="indicval"
+                  onChange={(e) => setIndicVal(e.target.value)}
+                  value={indicVal}
+                />
+              ) : (
+                <input type="checkbox" name="indicval" unchecked />
+              )}
+              <span> {indic} </span>
+              {
+                //Checkbox : number input -----value is indic value, this should all go in subtask creator anyways
+              }
             </div>
           </div>
           <textarea
