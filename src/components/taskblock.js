@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import { ScheduleContext } from "../contexts/schedulecontext";
 
-function TaskBlock(props) {
+function TaskBlock({ task }) {
   const { dispatch } = useContext(ScheduleContext);
-  const task = props.task;
-  console.log(`key is ${task.tID}`);
-
   return task ? (
     <div className="taskblock">
       <button

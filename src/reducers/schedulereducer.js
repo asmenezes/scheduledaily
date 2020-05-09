@@ -1,7 +1,6 @@
 export const scheduleReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
-      console.log(state);
       return [
         ...state,
         {
@@ -16,8 +15,6 @@ export const scheduleReducer = (state, action) => {
         },
       ];
     case "REMOVE_TASK":
-      console.log(state);
-      console.log(state.filter((task) => task.tID !== action.tID));
       return state.filter((task) => task.tID !== action.tID);
     default:
       return state;
