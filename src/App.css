@@ -24,6 +24,11 @@ a {
 a:hover {
   color: black;
 }
+ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: inherit;
+}
 ::-webkit-scrollbar {
   background-color: transparent;
 }
@@ -39,7 +44,7 @@ a:hover {
   grid-template-columns: 1fr 1fr;
 }
 .scroll {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .lightlabel {
@@ -183,18 +188,20 @@ a:hover {
   border-style: solid;
   border-width: thin;
   border-color: rgb(184, 219, 217);
+  overflow-y: scroll;
 }
 
 #daynotes,
 #booleanlist {
-  height: 110%;
+  height: 120%;
+  max-height: 24vh;
   width: 100%;
   border-radius: 10px;
   background-color: rgb(244, 244, 249);
   border-style: solid;
   border-width: thin;
   border-color: rgb(184, 219, 217);
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 #daynotes {

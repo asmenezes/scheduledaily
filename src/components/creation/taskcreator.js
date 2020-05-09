@@ -26,7 +26,7 @@ function TaskCreator() {
     setNotes("Notes: ");
     setSubtasks([]);
   };
-
+  //hh%3Amm <- time format
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
@@ -57,6 +57,8 @@ function TaskCreator() {
                   name="starttime"
                   onChange={(e) => setStartTime(e.target.value)}
                   value={startTime}
+                  pattern="[0-9]{2}:[0-9]{2}"
+                  required
                 />
               </div>
               <div>
@@ -69,6 +71,9 @@ function TaskCreator() {
                   name="endtime"
                   onChange={(e) => setEndTime(e.target.value)}
                   value={endTime}
+                  pattern="[0-9]{2}:[0-9]{2}"
+                  min={startTime}
+                  required
                 />
               </div>
             </div>

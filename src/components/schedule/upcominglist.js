@@ -2,23 +2,17 @@ import React, { useContext } from "react";
 import TaskBlock from "../taskblock";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 
-function UpcomingList(props) {
+function UpcomingList() {
   const { tasks } = useContext(ScheduleContext);
   return (
-    <div id="upcominglist">
+    <div id="upcominglist" className="scroll">
       <h3 className="lightlabel">Upcoming Tasks:</h3>
-      <div className="scroll">
+
+      <ul className="scroll">
         {tasks.map((task) => {
-          return (
-            <TaskBlock
-              startTime={task.startTime}
-              endTime={task.endTime}
-              taskName={task.taskName}
-              tID={task.tID}
-            />
-          );
+          return <TaskBlock task={task} key={task.tID} />;
         })}
-      </div>
+      </ul>
     </div>
   );
 }
