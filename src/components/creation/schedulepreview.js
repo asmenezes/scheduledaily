@@ -1,8 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import TaskBlock from "../taskblock";
-import ScheduleContextProvider, {
-  ScheduleContext,
-} from "../../contexts/schedulecontext";
+import { ScheduleContext } from "../../contexts/schedulecontext";
 
 const SchedulePreview = () => {
   const { tasks } = useContext(ScheduleContext);
