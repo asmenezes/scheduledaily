@@ -111,7 +111,7 @@ function TaskCreator() {
                   max={999}
                 />
               ) : (
-                <input type="checkbox" name="indicval" unchecked />
+                <input type="checkbox" name="indicval" unchecked="true" />
               )}
               <span> {indic} </span>
               {

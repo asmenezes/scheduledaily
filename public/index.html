@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Schedule Daily" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
 
-<head>
-  <meta charset="utf-8" />
-  <!-- <link rel="icon" href="" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Schedule Daily" />
-  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Schedule Daily</title>
+  </head>
 
-  <title>Schedule Daily</title>
-</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+    <div id="time"></div>
+    <div id="root"></div>
+    <script>
+      let now = new Date();
+      console.log(window.location.pathname);
+      const clock = document.getElementById("time");
 
-</body>
-
+      window.setInterval(() => {
+        if (window.location.pathname == "/dayschedule") {
+          clock.innerHTML = `${now.getHours()}:${now.getMinutes()}`;
+          clock.style.color = "black";
+          now = new Date();
+        } else {
+          clock.innerHTML = `${now.getHours()}:${now.getMinutes()}`;
+          clock.style.color = "transparent";
+        }
+      }, 1);
+    </script>
+  </body>
 </html>

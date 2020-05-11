@@ -7,10 +7,10 @@ function ScheduleHeader() {
   today = today.toDateString();
   return (
     <React.Fragment>
-      <div class="scheduleheader">
+      <div className="scheduleheader">
         <div className="timegroup">
           <span>{tasks[0] ? tasks[0].startTime : null}</span>
-          <span id="currenttimedisplay">12:30</span>
+          <span id="currenttimedisplay"></span>
           <span>{tasks[0] ? tasks[0].endTime : null}</span>
         </div>
         <div className="baseline">

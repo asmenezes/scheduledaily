@@ -5,7 +5,6 @@
   border-style: none;
   font-weight: lighter;
 }
-
 body {
   background-color: #d8ebea;
 }
@@ -35,6 +34,15 @@ input[name="indicval"] {
   margin-left: 1.5em;
   font-size: 1.2em;
 }
+#time {
+  background-color: transparent;
+  font-size: 2.5em;
+  padding-right: calc(50vw - 1.25em);
+  margin-left: calc(50vw - 1.25em);
+  margin-top: 0.1em;
+  margin-bottom: -1.1em;
+}
+
 ::-webkit-scrollbar {
   background-color: transparent;
 }
@@ -84,6 +92,8 @@ input[name="indicval"] {
 
 #currenttimedisplay {
   font-size: 2em;
+
+  padding-left: 2.6em;
 }
 
 .baseline {
