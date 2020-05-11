@@ -24,7 +24,7 @@ function CurrentDisplay() {
       <div id="currentdisplaynotes">
         <textarea
           className="dayNotes fillup"
-          defaultValue={tasks[0].taskNotes}
+          defaultValue={tasks[0] ? tasks[0].taskNotes : "Day Notes:"}
         ></textarea>
       </div>
     </div>
