@@ -115,7 +115,7 @@ function TaskCreator() {
               )}
               <span> {indic} </span>
               {
-                //Checkbox : number input -----value is indic value, this should all go in subtask creator anyways
+                //Checkbox : number input -----value is indic value, use javascript to make more form elements when neccesary
               }
             </div>
           </div>
