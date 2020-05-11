@@ -2,7 +2,7 @@ export const scheduleReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
       return insertByTime(state, action.task);
-      return;
+
     case "REMOVE_TASK":
       return state.filter((task) => task.tID !== action.tID);
     default:

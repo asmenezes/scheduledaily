@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import ScheduleHeader from "./scheduleheader";
 import CurrentDisplay from "./currenttaskdisplay";
 import BooleanList from "./booleanlist";
