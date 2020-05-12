@@ -13,7 +13,7 @@ function CurrentDisplay() {
         <button id="nexttaskbutt">Next Task</button>
       </div>
       <div id="currentdiplaysub">
-        {tasks[0] ? (
+        {tasks[0].subtasks ? (
           tasks[0].subtasks.map((subtask) => {
             return <SubtaskDisplay stName={subtask.stName} />;
           })
