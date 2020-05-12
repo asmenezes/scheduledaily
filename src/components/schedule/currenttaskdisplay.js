@@ -8,7 +8,7 @@ function CurrentDisplay() {
     <div id="currentdisplay">
       <div id="currenttasktop">
         <h1 id="currentdisplayname">
-          {tasks[0].taskName ? tasks[0].taskName : "Break"}
+          {tasks[0] ? tasks[0].taskName : "Break"}
         </h1>
         <button id="nexttaskbutt">Next Task</button>
       </div>
