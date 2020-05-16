@@ -5,5 +5,12 @@ export const dateConv = (time) => {
   return today;
 };
 export const disp12Time = (timeString) => {
-  return null;
+  //if 1st 2 are more than 12 subtract 11
+  let hours = Number(timeString.substring(0,2));
+  if(hours > 12){
+    hours -= 12;
+    let newtime = (hours + ":" + timeString.substring(3,5) + "pm")
+    return newtime
+  }
+  return timeString + "am";
 };

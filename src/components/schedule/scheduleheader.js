@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ScheduleContext } from "../../contexts/schedulecontext";
-import { dateConv } from "../scripts/shared.js";
+import { dateConv, disp12Time } from "../scripts/shared.js";
 
 function ScheduleHeader() {
   const { tasks } = useContext(ScheduleContext);
@@ -27,9 +27,9 @@ function ScheduleHeader() {
     <React.Fragment>
       <div className="scheduleheader">
         <div className="timegroup">
-          <span>{tasks[0] ? tasks[0].startTime : null}</span>
+          <span>{tasks[0] ? disp12Time(tasks[0].startTime) : null}</span>
           <span id="currenttimedisplay"></span>
-          <span>{tasks[0] ? tasks[0].endTime : null}</span>
+          <span>{tasks[0] ? disp12Time(tasks[0].endTime) : null}</span>
         </div>
         <div className="baseline">
           <span>{today}</span>
