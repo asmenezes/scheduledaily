@@ -14,12 +14,12 @@ function ScheduleHeader() {
       const et = tasks[0] ? dateConv(tasks[0].endTime): 0;
       let done = ((et-st)/((et - st) - (et - todayInitial ))*10);
       let left = ((et - st) - ((et-st)/((et - st) - (et - todayInitial ))));
-      // (((et - st) - (todayInitial - st))/(et-st));
+      // (((et - st) - (todayInitial - st))/(et-st)); Fix IIIIT
       console.log(100 - done +"%");
       prog.style.animationName = "anim";
       prog.style.width = 100 - done +"%"; //  ((et - st) - (nt - st) ) / et - st
       prog.style.animationTimingFunction = "linear";
-      prog.style.animationDuration = done+"s"; //  ((et - st) - (nt - st))
+      prog.style.animationDuration = 1+"s"; //  ((et - st) - (nt - st))
       prog.style.animationIterationCount = 1;
     }
   }, []);

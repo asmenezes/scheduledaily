@@ -17,14 +17,24 @@
 
     <div id="time"></div>
     <div id="root"></div>
+
     <script>
+    const disp12Time = (timeString) => {
+      let hours = Number(timeString.substring(0,2));
+      if(hours > 12){
+        hours -= 12;
+        let newtime = (hours + ":" + timeString.substring(3,5) + "PM")
+        return newtime
+      }
+      return timeString + "AM";
+    };
       let now = new Date();
       console.log(window.location.pathname);
       const clock = document.getElementById("time");
 
       window.setInterval(() => {
         if (window.location.pathname == "/dayschedule") {
-          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
+          clock.innerHTML = `${disp12Time(now.toTimeString().substring(0, 5))}`;
           clock.style.color = "black";
           now = new Date();
         } else {
