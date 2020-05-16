@@ -1,19 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ScheduleContext } from "../../contexts/schedulecontext";
+import { dateConv } from "../scripts/shared.js";
 
 function ScheduleHeader() {
   const { tasks } = useContext(ScheduleContext);
-  let today = new Date();
-  today = today.toDateString();
+  let todayInitial = new Date();
+  let today = todayInitial.toDateString();
   useEffect(() => {
     if (document.getElementById("progress")) {
       const prog = document.getElementById("progress");
-      console.log("in progress");
+      const st = tasks[0] ? dateConv(tasks[0].startTime) : 0;
+      const et = tasks[0] ? dateConv(tasks[0].endTime): 0;
+      let done = ((et-st)/((et - st) - (et - todayInitial ))*10);
+      let left = ((et - st) - ((et-st)/((et - st) - (et - todayInitial ))));
+      // (((et - st) - (todayInitial - st))/(et-st));
+      console.log(100 - done +"%");
       prog.style.animationName = "anim";
-      prog.style.width = "50%"; //  ((et - st) - (nt - st) ) / et - st
+      prog.style.width = 100 - done +"%"; //  ((et - st) - (nt - st) ) / et - st
       prog.style.animationTimingFunction = "linear";
-      prog.style.animationDuration = "100000s"; //  ((et - st) - (nt - st))
+      prog.style.animationDuration = done+"s"; //  ((et - st) - (nt - st))
       prog.style.animationIterationCount = 1;
     }
   }, []);

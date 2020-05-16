@@ -24,11 +24,11 @@
 
       window.setInterval(() => {
         if (window.location.pathname == "/dayschedule") {
-          clock.innerHTML = `${now.getHours()}:${now.getMinutes()}`;
+          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
           clock.style.color = "black";
           now = new Date();
         } else {
-          clock.innerHTML = `${now.getHours()}:${now.getMinutes()}`;
+          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
           clock.style.color = "transparent";
         }
       }, 1);
