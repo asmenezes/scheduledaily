@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import CreationSelection from "./creationselection";
+import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function CreationSidebar() {
+    const {note,editNote} = useContext(DayNotesContext)
   return (
     <React.Fragment>
       <div className="sidebar" id="creationsidebar">
@@ -28,7 +30,8 @@ function CreationSidebar() {
           cols="28"
           rows="6"
           className="dayNotes"
-          defaultValue="Day Notes: "
+          onChange={(e) => editNote(e.target.value)}
+          defaultValue={note[0]? note[0].note : null}
         ></textarea>
       </div>
     </React.Fragment>

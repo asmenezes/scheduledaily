@@ -6,6 +6,7 @@ import BackHeader from "../backheader";
 import ScheduleContextProvider, {
   ScheduleContext,
 } from "../../contexts/schedulecontext";
+import DayNotesContextProvider from "../../contexts/daynotescontext"
 
 function Main() {
   const { tasks } = useContext(ScheduleContext);
@@ -14,7 +15,9 @@ function Main() {
       <React.Fragment>
         <div className="doubler">
           <div>
+          <DayNotesContextProvider>
             <CreationSidebar />
+            </DayNotesContextProvider>
           </div>
 
           <div className="content">

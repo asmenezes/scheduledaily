@@ -38,7 +38,7 @@
           clock.style.color = "black";
           now = new Date();
         } else {
-          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
+          clock.innerHTML = `${disp12Time(now.toTimeString().substring(0, 5))}`;
           clock.style.color = "transparent";
         }
       }, 1);

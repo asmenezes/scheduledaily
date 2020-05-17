@@ -11,5 +11,6 @@ export const disp12Time = (timeString) => {
     let newtime = (hours + ":" + timeString.substring(3,5) + "pm")
     return newtime
   }
+  //Make am no leading zeros too
   return timeString + "am";
 };

@@ -42,6 +42,9 @@ input[name="indicval"] {
   margin-top: 0.1em;
   margin-bottom: -1.1em;
 }
+#time:hover{
+  cursor: default;
+}
 
 @keyframes anim {
   100% {
@@ -101,8 +104,11 @@ input[name="indicval"] {
   padding-left: 1.5em;
   padding-right: 1.5em;
   margin-right: 1em;
+  text-align: center;
 }
-
+#currenttimedisplay:hover{
+  cursor: default;
+}
 .baseline {
   margin-top: -1.6em;
   padding: 0 1em;

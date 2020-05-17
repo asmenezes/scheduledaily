@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function DayNotes() {
-  return <textarea id="daynotes" defaultValue="Day Notes: "></textarea>;
+  const {note,editNote} = useContext(DayNotesContext)
+
+
+  return <textarea id="daynotes" onChange={(e) => editNote(e.target.value)}
+  defaultValue={note[0]? note[0].note : null}></textarea>;
 }
 
 export default DayNotes;

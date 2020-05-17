@@ -5,6 +5,7 @@ import BooleanList from "./booleanlist";
 import UpcomingList from "./upcominglist";
 import DayNotes from "./daynotes";
 import ScheduleContextProvider from "../../contexts/schedulecontext";
+import DayNotesContextProvider from "../../contexts/daynotescontext"
 
 function ScheduleMain() {
   return (
@@ -14,7 +15,9 @@ function ScheduleMain() {
         <div id="schedulegrid">
           <CurrentDisplay />
           <UpcomingList />
-          <DayNotes />
+          <DayNotesContextProvider>
+            <DayNotes />
+          </DayNotesContextProvider>
           <BooleanList />
         </div>
       </ScheduleContextProvider>

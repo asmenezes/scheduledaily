@@ -11,7 +11,7 @@ export const scheduleReducer = (state, action) => {
 };
 // make this function insertion sort by start time instead of at the end
 function insertByTime(state, task) {
-  return [
+  state = [
     ...state,
     {
       taskName: task.taskName,
@@ -22,6 +22,10 @@ function insertByTime(state, task) {
       isComplete: false,
       taskNotes: task.taskNotes,
       subtasks: task.subtasks,
-    },
+    }
+  ]
+  state = state.sort()//Actually make a function that sorts though
+  return [
+    ...state
   ];
 }
