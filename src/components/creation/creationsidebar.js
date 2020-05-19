@@ -1,10 +1,12 @@
 import React, {useContext} from "react";
 import CreationSelection from "./creationselection";
 import CreationSelectionInput from "./creationselectioninput";
+import { ScheduleContext } from "../../contexts/schedulecontext";
 
 import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function CreationSidebar() {
+  const { tasks, dispatch } = useContext(ScheduleContext);
     const {note,editNote} = useContext(DayNotesContext)
   return (
     <React.Fragment>
@@ -19,7 +21,11 @@ function CreationSidebar() {
         <div className="sidebarlabel">
           <p className="lighttext">Preset Tasks:</p>
           <div className="sidebarlist">
-
+            <ul>
+            {tasks.map((task) => {
+              return <CreationSelection selectionname={task.taskName} key={task.tID} />;
+            })}
+            </ul>
             <CreationSelectionInput />
 
           </div>
@@ -27,7 +33,12 @@ function CreationSidebar() {
         <div className="sidebarlabel">
           <p className="lighttext">Un-Timed Tasks:</p>
           <div className="sidebarlist">
-            <CreationSelection selectionname={"Selection"} />
+          <ul>
+          {tasks.map((task) => {
+            return <CreationSelection selectionname={task.taskName} key={task.tID} />;
+          })}
+          </ul>
+          <CreationSelectionInput />
           </div>
         </div>
         <textarea
