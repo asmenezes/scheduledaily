@@ -10,7 +10,12 @@ export const disp12Time = (timeString) => {
     hours -= 12;
     let newtime = (hours + ":" + timeString.substring(3,5) + "pm")
     return newtime
+  }if(hours == 12){
+    return timeString + "pm";
   }
   //Make am no leading zeros too
-  return timeString + "am";
+  hours += 1;
+  let newtime = (hours + ":" + timeString.substring(3,5) + "am")
+  return newtime
+
 };

@@ -25,8 +25,13 @@
         hours -= 12;
         let newtime = (hours + ":" + timeString.substring(3,5) + "PM")
         return newtime
+      }if(hours == 12){
+        return timeString + "PM";
       }
-      return timeString + "AM";
+      //Make am no leading zeros too
+      hours += 1;
+      let newtime = (hours + ":" + timeString.substring(3,5) + "AM")
+      return newtime
     };
       let now = new Date();
       console.log(window.location.pathname);
@@ -38,7 +43,7 @@
           clock.style.color = "black";
           now = new Date();
         } else {
-          clock.innerHTML = `${disp12Time(now.toTimeString().substring(0, 5))}`;
+          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
           clock.style.color = "transparent";
         }
       }, 1);
