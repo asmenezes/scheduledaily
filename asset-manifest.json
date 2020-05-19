@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/scheduledaily/static/css/main.fb956727.chunk.css",
-    "main.js": "/scheduledaily/static/js/main.8cc0981e.chunk.js",
-    "main.js.map": "/scheduledaily/static/js/main.8cc0981e.chunk.js.map",
+    "main.css": "/scheduledaily/static/css/main.4e0a6f80.chunk.css",
+    "main.js": "/scheduledaily/static/js/main.ba2ea280.chunk.js",
+    "main.js.map": "/scheduledaily/static/js/main.ba2ea280.chunk.js.map",
     "runtime-main.js": "/scheduledaily/static/js/runtime-main.5df808ee.js",
     "runtime-main.js.map": "/scheduledaily/static/js/runtime-main.5df808ee.js.map",
     "static/js/2.e4f49147.chunk.js": "/scheduledaily/static/js/2.e4f49147.chunk.js",
     "static/js/2.e4f49147.chunk.js.map": "/scheduledaily/static/js/2.e4f49147.chunk.js.map",
     "index.html": "/scheduledaily/index.html",
-    "precache-manifest.adb085623311f425fe815eebd0836a23.js": "/scheduledaily/precache-manifest.adb085623311f425fe815eebd0836a23.js",
+    "precache-manifest.cfddd0e7637ae1e4899f1d429e8d6ee7.js": "/scheduledaily/precache-manifest.cfddd0e7637ae1e4899f1d429e8d6ee7.js",
     "service-worker.js": "/scheduledaily/service-worker.js",
-    "static/css/main.fb956727.chunk.css.map": "/scheduledaily/static/css/main.fb956727.chunk.css.map",
+    "static/css/main.4e0a6f80.chunk.css.map": "/scheduledaily/static/css/main.4e0a6f80.chunk.css.map",
     "static/js/2.e4f49147.chunk.js.LICENSE.txt": "/scheduledaily/static/js/2.e4f49147.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5df808ee.js",
     "static/js/2.e4f49147.chunk.js",
-    "static/css/main.fb956727.chunk.css",
-    "static/js/main.8cc0981e.chunk.js"
+    "static/css/main.4e0a6f80.chunk.css",
+    "static/js/main.ba2ea280.chunk.js"
   ]
 }
