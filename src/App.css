@@ -357,7 +357,20 @@ input[name="indicval"] {
 .selectionname {
   margin-left: 0.5em;
 }
+/* Creation Selection INput  */
+.selectioninput{
+  margin-left: 0.5em;
+  font-size: 1em;
+  background-color: transparent;
+}
+.selectioninput:hover, .selectioninput:focus{
 
+  border-bottom: solid;
+  border-radius: 0px;
+  border-width: thin;
+  border-color: rgb(0, 121, 145);
+
+}
 /* task cards */
 .taskblock {
   background-color: #d8ebea;

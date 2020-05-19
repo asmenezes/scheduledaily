@@ -1,5 +1,7 @@
 import React, {useContext} from "react";
 import CreationSelection from "./creationselection";
+import CreationSelectionInput from "./creationselectioninput";
+
 import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function CreationSidebar() {
@@ -17,7 +19,9 @@ function CreationSidebar() {
         <div className="sidebarlabel">
           <p className="lighttext">Preset Tasks:</p>
           <div className="sidebarlist">
-            <CreationSelection selectionname={"Selection"} />
+
+            <CreationSelectionInput />
+
           </div>
         </div>
         <div className="sidebarlabel">
