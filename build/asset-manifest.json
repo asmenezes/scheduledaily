@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/scheduledaily/static/css/main.81624632.chunk.css",
+    "main.css": "/scheduledaily/static/css/main.fb956727.chunk.css",
     "main.js": "/scheduledaily/static/js/main.8cc0981e.chunk.js",
     "main.js.map": "/scheduledaily/static/js/main.8cc0981e.chunk.js.map",
     "runtime-main.js": "/scheduledaily/static/js/runtime-main.5df808ee.js",
@@ -8,15 +8,15 @@
     "static/js/2.e4f49147.chunk.js": "/scheduledaily/static/js/2.e4f49147.chunk.js",
     "static/js/2.e4f49147.chunk.js.map": "/scheduledaily/static/js/2.e4f49147.chunk.js.map",
     "index.html": "/scheduledaily/index.html",
-    "precache-manifest.0460ce30b382056b8b429cd259d74002.js": "/scheduledaily/precache-manifest.0460ce30b382056b8b429cd259d74002.js",
+    "precache-manifest.adb085623311f425fe815eebd0836a23.js": "/scheduledaily/precache-manifest.adb085623311f425fe815eebd0836a23.js",
     "service-worker.js": "/scheduledaily/service-worker.js",
-    "static/css/main.81624632.chunk.css.map": "/scheduledaily/static/css/main.81624632.chunk.css.map",
+    "static/css/main.fb956727.chunk.css.map": "/scheduledaily/static/css/main.fb956727.chunk.css.map",
     "static/js/2.e4f49147.chunk.js.LICENSE.txt": "/scheduledaily/static/js/2.e4f49147.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5df808ee.js",
     "static/js/2.e4f49147.chunk.js",
-    "static/css/main.81624632.chunk.css",
+    "static/css/main.fb956727.chunk.css",
     "static/js/main.8cc0981e.chunk.js"
   ]
 }
