@@ -3,6 +3,6 @@ export class SubTask {
   pID: number;
   goal: number;
   value: number;
-  stType: boolean;
+  stType: boolean;//False = Check, True = Int
   tID: number;
 }

@@ -29,3 +29,5 @@ function insertByTime(state, task) {
     ...state
   ];
 }
+//Add Complete_Task
+//Add Edit_dayNote
