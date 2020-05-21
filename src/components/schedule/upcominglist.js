@@ -7,12 +7,13 @@ function UpcomingList() {
   return (
     <div id="upcominglist" className="scroll">
       <h3 className="lightlabel">Upcoming Tasks:</h3>
-
+      {tasks[0]?
       <ul className="scroll">
         {tasks.map((task) => {
           return <TaskBlock task={task} key={task.tID} />;
         })}
       </ul>
+       : null}
     </div>
   );
 }
