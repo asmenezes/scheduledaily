@@ -2,11 +2,13 @@ import React, {useContext} from "react";
 import CreationSelection from "./creationselection";
 import CreationSelectionInput from "./creationselectioninput";
 import { ScheduleContext } from "../../contexts/schedulecontext";
-
+import { BooleanContext } from "../../contexts/booleancontext";
 import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function CreationSidebar() {
   const { tasks, dispatch } = useContext(ScheduleContext);
+  const { bools, boolsDispatch } = useContext(BooleanContext);
+
     const {note,editNote} = useContext(DayNotesContext)
   return (
     <React.Fragment>
@@ -33,11 +35,14 @@ function CreationSidebar() {
         <div className="sidebarlabel">
           <p className="lighttext">Un-Timed Tasks:</p>
           <div className="sidebarlist">
-          <ul>
-          {tasks.map((task) => {
-            return <CreationSelection selectionname={task.taskName} key={task.tID} />;
-          })}
-          </ul>
+
+          {bools[0] ?
+            <ul>
+              {bools.map((bool) => {
+                return <CreationSelection selectionname={bool.boolName} key={bool.bID} />;
+              })}
+            </ul>
+            : null}
           <CreationSelectionInput />
           </div>
         </div>

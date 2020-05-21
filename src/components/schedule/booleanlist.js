@@ -1,16 +1,18 @@
 import React, { useContext } from "react";
 import SubtaskDisplay from "./subtaskdisplay";
-import { ScheduleContext } from "../../contexts/schedulecontext";
+import { BooleanContext } from "../../contexts/booleancontext";
 
 function BooleanList() {
-  const { tasks } = useContext(ScheduleContext);
+  const { bools } = useContext(BooleanContext);
   return (
     <div id="booleanlist" className="scroll">
+    {bools[0] ?
       <ul>
-        {tasks.map((task) => {
-          return <SubtaskDisplay stName={task.taskName} key={task.tID} />;
+        {bools.map((bool) => {
+          return <SubtaskDisplay stName={bool.boolName} key={bool.bID} />;
         })}
       </ul>
+      : null}
     </div>
   );
 }

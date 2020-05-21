@@ -5,7 +5,8 @@ import BooleanList from "./booleanlist";
 import UpcomingList from "./upcominglist";
 import DayNotes from "./daynotes";
 import ScheduleContextProvider from "../../contexts/schedulecontext";
-import DayNotesContextProvider from "../../contexts/daynotescontext"
+import DayNotesContextProvider from "../../contexts/daynotescontext";
+import BooleanContextProvider from "../../contexts/booleancontext";
 
 function ScheduleMain() {
   return (
@@ -18,7 +19,9 @@ function ScheduleMain() {
           <DayNotesContextProvider>
             <DayNotes />
           </DayNotesContextProvider>
-          <BooleanList />
+          <BooleanContextProvider>
+            <BooleanList />
+          </BooleanContextProvider>
         </div>
       </ScheduleContextProvider>
     </div>

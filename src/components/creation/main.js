@@ -7,6 +7,7 @@ import ScheduleContextProvider, {
   ScheduleContext,
 } from "../../contexts/schedulecontext";
 import DayNotesContextProvider from "../../contexts/daynotescontext"
+import BooleanContextProvider from "../../contexts/booleancontext"
 
 function Main() {
   const { tasks } = useContext(ScheduleContext);
@@ -15,9 +16,11 @@ function Main() {
       <React.Fragment>
         <div className="doubler">
           <div>
+          <BooleanContextProvider>
           <DayNotesContextProvider>
             <CreationSidebar />
             </DayNotesContextProvider>
+            </BooleanContextProvider>
           </div>
 
           <div className="content">
