@@ -359,7 +359,7 @@ input[name="indicval"] {
 }
 /* Creation Selection INput  */
 .selectioninput{
-  margin-left: 0.5em;
+  margin-left: 1.1em;
   font-size: 1em;
   background-color: transparent;
 }
@@ -396,10 +396,18 @@ input[name="indicval"] {
   margin: -0.5em;
   background-color: transparent;
   color: transparent;
+
+}
+input.deletebutton{
+  height: auto;
+  margin-top: -1.65em;
+  padding: .5em .5em;
+  font-weight: normal;
 }
 .deletebutton:hover {
   color: black;
   background-color: rgb(184, 219, 217);
+  cursor: pointer;
 }
 /* Task Creator */
 #taskcreator {

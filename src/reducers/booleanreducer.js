@@ -4,7 +4,7 @@ export const booleanReducer = (state, action) => {
       return [
         ...state,
         {
-          boolName: action.boolName,
+          boolName: action.bool.boolName,
           bID: Math.floor(Math.random() * 900000),
           pID: 1,
           isComplete: false,
@@ -12,9 +12,9 @@ export const booleanReducer = (state, action) => {
       ]
 
     case "REMOVE_BOOL":
-      return state.filter((bool) => bool.bID !== action.bID);
+      return state.filter((bool) => bool.bID !== action.bool.bID);
     default:
       return state;
   }
 };
-// Add Complete_bool 
+// Add Complete_bool
