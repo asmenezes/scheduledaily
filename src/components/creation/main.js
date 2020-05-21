@@ -25,7 +25,7 @@ function Main() {
 
           <div className="content">
             <BackHeader />
-            <SchedulePreview tasks={tasks} />
+            <SchedulePreview />
             <TaskCreator />
           </div>
         </div>

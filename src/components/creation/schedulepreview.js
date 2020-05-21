@@ -4,7 +4,6 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 
 const SchedulePreview = () => {
   const { tasks } = useContext(ScheduleContext);
-  console.log(tasks);
 
   return (
     <div className="schedulepreviewcontainer">
