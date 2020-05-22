@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 import CreationSelection from "./creationselection";
 import CreationSelectionInput from "./creationselectioninput";
 import { ScheduleContext } from "../../contexts/schedulecontext";
-import BooleanContextProvider, {
-  BooleanContext,
-} from "../../contexts/booleancontext";
+import { BooleanContext } from "../../contexts/booleancontext";
 import { DayNotesContext } from "../../contexts/daynotescontext";
 
 function CreationSidebar() {
-  const { tasks, dispatch } = useContext(ScheduleContext);
-  const { bools, boolsDispatch } = useContext(BooleanContext);
+  const { tasks } = useContext(ScheduleContext);
+  const { bools } = useContext(BooleanContext);
 
   const { note, editNote } = useContext(DayNotesContext);
   return (
