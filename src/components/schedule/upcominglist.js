@@ -6,7 +6,7 @@ function UpcomingList() {
   const { tasks } = useContext(ScheduleContext);
   return (
     <div id="upcominglist" className="scroll">
-      <h3 className="lightlabel">Upcoming Tasks:</h3>
+      <h3 className="lightlabel">Coming Up:</h3>
       {tasks[0] ? (
         <ul className="scroll">
           {

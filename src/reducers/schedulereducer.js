@@ -1,5 +1,5 @@
 export const scheduleReducer = (state, action) => {
-  let index = state.findIdex((task) => task.tID == action.tID);
+  let index = state.findIndex((task) => task.tID == action.tID);
   switch (action.type) {
     case "ADD_TASK":
       return insertByTime(state, action.task);
