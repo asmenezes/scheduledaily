@@ -5,17 +5,17 @@ export const dateConv = (time) => {
   return today;
 };
 export const disp12Time = (timeString) => {
-  let hours = Number(timeString.substring(0,2));
-  if(hours > 12){
+  let hours = Number(timeString.substring(0, 2));
+  if (hours > 12) {
     hours -= 12;
-    let newtime = (hours + ":" + timeString.substring(3,5) + "pm")
-    return newtime
-  }if(hours == 12){
+    let newtime = hours + ":" + timeString.substring(3, 5) + "pm";
+    return newtime;
+  }
+  if (hours == 12) {
     return timeString + "pm";
   }
   //Make am no leading zeros too
-  hours += 1;
-  let newtime = (hours + ":" + timeString.substring(3,5) + "am")
-  return newtime
 
+  let newtime = hours + ":" + timeString.substring(3, 5) + "am";
+  return newtime;
 };
