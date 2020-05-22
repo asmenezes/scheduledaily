@@ -7,13 +7,16 @@ function UpcomingList() {
   return (
     <div id="upcominglist" className="scroll">
       <h3 className="lightlabel">Upcoming Tasks:</h3>
-      {tasks[0]?
-      <ul className="scroll">
-        {tasks.map((task) => {
-          return <TaskBlock task={task} key={task.tID} />;
-        })}
-      </ul>
-       : null}
+      {tasks[0] ? (
+        <ul className="scroll">
+          {
+            // if task.startTime is more than now's time show it
+          }
+          {tasks.map((task) => {
+            return <TaskBlock task={task} key={task.tID} />;
+          })}
+        </ul>
+      ) : null}
     </div>
   );
 }

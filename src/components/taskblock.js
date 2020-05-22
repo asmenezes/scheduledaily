@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ScheduleContext } from "../contexts/schedulecontext";
-import { disp12Time } from "./scripts/shared"
+import { disp12Time } from "./scripts/shared";
 
 function TaskBlock({ task }) {
   const { dispatch } = useContext(ScheduleContext);
@@ -17,9 +17,11 @@ function TaskBlock({ task }) {
         <p className="stime">{disp12Time(task.startTime)}</p>
         <p>{disp12Time(task.endTime)}</p>
       </div>
-      <div className="subtask">
-        <span>SubTasks</span>
-      </div>
+      {task.subtasks ? (
+        <div className="subtask">
+          <span>SubTasks</span>
+        </div>
+      ) : null}
     </div>
   ) : null;
 }

@@ -1,4 +1,3 @@
-
 export class Bool {
   boolName: string;
   pID: number;

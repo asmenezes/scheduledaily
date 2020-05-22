@@ -13,18 +13,18 @@ function CurrentDisplay() {
         <button id="nexttaskbutt">Next Task</button>
       </div>
       <div id="currentdiplaysub">
-        {tasks[0] ? tasks[0].subtasks ? (
-          tasks[0].subtasks.map((subtask) => {
-            return <SubtaskDisplay stName={subtask.stName} />;
-          })
-        ) : (
-          null
-        ) : null}
+        {tasks[0]
+          ? tasks[0].subtasks
+            ? tasks[0].subtasks.map((subtask) => {
+                return <SubtaskDisplay stName={subtask.stName} />;
+              })
+            : null
+          : null}
       </div>
       <div id="currentdisplaynotes">
         <textarea
           className="dayNotes fillup"
-          defaultValue={tasks[0] ? tasks[0].taskNotes : "Day Notes:"}
+          defaultValue={tasks[0] ? tasks[0].taskNotes : "Task Notes:"}
         ></textarea>
       </div>
     </div>

@@ -1,10 +1,17 @@
 export const scheduleReducer = (state, action) => {
+  let index = state.findIdex((task) => task.tID == action.tID);
   switch (action.type) {
     case "ADD_TASK":
       return insertByTime(state, action.task);
 
     case "REMOVE_TASK":
       return state.filter((task) => task.tID !== action.tID);
+    case "TOGGLE_TASK":
+      state[index].isComplete = !state[index].isComplete;
+      return state;
+    case "EDIT_TASK_NOTE":
+      state[index].taskNotes = action.notes;
+      return state;
     default:
       return state;
   }
@@ -41,6 +48,3 @@ function insertByTime(state, task) {
   });
   return [...state];
 }
-
-//Add Complete_Task
-//Add Edit_dayNote
