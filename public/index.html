@@ -22,7 +22,7 @@
       const disp12Time = (timeString) => {
         let hours = Number(timeString.substring(0, 2));
         if (hours > 12) {
-          hours -= 12;
+          hours -= 11;
           let newtime = hours + ":" + timeString.substring(3, 5) + "PM";
           return newtime;
         }
