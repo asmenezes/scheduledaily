@@ -49,6 +49,7 @@ function CreationSidebar() {
                     <CreationSelection
                       selectionname={bool.boolName}
                       key={bool.bID}
+                      bool={bool}
                     />
                   );
                 })}

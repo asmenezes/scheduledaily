@@ -12,7 +12,7 @@ export const booleanReducer = (state, action) => {
       ]
 
     case "REMOVE_BOOL":
-      return state.filter((bool) => bool.bID !== action.bool.bID);
+      return state.filter((bool) => bool.bID !== action.bID);
     default:
       return state;
   }
