@@ -30,41 +30,17 @@ function insertByTime(state, task) {
     let minutesA = Number(a.startTime.substring(3, 5));
     let minutesB = Number(b.startTime.substring(3, 5));
 
-    if (
-      Number(a.startTime.substring(0, 2)) <
-        Number(b.startTime.substring(0, 2)) ||
-      (Number(a.startTime.substring(0, 2)) ===
-        Number(b.startTime.substring(0, 2)) &&
-        Number(a.startTime.substring(3, 5)) <
-          Number(b.startTime.substring(3, 5)))
-    ) {
+    if (hoursA < hoursB || (hoursA === hoursB && minutesA < minutesB)) {
       return -1;
     }
-    if (
-      Number(b.startTime.substring(0, 2)) < Number(a.startTime.substring(0, 2))
-    ) {
+    if (hoursB < hoursA) {
       return 1;
     }
-    // a must be equal to b
+
     return 0;
-  }); //Actually make a function that sorts though
+  });
   return [...state];
 }
 
-function compare(a, b) {
-  const hoursA = Number(a.startTime.substring(0, 2));
-  const hoursB = Number(b.startTime.substring(0, 2));
-  const minutesA = Number(a.startTime.substring(3, 5));
-  const minutesB = Number(b.startTime.substring(3, 5));
-
-  if (hoursA < hoursB || (hoursA === hoursB && minutesA < minutesB)) {
-    return -1;
-  }
-  if (hoursB < hoursA) {
-    return 1;
-  }
-  // a must be equal to b
-  return 0;
-}
 //Add Complete_Task
 //Add Edit_dayNote
