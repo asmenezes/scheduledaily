@@ -19,20 +19,20 @@
     <div id="root"></div>
 
     <script>
-    const disp12Time = (timeString) => {
-      let hours = Number(timeString.substring(0,2));
-      if(hours > 12){
-        hours -= 12;
-        let newtime = (hours + ":" + timeString.substring(3,5) + "PM")
-        return newtime
-      }if(hours == 12){
-        return timeString + "PM";
-      }
-      //Make am no leading zeros too
-      hours += 1;
-      let newtime = (hours + ":" + timeString.substring(3,5) + "AM")
-      return newtime
-    };
+      const disp12Time = (timeString) => {
+        let hours = Number(timeString.substring(0, 2));
+        if (hours > 12) {
+          hours -= 12;
+          let newtime = hours + ":" + timeString.substring(3, 5) + "PM";
+          return newtime;
+        }
+        if (hours == 12) {
+          return timeString + "PM";
+        }
+
+        let newtime = hours + ":" + timeString.substring(3, 5) + "AM";
+        return newtime;
+      };
       let now = new Date();
       console.log(window.location.pathname);
       const clock = document.getElementById("time");

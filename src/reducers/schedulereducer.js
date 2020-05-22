@@ -9,7 +9,7 @@ export const scheduleReducer = (state, action) => {
       return state;
   }
 };
-// make this function insertion sort by start time instead of at the end
+
 function insertByTime(state, task) {
   state = [
     ...state,
