@@ -10,8 +10,10 @@ export const scheduleReducer = (state, action) => {
       state[index].isComplete = !state[index].isComplete;
       return state;
     case "EDIT_TASK_NOTE":
-      state[index].taskNotes = action.notes;
-      return state;
+      console.log(action.task.ind);
+      state[action.task.ind].taskNotes = action.task.note;
+      console.log(state[action.task.ind].taskNotes);
+      return [...state];
     default:
       return state;
   }
