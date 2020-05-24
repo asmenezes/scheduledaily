@@ -7,7 +7,7 @@ function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);
 
   let now = new Date();
-  console.log(tasks[0].startTime);
+
   let currentIndex = tasks.findIndex(
     (task) =>
       dateConv(task.startTime.toString()) <= now &&

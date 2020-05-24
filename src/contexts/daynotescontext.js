@@ -4,7 +4,7 @@ export const DayNotesContext = createContext();
 
 const DayNotesContextProvider = (props) => {
   let initNote = localStorage.getItem("note");
-  let jsonNote = JSON.parse(initNote)[0]
+  let jsonNote = initNote
     ? JSON.parse(initNote)
     : [{ note: "Today's Notes: " }];
   const [note, setNote] = useState(jsonNote);
