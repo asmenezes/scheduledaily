@@ -30,9 +30,11 @@ function CurrentDisplay() {
   return (
     <div id="currentdisplay">
       <div id="currenttasktop">
-        <h1 id="currentdisplayname">
-          {currentIndex >= 0 ? tasks[currentIndex].taskName : "Break"}
-        </h1>
+        <ul className="inline">
+          <h1 id="currentdisplayname">
+            {currentIndex >= 0 ? tasks[currentIndex].taskName : "Break"}
+          </h1>
+        </ul>
         <button id="nexttaskbutt">Next Task</button>
       </div>
       <div id="currentdiplaysub">

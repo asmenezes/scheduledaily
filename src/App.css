@@ -42,7 +42,7 @@ input[name="indicval"] {
   margin-top: 0.1em;
   margin-bottom: -1.1em;
 }
-#time:hover{
+#time:hover {
   cursor: default;
 }
 
@@ -79,6 +79,10 @@ input[name="indicval"] {
 .backheader {
   display: inline;
 }
+
+.inline {
+  display: inline;
+}
 /* Schedule Header */
 .scheduleheader {
   display: inline;
@@ -106,7 +110,7 @@ input[name="indicval"] {
   margin-right: 1em;
   text-align: center;
 }
-#currenttimedisplay:hover{
+#currenttimedisplay:hover {
   cursor: default;
 }
 .baseline {
@@ -282,8 +286,8 @@ input[name="indicval"] {
 
 .lineup {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-template-rows: max-content;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr min-content 1fr;
   max-width: 100%;
 }
 
@@ -358,18 +362,17 @@ input[name="indicval"] {
   margin-left: 0.5em;
 }
 /* Creation Selection INput  */
-.selectioninput{
+.selectioninput {
   margin-left: 1.1em;
   font-size: 1em;
   background-color: transparent;
 }
-.selectioninput:hover, .selectioninput:focus{
-
+.selectioninput:hover,
+.selectioninput:focus {
   border-bottom: solid;
   border-radius: 0px;
   border-width: thin;
   border-color: rgb(0, 121, 145);
-
 }
 /* task cards */
 .taskblock {
@@ -396,12 +399,11 @@ input[name="indicval"] {
   margin: -0.5em;
   background-color: transparent;
   color: transparent;
-
 }
-input.deletebutton{
+input.deletebutton {
   height: auto;
   margin-top: -1.65em;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   font-weight: normal;
 }
 .deletebutton:hover {
@@ -431,6 +433,7 @@ input.deletebutton{
   padding: 0.3em;
   padding-top: 0.5em;
   margin: 0.25em;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .taskcreationinput {
@@ -466,7 +469,9 @@ input.deletebutton{
   padding-top: 1em;
   font-size: 1.3em;
 }
-
+#timeinput {
+  grid-area: 1 / 2 / 2 / 3;
+}
 .time {
   grid-area: time;
   height: auto;
@@ -509,6 +514,25 @@ input.deletebutton{
   margin-bottom: -0.5em;
   margin-left: -1.4em;
   margin-right: -0.5em;
+}
+.stlist {
+  grid-area: 2 / 1 / 3 / 3;
+}
+.stlist ul,
+.stlist .subtasknameinput {
+  display: inline;
+}
+.stSub {
+  /* padding: 5%; */
+  height: calc(100% - 2em);
+  width: 1.5em;
+  background-color: rgb(0, 121, 145);
+  color: white;
+  font-weight: normal;
+  font-size: 1em;
+  border-radius: 5px;
+  float: right;
+  margin-right: 0.25em;
 }
 
 #tasknamelabel {

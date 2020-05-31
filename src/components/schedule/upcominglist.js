@@ -12,7 +12,7 @@ function UpcomingList() {
       {tasks[0] ? (
         <ul className="scroll">
           {tasks.map((task) => {
-            return dateConv(task.endTime.toString()) > now ? (
+            return dateConv(task.startTime.toString()) > now ? (
               <TaskBlock task={task} key={task.tID} />
             ) : null;
           })}

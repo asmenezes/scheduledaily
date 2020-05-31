@@ -18,7 +18,8 @@ export const scheduleReducer = (state, action) => {
       return state;
   }
 };
-
+//add and remove SubTasks
+//edit subtasks
 function insertByTime(state, task) {
   state = [
     ...state,

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
+import SubtaskPreview from "./subtaskcreator";
 
 function TaskCreator() {
   const { dispatch } = useContext(ScheduleContext);
@@ -8,6 +9,7 @@ function TaskCreator() {
   const [endTime, setEndTime] = useState("");
   const [taskNotes, setNotes] = useState("");
   const [subtasks, setSubtasks] = useState("");
+  const [stName, setstName] = useState("");
   const [indic, setIndic] = useState(false);
   const [indicVal, setIndicVal] = useState(2);
   const handleSubmit = (e) => {
@@ -26,9 +28,16 @@ function TaskCreator() {
     setStartTime("");
     setEndTime("");
     setNotes("Notes: ");
-    setSubtasks([]);
+    setSubtasks("");
     setIndic(false);
     setIndicVal(2);
+    setstName("");
+  };
+  const addST = (e) => {
+    setSubtasks([...subtasks, { stName, indic, indicVal }]);
+    setIndic(false);
+    setIndicVal(2);
+    setstName("");
   };
   //hh%3Amm <- time format
   return (
@@ -50,7 +59,7 @@ function TaskCreator() {
                 Task Name
               </label>
             </div>
-            <div className="double">
+            <div id="timeinput" className="double">
               <div>
                 <label htmlFor="starttime" className="timeLabel">
                   Start Time
@@ -81,13 +90,29 @@ function TaskCreator() {
                 />
               </div>
             </div>
+            <div className="stlist">
+              {subtasks[0] ? (
+                <ul>
+                  {subtasks.map((sub) => {
+                    return (
+                      <SubtaskPreview
+                        stName={sub.stName}
+                        key={sub.stID}
+                        subtask={sub}
+                        ind={indicVal}
+                      />
+                    );
+                  })}
+                </ul>
+              ) : null}
+            </div>
             <div>
-              <div className="create list of subtasks"></div>
               <div className="creater of subtasks">
                 <input
                   className="subtasknameinput taskcreationinput"
                   placeholder="Subtask Name"
                   type="text"
+                  onChange={(e) => setstName(e.target.value)}
                 />
               </div>
             </div>
@@ -113,10 +138,9 @@ function TaskCreator() {
               ) : (
                 <input type="checkbox" name="indicval" unchecked="true" />
               )}
-              <span> {indic} </span>
-              {
-                //Checkbox : number input -----value is indic value, use javascript to make more form elements when neccesary
-              }
+              <span onClick={addST} className="stSub">
+                +
+              </span>
             </div>
           </div>
           <textarea
