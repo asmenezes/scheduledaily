@@ -523,7 +523,6 @@ input.deletebutton {
   display: inline;
 }
 .stSub {
-  /* padding: 5%; */
   height: calc(100% - 2em);
   width: 1.5em;
   background-color: rgb(0, 121, 145);
@@ -535,6 +534,12 @@ input.deletebutton {
   margin-right: 0.25em;
   text-align: center;
   padding-top: 0.2em;
+}
+.subBarName {
+  padding-right: 1em;
+}
+.subBarList {
+  overflow-x: hidden;
 }
 
 #tasknamelabel {

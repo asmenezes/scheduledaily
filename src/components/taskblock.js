@@ -17,9 +17,25 @@ function TaskBlock({ task }) {
         <p className="stime">{disp12Time(task.startTime)}</p>
         <p>{disp12Time(task.endTime)}</p>
       </div>
-      {task.subtasks ? (
+      {task.subtasks[0].stName ? (
         <div className="subtask">
-          <span>SubTasks</span>
+          <ul className="subBarList">
+            <span className="subBar" key={Math.floor(Math.random() * 900000)}>
+              {task.subtasks.map((st) => {
+                {
+                  return (
+                    <span
+                      className="subBarName"
+                      key={Math.floor(Math.random() * 900000)}
+                    >
+                      {st.stName}
+                      {"\t"}
+                    </span>
+                  );
+                }
+              })}
+            </span>
+          </ul>
         </div>
       ) : null}
     </div>
