@@ -5,7 +5,7 @@ function SubtaskPreview(props) {
   const { dispatch } = useContext(ScheduleContext);
   const [name, setName] = useState(props.subtask.stName);
   const [indic, setIndic] = useState(props.subtask.stType);
-  const [indicVal, setIndicVal] = useState(props.ind);
+  const [indicVal, setIndicVal] = useState(props.subtask.goal);
   return (
     <div className="subtaskpreview">
       <div className="creater of subtasks">
@@ -22,6 +22,7 @@ function SubtaskPreview(props) {
             name="indication"
             onChange={(e) => setIndic(!indic)}
             className="check"
+            checked={indic}
           />
           <span className="slider"></span>
         </label>

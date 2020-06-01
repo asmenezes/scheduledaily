@@ -533,6 +533,8 @@ input.deletebutton {
   border-radius: 5px;
   float: right;
   margin-right: 0.25em;
+  text-align: center;
+  padding-top: 0.2em;
 }
 
 #tasknamelabel {

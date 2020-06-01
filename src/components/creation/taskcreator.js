@@ -34,7 +34,15 @@ function TaskCreator() {
     setstName("");
   };
   const addST = (e) => {
-    setSubtasks([...subtasks, { stName, indic, indicVal }]);
+    setSubtasks([
+      ...subtasks,
+      {
+        stName,
+        stType: indic,
+        goal: indicVal,
+        stID: Math.floor(Math.random() * 900000),
+      },
+    ]);
     setIndic(false);
     setIndicVal(2);
     setstName("");
@@ -99,7 +107,6 @@ function TaskCreator() {
                         stName={sub.stName}
                         key={sub.stID}
                         subtask={sub}
-                        ind={indicVal}
                       />
                     );
                   })}
@@ -113,6 +120,7 @@ function TaskCreator() {
                   placeholder="Subtask Name"
                   type="text"
                   onChange={(e) => setstName(e.target.value)}
+                  value={stName}
                 />
               </div>
             </div>
@@ -123,6 +131,7 @@ function TaskCreator() {
                   name="indication"
                   onChange={(e) => setIndic(!indic)}
                   className="check"
+                  checked={indic}
                 />
                 <span className="slider"></span>
               </label>
