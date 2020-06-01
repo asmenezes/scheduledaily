@@ -386,7 +386,7 @@ input[name="indicval"] {
   font-size: 0.85em;
   border-color: rgb(184, 219, 217);
   display: grid;
-  grid-template-columns: 0.9em auto max-content;
+  grid-template-columns: 0.9em auto min-content;
   grid-template-rows: max-content max-content;
   grid-template-areas: "deletebutton taskname time" "deletebutton subtask subtask";
   height: min-content;
@@ -536,7 +536,7 @@ input.deletebutton {
   padding-top: 0.2em;
 }
 .subBarName {
-  padding-right: 1em;
+  padding-right: 2em;
 }
 .subBarList {
   overflow-x: hidden;
