@@ -41,7 +41,13 @@ function CurrentDisplay() {
         {currentIndex >= 0
           ? tasks[currentIndex].subtasks
             ? tasks[currentIndex].subtasks.map((subtask) => {
-                return <SubtaskDisplay stName={subtask.stName} />;
+                return (
+                  <SubtaskDisplay
+                    sub={subtask}
+                    key={subtask.stID}
+                    stName={subtask.stName}
+                  />
+                );
               })
             : null
           : null}

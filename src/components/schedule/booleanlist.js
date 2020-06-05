@@ -6,13 +6,19 @@ function BooleanList() {
   const { bools } = useContext(BooleanContext);
   return (
     <div id="booleanlist" className="scroll">
-    {bools[0] ?
-      <ul>
-        {bools.map((bool) => {
-          return <SubtaskDisplay stName={bool.boolName} key={bool.bID} />;
-        })}
-      </ul>
-      : null}
+      {bools[0] ? (
+        <ul>
+          {bools.map((bool) => {
+            return (
+              <SubtaskDisplay
+                sub={bool}
+                stName={bool.boolName}
+                key={bool.bID}
+              />
+            );
+          })}
+        </ul>
+      ) : null}
     </div>
   );
 }

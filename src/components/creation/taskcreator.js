@@ -41,6 +41,7 @@ function TaskCreator() {
         stType: indic,
         goal: indicVal,
         stID: Math.floor(Math.random() * 900000),
+        value: 0,
       },
     ]);
     setIndic(false);
