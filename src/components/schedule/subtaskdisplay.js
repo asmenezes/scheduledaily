@@ -5,12 +5,12 @@ function SubtaskDisplay(props) {
   const { dispatch } = useContext(ScheduleContext);
   const [value, setValue] = useState(props.sub.value);
   return (
-    <div className="subtaskdisplay">
+    <div className="subtaskdisplay" key={props.sub.stID}>
       <input type="checkbox" className="check" />
       <p>{props.stName}</p>
 
       {props.sub.stType ? (
-        <div key={props.sub.stID}>
+        <div>
           <input
             type="number"
             name="indicval"

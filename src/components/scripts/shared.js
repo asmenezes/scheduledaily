@@ -16,6 +16,6 @@ export const disp12Time = (timeString) => {
   }
   //Make am no leading zeros too
 
-  let newtime = hours + ":" + timeString.substring(3, 5) + "am";
+  let newtime = ++hours + ":" + timeString.substring(3, 5) + "am";
   return newtime;
 };
