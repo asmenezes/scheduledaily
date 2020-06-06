@@ -14,6 +14,7 @@ function BooleanList() {
                 sub={bool}
                 stName={bool.boolName}
                 key={bool.bID}
+                key2={bool.bID}
               />
             );
           })}
