@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import SubtaskDisplay from "./subtaskdisplay";
 import { ScheduleContext } from "../../contexts/schedulecontext";
-import { dateConv } from "../scripts/shared";
+import { dateConv, now } from "../scripts/shared";
+import { currentIndex } from "../scripts/currenttaskscripts";
 
 function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);
-
-  let now = new Date();
 
   let currentIndex = tasks.findIndex(
     (task) =>
@@ -27,6 +26,13 @@ function CurrentDisplay() {
       },
     });
   };
+  useEffect(() => {
+    currentIndex = tasks.findIndex(
+      (task) =>
+        dateConv(task.startTime.toString()) <= now &&
+        dateConv(task.endTime.toString()) >= now
+    );
+  }, []);
   return (
     <div id="currentdisplay">
       <div id="currenttasktop">

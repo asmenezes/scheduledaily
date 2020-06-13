@@ -1,25 +1,26 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ScheduleContext } from "../../contexts/schedulecontext";
-import { dateConv, disp12Time } from "../scripts/shared.js";
+import { dateConv, disp12Time, now } from "../scripts/shared.js";
+import { findCIndex } from "../scripts/currenttaskscripts";
 
 function ScheduleHeader() {
   const { tasks } = useContext(ScheduleContext);
-  let todayInitial = new Date();
-  let today = todayInitial.toDateString();
+  let today = now.toDateString();
+  let index = findCIndex(tasks);
   useEffect(() => {
+    index = findCIndex(tasks);
     if (document.getElementById("progress")) {
       const prog = document.getElementById("progress");
-      const st = tasks[0] ? dateConv(tasks[0].startTime) : 0;
-      const et = tasks[0] ? dateConv(tasks[0].endTime): 0;
-      let done = ((et-st)/((et - st) - (et - todayInitial ))*10);
-      let left = ((et - st) - ((et-st)/((et - st) - (et - todayInitial ))));
-      // (((et - st) - (todayInitial - st))/(et-st)); Fix IIIIT
-      console.log(100 - done +"%");
+      const st = tasks[index] ? dateConv(tasks[index].startTime) : 0;
+      const et = tasks[index] ? dateConv(tasks[index].endTime) : 0;
+      let left = et - now;
+      let total = et - st;
+      console.log((left / total) * 100 + "%");
       prog.style.animationName = "anim";
-      prog.style.width = 100 - done +"%"; //  ((et - st) - (nt - st) ) / et - st
+      prog.style.width = ((total - left) / total) * 100 + "%";
       prog.style.animationTimingFunction = "linear";
-      prog.style.animationDuration = 1+"s"; //  ((et - st) - (nt - st))
+      prog.style.animationDuration = left + "ms";
       prog.style.animationIterationCount = 1;
     }
   }, []);
@@ -27,9 +28,11 @@ function ScheduleHeader() {
     <React.Fragment>
       <div className="scheduleheader">
         <div className="timegroup">
-          <span>{tasks[0] ? disp12Time(tasks[0].startTime) : null}</span>
+          <span>
+            {tasks[index] ? disp12Time(tasks[index].startTime) : null}
+          </span>
           <span id="currenttimedisplay"></span>
-          <span>{tasks[0] ? disp12Time(tasks[0].endTime) : null}</span>
+          <span>{tasks[index] ? disp12Time(tasks[index].endTime) : null}</span>
         </div>
         <div className="baseline">
           <span>{today}</span>
