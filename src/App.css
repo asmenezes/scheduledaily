@@ -176,6 +176,7 @@ input[name="indicval"] {
   font-size: 1.2em;
   display: inline;
   padding: 1.2em;
+  padding-top: 1.5em;
   float: right;
   margin: -0.75em;
 }

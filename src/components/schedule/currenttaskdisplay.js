@@ -26,6 +26,14 @@ function CurrentDisplay() {
       },
     });
   };
+  const toggleTask = (tid) => {
+    dispatch({
+      type: "TOGGLE_TASK",
+      task: {
+        tID: tid,
+      },
+    });
+  };
   useEffect(() => {
     currentIndex = tasks.findIndex(
       (task) =>
@@ -41,7 +49,14 @@ function CurrentDisplay() {
             {currentIndex >= 0 ? tasks[currentIndex].taskName : "Break"}
           </h1>
         </ul>
-        <button id="nexttaskbutt">Next Task</button>
+        {currentIndex >= 0 ? (
+          <button
+            id="nexttaskbutt"
+            onClick={toggleTask(tasks[currentIndex].tID)}
+          >
+            Mark Complete
+          </button>
+        ) : null}
       </div>
       <div id="currentdiplaysub">
         {currentIndex >= 0
