@@ -30,11 +30,8 @@ function CurrentDisplay() {
     let currentName = document.getElementById("currentdisplayname");
     if (currentName.className == "") {
       currentName.className = "finished";
-      console.log("if");
     } else {
       currentName.className = "";
-      currentName.class = "";
-      console.log("else");
     }
   }
   const toggleTask = (tid) => {
