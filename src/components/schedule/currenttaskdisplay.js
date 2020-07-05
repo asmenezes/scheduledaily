@@ -27,6 +27,7 @@ function CurrentDisplay() {
     });
   };
   const toggleTask = (tid) => {
+    console.log(tid);
     dispatch({
       type: "TOGGLE_TASK",
       task: {
@@ -52,7 +53,10 @@ function CurrentDisplay() {
         {currentIndex >= 0 ? (
           <button
             id="nexttaskbutt"
-            onClick={toggleTask(tasks[currentIndex].tID)}
+            onClick={() => {
+              toggleTask(tasks[currentIndex].tID);
+              console.log("toggle clicked");
+            }}
           >
             Mark Complete
           </button>
