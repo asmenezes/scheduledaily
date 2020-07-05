@@ -26,7 +26,17 @@ function CurrentDisplay() {
       },
     });
   };
-  function markText() {}
+  function markText() {
+    let currentName = document.getElementById("currentdisplayname");
+    if (currentName.className == "") {
+      currentName.className = "finished";
+      console.log("if");
+    } else {
+      currentName.className = "";
+      currentName.class = "";
+      console.log("else");
+    }
+  }
   const toggleTask = (tid) => {
     console.log(tid);
     dispatch({
@@ -47,7 +57,7 @@ function CurrentDisplay() {
     <div id="currentdisplay">
       <div id="currenttasktop">
         <ul className="inline">
-          <h1 id="currentdisplayname">
+          <h1 id="currentdisplayname" className="">
             {currentIndex >= 0 ? tasks[currentIndex].taskName : "Break"}
           </h1>
         </ul>
@@ -55,8 +65,9 @@ function CurrentDisplay() {
           <button
             id="nexttaskbutt"
             onClick={() => {
-              toggleTask(tasks[currentIndex].tID);
               markText();
+              toggleTask(tasks[currentIndex].tID);
+
               console.log("toggle clicked");
             }}
           >
