@@ -5,7 +5,7 @@ export const scheduleReducer = (state, action) => {
       return insertByTime(state, action.task);
 
     case "REMOVE_TASK":
-      return state.filter((task) => task.tID !== action.tID);
+      return state.filter((task) => task.tID !== action.task.tID);
     case "TOGGLE_TASK":
       state[index].isComplete = !state[index].isComplete;
       console.log(

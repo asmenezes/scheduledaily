@@ -8,7 +8,9 @@ function TaskBlock({ task }) {
     <div className="taskblock">
       <button
         className="deletebutton"
-        onClick={() => dispatch({ type: "REMOVE_TASK", tID: task.tID })}
+        onClick={() =>
+          dispatch({ type: "REMOVE_TASK", task: { tID: task.tID } })
+        }
       >
         x
       </button>

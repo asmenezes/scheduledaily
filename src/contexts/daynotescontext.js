@@ -14,7 +14,6 @@ const DayNotesContextProvider = (props) => {
 
   useEffect(() => {
     localStorage.setItem("note", JSON.stringify(note));
-    console.log(`Notes was just set to ${JSON.stringify(note)}`);
   }, [note]);
   return (
     <DayNotesContext.Provider value={{ note, editNote }}>
