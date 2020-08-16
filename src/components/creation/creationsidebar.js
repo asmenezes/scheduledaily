@@ -4,21 +4,44 @@ import CreationSelectionInput from "./creationselectioninput";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import { BooleanContext } from "../../contexts/booleancontext";
 import { DayNotesContext } from "../../contexts/daynotescontext";
+import { DayPresetContext } from "../../contexts/daypresetcontext";
 
 function CreationSidebar() {
   const { tasks } = useContext(ScheduleContext);
   const { bools } = useContext(BooleanContext);
-
+  const { dayPresets, dayDispatch } = useContext(DayPresetContext);
   const { note, editNote } = useContext(DayNotesContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dayDispatch({
+      type: "ADD_PRESET",
+      preset: {
+        presetName: new Date().toDateString(),
+        presetTasks: tasks,
+      },
+    });
+  };
   return (
     <React.Fragment>
       <div className="sidebar" id="creationsidebar">
         <div className="sidebarlabel">
           <p className="lighttext">Preset Schedules:</p>
           <div className="sidebarlist">
-            <CreationSelection selectionname={"Selection"} />
+            {dayPresets.map((preset) => {
+              return (
+                <CreationSelection
+                  selectionname={preset.presetName}
+                  key={preset.dpID}
+                />
+              );
+            })}
           </div>
-          <button id="createpresetbutton">Create Preset From Current</button>
+          <button id="createpresetbutton" onClick={handleSubmit}>
+            Create Preset From Current
+          </button>
+          {
+            //do add today to presets here ^^ ie handle submit
+          }
         </div>
         <div className="sidebarlabel">
           <p className="lighttext">Preset Tasks:</p>

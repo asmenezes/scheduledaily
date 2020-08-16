@@ -15,6 +15,7 @@ function ScheduleHeader() {
       const st = tasks[index] ? dateConv(tasks[index].startTime) : 0;
       const et = tasks[index] ? dateConv(tasks[index].endTime) : 0;
       let left = et - now;
+      //use left to set timeout update the state
       let total = et - st;
       console.log((left / total) * 100 + "%");
       prog.style.animationName = "anim";

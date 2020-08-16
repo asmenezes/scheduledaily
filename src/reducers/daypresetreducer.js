@@ -1,21 +1,25 @@
-export const scheduleReducer = (state, action) => {
-  let index = state.findIndex((task) => task.tID == action.task.tID);
+export const DayPresetReducer = (state, action) => {
+  //let index = state.findIndex((task) => task.tID == action.task.tID);
   switch (action.type) {
-    case "ADD_TASK":
-      return insertByTime(state, action.task);
+    case "ADD_PRESET":
+      return (state = [
+        ...state,
+        {
+          presetName: action.preset.presetName,
+          taskList: action.preset.presetTasks,
+          dpID: Math.floor(Math.random() * 900000),
+        },
+      ]);
 
-    case "REMOVE_TASK":
-      return state.filter((task) => task.tID !== action.tID);
-    case "TOGGLE_TASK":
+    case "REMOVE_PRESET":
+      return state.filter((preset) => preset.dpID !== action.dpID);
+    /*  case "TOGGLE_TASK":
       state[index].isComplete = !state[index].isComplete;
       console.log(
         `index is ${state[index].isComplete}, tID is ${action.task.tID}`
       );
-      return state;
-    case "EDIT_TASK_NOTE":
-      console.log(action.task.ind);
-      state[action.task.ind].taskNotes = action.task.note;
-      console.log(state[action.task.ind].taskNotes);
+      return state;*/
+    case "RENAME_PRESET":
       return [...state];
     default:
       return state;

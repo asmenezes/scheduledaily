@@ -6,7 +6,7 @@ import BackHeader from "../backheader";
 import ScheduleContextProvider from "../../contexts/schedulecontext";
 import DayNotesContextProvider from "../../contexts/daynotescontext";
 import BooleanContextProvider from "../../contexts/booleancontext";
-
+import DayPresetContextProvider from "../../contexts/daypresetcontext";
 function Main() {
   return (
     <ScheduleContextProvider>
@@ -15,7 +15,9 @@ function Main() {
           <div>
             <BooleanContextProvider>
               <DayNotesContextProvider>
-                <CreationSidebar />
+                <DayPresetContextProvider>
+                  <CreationSidebar />
+                </DayPresetContextProvider>
               </DayNotesContextProvider>
             </BooleanContextProvider>
           </div>

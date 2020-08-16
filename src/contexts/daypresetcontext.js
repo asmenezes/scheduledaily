@@ -1,9 +1,9 @@
-import React, { createContext, useEffect, useState } from "react";
-
+import React, { createContext, useEffect, useState, useReducer } from "react";
+import { DayPresetReducer } from "../reducers/daypresetreducer";
 export const DayPresetContext = createContext();
 
 const DayPresetContextProvider = (props) => {
-  const [dayPresets, dispatch] = useReducer(DayPresetReducer, [], () => {
+  const [dayPresets, dayDispatch] = useReducer(DayPresetReducer, [], () => {
     const localData = localStorage.getItem("dayPresets");
     return localData ? JSON.parse(localData) : [];
   });
@@ -12,7 +12,7 @@ const DayPresetContextProvider = (props) => {
     console.log(`dayPresets was just set to ${JSON.stringify(dayPresets)}`);
   }, [dayPresets]);
   return (
-    <DayPresetContext.Provider value={{ dayPresets, dispatch }}>
+    <DayPresetContext.Provider value={{ dayPresets, dayDispatch }}>
       {props.children}
     </DayPresetContext.Provider>
   );
