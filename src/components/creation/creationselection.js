@@ -15,7 +15,9 @@ function CreationSelection(props) {
       >
         x
       </button>
-      <p className="selectionname">{props.selectionname}</p>
+      <p className="selectionname" onClick={props.onClick}>
+        {props.selectionname}
+      </p>
     </div>
   );
 }

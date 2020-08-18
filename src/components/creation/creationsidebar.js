@@ -7,7 +7,7 @@ import { DayNotesContext } from "../../contexts/daynotescontext";
 import { DayPresetContext } from "../../contexts/daypresetcontext";
 
 function CreationSidebar() {
-  const { tasks } = useContext(ScheduleContext);
+  const { tasks, dispatch } = useContext(ScheduleContext);
   const { bools } = useContext(BooleanContext);
   const { dayPresets, dayDispatch } = useContext(DayPresetContext);
   const { note, editNote } = useContext(DayNotesContext);
@@ -21,6 +21,14 @@ function CreationSidebar() {
       },
     });
   };
+  const swapTasks = (e, list) => {
+    e.preventDefault();
+    dispatch({
+      type: "REPLACE_TASKS",
+      tasks: list,
+      task: 0,
+    });
+  };
   return (
     <React.Fragment>
       <div className="sidebar" id="creationsidebar">
@@ -32,6 +40,9 @@ function CreationSidebar() {
                 <CreationSelection
                   selectionname={preset.presetName}
                   key={preset.dpID}
+                  onClick={(e) => {
+                    swapTasks(e, preset.taskList);
+                  }}
                 />
               );
             })}
