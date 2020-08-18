@@ -525,7 +525,7 @@ input.deletebutton {
   display: inline;
 }
 .stSub {
-  height: calc(100% - 2em);
+  height: 1.45em;
   width: 1.5em;
   background-color: rgb(0, 121, 145);
   color: white;
@@ -535,7 +535,7 @@ input.deletebutton {
   float: right;
   margin-right: 0.25em;
   text-align: center;
-  padding-top: 0.2em;
+  padding-top: 0.25em;
 }
 .subBarName {
   padding-right: 2em;

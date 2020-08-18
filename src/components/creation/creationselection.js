@@ -4,7 +4,6 @@ import { DayPresetContext } from "../../contexts/daypresetcontext";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 
 function CreationSelection(props) {
-  //make a switch statement that finds out what the selection is and then deletes it with the appropriate method/context
   //Possibly also do one that renames the thing
   const { boolsDispatch } = useContext(BooleanContext);
   const { dispatch } = useContext(ScheduleContext);
