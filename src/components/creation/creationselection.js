@@ -1,18 +1,25 @@
 import React, { useContext } from "react";
 import { BooleanContext } from "../../contexts/booleancontext";
+import { DayPresetContext } from "../../contexts/daypresetcontext";
+import { ScheduleContext } from "../../contexts/schedulecontext";
 
 function CreationSelection(props) {
   //make a switch statement that finds out what the selection is and then deletes it with the appropriate method/context
   //Possibly also do one that renames the thing
   const { boolsDispatch } = useContext(BooleanContext);
+  const { dispatch } = useContext(ScheduleContext);
+  const { dayDispatch } = useContext(DayPresetContext);
+  function deleteSelection(e) {
+    e.preventDefault();
+    if (props.bool) {
+      boolsDispatch({ type: "REMOVE_BOOL", bID: props.bool.bID });
+    } else if (props.preset) {
+      dayDispatch({ type: "REMOVE_PRESET", dpID: props.preset.dpID });
+    }
+  }
   return (
     <div className="creationselection">
-      <button
-        className="deletebutton"
-        onClick={() =>
-          boolsDispatch({ type: "REMOVE_BOOL", bID: props.bool.bID })
-        }
-      >
+      <button className="deletebutton" onClick={(e) => deleteSelection(e)}>
         x
       </button>
       <p className="selectionname" onClick={props.onClick}>

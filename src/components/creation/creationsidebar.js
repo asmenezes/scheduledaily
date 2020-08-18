@@ -39,6 +39,7 @@ function CreationSidebar() {
               return (
                 <CreationSelection
                   selectionname={preset.presetName}
+                  preset={preset}
                   key={preset.dpID}
                   onClick={(e) => {
                     swapTasks(e, preset.taskList);
