@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SubtaskPreview from "./subtaskcreator";
 
@@ -33,6 +33,39 @@ function TaskCreator() {
     setIndicVal(2);
     setstName("");
   };
+  function hider(x) {
+    let thisOne = document.getElementsByTagName("textarea");
+    let thistwo = document.getElementsByClassName("creater");
+    let thisthree = document.getElementsByClassName("secondpart");
+    let thisone = [...thisOne, ...thistwo, ...thisthree];
+    if (x.matches) {
+      for (let i = 0; i < thisone.length; i++) {
+        console.log(thisone[i]);
+        if (!thisone[i].classList.contains("hide")) {
+          thisone[i].classList.add("hide");
+          //Finish subtask in reducer
+        } else {
+          //thisone[i].classList.remove("hide");
+          //unfinish subtask in reducer
+        }
+      }
+    } else {
+      for (let i = 0; i < thisone.length; i++) {
+        console.log(thisone[i]);
+        if (thisone[i].classList.contains("hide")) {
+          thisone[i].classList.remove("hide");
+          //Finish subtask in reducer
+        }
+      }
+    }
+  }
+
+  let x = window.matchMedia("(max-width: 860px)");
+  // Call listener function at run time
+  x.addListener(hider);
+  useEffect(() => {
+    hider(x);
+  }, []);
   const addST = (e) => {
     setSubtasks([
       ...subtasks,
@@ -114,17 +147,15 @@ function TaskCreator() {
                 </ul>
               ) : null}
             </div>
-            <div>
-              <div className="creater of subtasks">
-                <input
-                  className="subtasknameinput taskcreationinput"
-                  placeholder="Subtask Name"
-                  type="text"
-                  onChange={(e) => setstName(e.target.value)}
-                  value={stName}
-                />
-              </div>
-            </div>
+
+            <input
+              className="subtasknameinput taskcreationinput creater"
+              placeholder="Subtask Name"
+              type="text"
+              onChange={(e) => setstName(e.target.value)}
+              value={stName}
+            />
+
             <div className="secondpart">
               <label className="switch" id="typeselector">
                 <input
@@ -154,6 +185,7 @@ function TaskCreator() {
             </div>
           </div>
           <textarea
+            onLoad={() => hider(window.matchMedia("(max-width: 860px)"))}
             cols="28"
             rows="5"
             className="tasknotesinput taskcreationinput"
