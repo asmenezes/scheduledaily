@@ -6,8 +6,8 @@ function BackHeader() {
   today = today.toDateString();
   return (
     <div className="backheader">
-      <span>{today}</span>
-      <Link className="right" to="/dayschedule">
+      <span id="topDate">{today}</span>
+      <Link className="right topLink" to="/dayschedule">
         Schedule
       </Link>
     </div>

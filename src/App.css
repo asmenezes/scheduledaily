@@ -289,7 +289,7 @@ input[name="indicval"] {
 .lineup {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: min-content min-content min-content;
   max-width: 100%;
 }
 
@@ -672,6 +672,20 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 860px) {
   /*layout for phones*/
+  .backheader {
+    display: block;
+    margin: auto;
+  }
+  .topLink {
+    display: none;
+  }
+  #topDate {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.25em;
+  }
   .doubler {
     display: grid;
     grid-template-columns: 1fr;
@@ -693,7 +707,7 @@ input:checked + .slider:before {
   .schedulepreviewcontainer {
     display: grid;
     grid-template-columns: 1fr;
-    height: 75vh;
+    height: 70vh;
     margin-bottom: 1.5em;
   }
   .deletebutton {
@@ -866,5 +880,8 @@ input:checked + .slider:before {
   }
   .hide {
     display: none;
+  }
+  .show {
+    display: block;
   }
 }
