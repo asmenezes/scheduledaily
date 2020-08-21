@@ -34,8 +34,11 @@ function TaskCreator() {
     setstName("");
   };
   function hider(x) {
-    let thisOne = document.getElementsByTagName("textarea");
+    let thisOne = document.getElementsByClassName(
+      "tasknotesinput taskcreationinput"
+    );
     let thistwo = document.getElementsByClassName("creater");
+
     let thisthree = document.getElementsByClassName("secondpart");
     let thisone = [...thisOne, ...thistwo, ...thisthree];
     if (x.matches) {
@@ -60,7 +63,7 @@ function TaskCreator() {
     }
   }
 
-  let x = window.matchMedia("(max-width: 860px)");
+  let x = window.matchMedia("(max-width: 720px)");
   // Call listener function at run time
   x.addListener(hider);
   useEffect(() => {

@@ -630,11 +630,12 @@ input:checked + .slider:before {
 @media only screen and (max-width: 950px) {
   .schedulepreviewcontainer {
     column-count: 1;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
+    height: 60vh;
   }
 
   .schedulepreview {
-    min-height: 65vh;
+    min-height: 60vh;
     overflow-y: scroll;
     display: block;
   }
@@ -669,53 +670,11 @@ input:checked + .slider:before {
     font-size: 2em;
   }
 }
-
-@media only screen and (max-width: 860px) {
-  /*layout for phones*/
-  .backheader {
-    display: block;
-    margin: auto;
-  }
-  .topLink {
-    display: none;
-  }
-  #topDate {
-    display: block;
-    margin: auto;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 1.25em;
-  }
-  .doubler {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  #creationsidebar {
-    display: none;
-  }
-  .content {
-    padding: 1.5em;
-    display: block;
-    float: right;
-    margin-left: 0;
-    max-width: 100%;
-  }
+@media only screen and (max-width: 890px) {
   #creatoradd {
     grid-area: none;
     width: 1.5em;
   }
-  .schedulepreviewcontainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 70vh;
-    margin-bottom: 1.5em;
-  }
-  .deletebutton {
-    color: black;
-    background-color: rgb(184, 219, 217);
-    cursor: pointer;
-  }
-  /* Task Creator */
   #taskcreator {
     background-color: rgb(244, 244, 249);
     border-radius: 5px;
@@ -878,6 +837,54 @@ input:checked + .slider:before {
     -ms-transform: translateX(18px);
     transform: translateX(18px);
   }
+}
+@media only screen and (max-width: 720px) {
+  /*layout for phones*/
+  .backheader {
+    display: block;
+    margin: auto;
+  }
+  .topLink {
+    display: none;
+  }
+  #topDate {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.25em;
+  }
+  .doubler {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #creationsidebar {
+    display: none;
+    width: 80vw;
+    max-width: 300px;
+    position: fixed;
+  }
+  .content {
+    padding: 1.5em;
+    display: block;
+    float: right;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .schedulepreviewcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 70vh;
+    margin-bottom: 1.5em;
+  }
+  .deletebutton {
+    color: black;
+    background-color: rgb(184, 219, 217);
+    cursor: pointer;
+  }
+  /* Task Creator */
+
   .hide {
     display: none;
   }
