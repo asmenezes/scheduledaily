@@ -893,8 +893,23 @@ input:checked + .slider:before {
     padding: 1em;
   }
   .baseline {
-    margin-top: 1.5em;
+    margin-top: -1em;
     padding: 0 1em;
+  }
+  #time {
+    background-color: transparent;
+    font-size: 1.5em;
+    padding-right: calc(50vw - 1.25em);
+    margin-left: calc(50vw - 2em);
+    margin-top: 0.1em;
+    margin-bottom: 0em;
+  }
+  #currentdisplayname {
+    font-size: 2em;
+  }
+  #nexttaskbutt {
+    font-size: 0.8em;
+    padding-top: 1.4em;
   }
   .hide {
     display: none;
