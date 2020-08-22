@@ -41,10 +41,12 @@
         if (window.location.pathname == "/dayschedule") {
           clock.innerHTML = `${disp12Time(now.toTimeString().substring(0, 5))}`;
           clock.style.color = "black";
+          clock.style.display = "block";
           now = new Date();
         } else {
           clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
           clock.style.color = "transparent";
+          clock.style.display = "none";
         }
       }, 1);
     </script>
