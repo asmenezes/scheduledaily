@@ -841,17 +841,17 @@ input:checked + .slider:before {
 @media only screen and (max-width: 720px) {
   /*layout for phones*/
   .backheader {
-    display: block;
     margin: auto;
   }
   .topLink {
-    display: none;
+    float: right;
+    margin-top: -1.15em;
   }
   #topDate {
     display: block;
     margin: auto;
     text-align: center;
-    font-weight: bolder;
+
     font-size: 1.25em;
   }
   .doubler {
@@ -883,8 +883,19 @@ input:checked + .slider:before {
     background-color: rgb(184, 219, 217);
     cursor: pointer;
   }
-  /* Task Creator */
-
+  /*main page*/
+  #schedulegrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7fr 3fr;
+    gap: 2em 1em;
+    grid-template-areas: ". " ".";
+    padding: 1em;
+  }
+  .baseline {
+    margin-top: 1.5em;
+    padding: 0 1em;
+  }
   .hide {
     display: none;
   }
