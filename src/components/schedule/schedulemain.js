@@ -15,7 +15,7 @@ function ScheduleMain() {
     let thisthree = document.getElementsByClassName("timegroup");
     let thisfour = document.getElementById("progressbar");
     let thisone = [thisOne, thistwo, ...thisthree, thisfour];
-    if (x.matches) {
+    if (x.matches && thisone[0]) {
       for (let i = 0; i < thisone.length; i++) {
         console.log(thisone[i]);
         if (!thisone[i].classList.contains("hide")) {
@@ -26,7 +26,7 @@ function ScheduleMain() {
           //unfinish subtask in reducer
         }
       }
-    } else {
+    } else if (thisone[0]) {
       for (let i = 0; i < thisone.length; i++) {
         console.log(thisone[i]);
         if (thisone[i].classList.contains("hide")) {

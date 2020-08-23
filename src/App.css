@@ -926,12 +926,13 @@ input:checked + .slider:before {
     border-radius: 50%;
     border-color: rgb(184, 219, 217);
     border-style: solid;
+    border-width: thin;
   }
   .swipeButton.right {
-    left: 95%;
+    left: 96%;
   }
   .swipeButton.left {
-    right: 5%;
+    right: 1em;
     transform: rotateY(180deg);
   }
   .swbt {
