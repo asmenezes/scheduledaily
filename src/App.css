@@ -929,7 +929,7 @@ input:checked + .slider:before {
     border-width: thin;
   }
   .swipeButton.right {
-    left: 96%;
+    left: calc(100% - 1em);
   }
   .swipeButton.left {
     right: 1em;
