@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import TaskBlock from "../taskblock";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import { dateConv } from "../scripts/shared";
+import SwipeButton from "../swipebutton";
 
 function UpcomingList() {
   let now = new Date();
@@ -18,6 +19,7 @@ function UpcomingList() {
           })}
         </ul>
       ) : null}
+      <SwipeButton className="swipeButton left" />
     </div>
   );
 }

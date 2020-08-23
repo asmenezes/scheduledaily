@@ -625,6 +625,9 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+.swipeButton {
+  display: none;
+}
 
 /* Responsiveness  */
 @media only screen and (max-width: 950px) {
@@ -910,6 +913,31 @@ input:checked + .slider:before {
   #nexttaskbutt {
     font-size: 0.8em;
     padding-top: 1.4em;
+  }
+  .swipeButton {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    position: relative;
+    bottom: 10em;
+    color: black;
+    background-color: #d8ebea;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: rgb(184, 219, 217);
+    border-style: solid;
+  }
+  .swipeButton.right {
+    left: 95%;
+  }
+  .swipeButton.left {
+    right: 5%;
+    transform: rotateY(180deg);
+  }
+  .swbt {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
   }
   .hide {
     display: none;

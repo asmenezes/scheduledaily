@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import SubtaskDisplay from "./subtaskdisplay";
 import { ScheduleContext } from "../../contexts/schedulecontext";
+import SwipeButton from "../swipebutton";
 import { dateConv, now } from "../scripts/shared";
 import { currentIndex } from "../scripts/currenttaskscripts";
 
@@ -98,6 +99,7 @@ function CurrentDisplay() {
           }
         ></textarea>
       </div>
+      <SwipeButton addClass="right" />
     </div>
   );
 }
