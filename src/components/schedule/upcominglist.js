@@ -7,6 +7,12 @@ import SwipeButton from "../swipebutton";
 function UpcomingList() {
   let now = new Date();
   const { tasks } = useContext(ScheduleContext);
+  const unswapTop = () => {
+    let list = document.getElementById("upcominglist");
+    list.style.display = "none";
+    let curr = document.getElementById("currentdisplay");
+    curr.style.display = "grid";
+  };
   return (
     <div id="upcominglist" className="scroll">
       <h3 className="lightlabel">Coming Up:</h3>
@@ -19,7 +25,7 @@ function UpcomingList() {
           })}
         </ul>
       ) : null}
-      <SwipeButton className="swipeButton left" />
+      <SwipeButton addClass="left" onClick={() => unswapTop()} />
     </div>
   );
 }

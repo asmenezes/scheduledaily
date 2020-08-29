@@ -4,7 +4,12 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
 import { dateConv, now } from "../scripts/shared";
 import { currentIndex } from "../scripts/currenttaskscripts";
-
+const swapTop = () => {
+  let list = document.getElementById("upcominglist");
+  list.style.display = "block";
+  let curr = document.getElementById("currentdisplay");
+  curr.style.display = "none";
+};
 function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);
 
@@ -99,7 +104,7 @@ function CurrentDisplay() {
           }
         ></textarea>
       </div>
-      <SwipeButton addClass="right" />
+      <SwipeButton onClick={() => swapTop()} addClass="right" />
     </div>
   );
 }
