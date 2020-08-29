@@ -6,9 +6,10 @@ import { dateConv, now } from "../scripts/shared";
 import { currentIndex } from "../scripts/currenttaskscripts";
 const swapTop = () => {
   let list = document.getElementById("upcominglist");
-  list.style.display = "block";
+  list.classList.remove("hide");
   let curr = document.getElementById("currentdisplay");
-  curr.style.display = "none";
+  curr.classList.add("hide");
+  console.log(curr);
 };
 function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);

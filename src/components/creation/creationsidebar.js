@@ -32,8 +32,8 @@ function CreationSidebar() {
   };
   const hideSidebar = (a) => {
     let sb = document.getElementById("schedPreSB");
-    a.target.parentNode.parentNode.style.display = "none";
-    sb.style.display = "block";
+    a.target.parentNode.parentNode.classList.add("hide");
+    sb.classList.remove("hide");
   };
   return (
     <React.Fragment>

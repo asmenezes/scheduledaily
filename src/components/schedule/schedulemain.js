@@ -17,7 +17,6 @@ function ScheduleMain() {
     let thisone = [thisOne, thistwo, ...thisthree, thisfour];
     if (x.matches && thisone[0]) {
       for (let i = 0; i < thisone.length; i++) {
-        console.log(thisone[i]);
         if (!thisone[i].classList.contains("hide")) {
           thisone[i].classList.add("hide");
           //Finish subtask in reducer
@@ -28,7 +27,6 @@ function ScheduleMain() {
       }
     } else if (thisone[0]) {
       for (let i = 0; i < thisone.length; i++) {
-        console.log(thisone[i]);
         if (thisone[i].classList.contains("hide")) {
           thisone[i].classList.remove("hide");
           //Finish subtask in reducer

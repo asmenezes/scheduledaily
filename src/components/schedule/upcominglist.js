@@ -9,9 +9,9 @@ function UpcomingList() {
   const { tasks } = useContext(ScheduleContext);
   const unswapTop = () => {
     let list = document.getElementById("upcominglist");
-    list.style.display = "none";
+    list.classList.add("hide");
     let curr = document.getElementById("currentdisplay");
-    curr.style.display = "grid";
+    curr.classList.remove("hide");
   };
   return (
     <div id="upcominglist" className="scroll">

@@ -7,9 +7,9 @@ const SchedulePreview = (e) => {
   const { tasks } = useContext(ScheduleContext);
   const revealSidebar = (a) => {
     let bar = document.getElementById("creationsidebar");
+    bar.classList.remove("hide");
     bar.style.display = "block";
-
-    a.target.parentNode.style.display = "none";
+    a.target.parentNode.classList.add("hide");
   };
   return (
     <div className="schedulepreviewcontainer">
