@@ -5,6 +5,7 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 import { BooleanContext } from "../../contexts/booleancontext";
 import { DayNotesContext } from "../../contexts/daynotescontext";
 import { DayPresetContext } from "../../contexts/daypresetcontext";
+import SwipeButton from "../swipebutton";
 
 function CreationSidebar() {
   const { tasks, dispatch } = useContext(ScheduleContext);
@@ -28,6 +29,11 @@ function CreationSidebar() {
       tasks: list,
       task: 0,
     });
+  };
+  const hideSidebar = (a) => {
+    let sb = document.getElementById("schedPreSB");
+    a.target.parentNode.parentNode.style.display = "none";
+    sb.style.display = "block";
   };
   return (
     <React.Fragment>
@@ -72,6 +78,7 @@ function CreationSidebar() {
             <CreationSelectionInput action="ADD_PRESET" />
           </div>
         </div>
+        <SwipeButton onClick={(a) => hideSidebar(a)} />
         <div className="sidebarlabel">
           <p className="lighttext">Un-Timed Tasks:</p>
           <div className="sidebarlist">

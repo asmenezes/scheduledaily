@@ -3,9 +3,14 @@ import TaskBlock from "../taskblock";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
 
-const SchedulePreview = () => {
+const SchedulePreview = (e) => {
   const { tasks } = useContext(ScheduleContext);
+  const revealSidebar = (a) => {
+    let bar = document.getElementById("creationsidebar");
+    bar.style.display = "block";
 
+    a.target.parentNode.style.display = "none";
+  };
   return (
     <div className="schedulepreviewcontainer">
       <div className="schedulepreview">
@@ -15,7 +20,11 @@ const SchedulePreview = () => {
           })}
         </ul>
       </div>
-      <SwipeButton addClass="left" />
+      <SwipeButton
+        id="schedPreSB"
+        addClass="left"
+        onClick={(a) => revealSidebar(a)}
+      />
     </div>
   );
 };
