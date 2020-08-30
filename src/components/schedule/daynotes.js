@@ -4,15 +4,22 @@ import SwipeButton from "../swipebutton";
 
 function DayNotes() {
   const { note, editNote } = useContext(DayNotesContext);
-
+  const swapBottom = () => {
+    let list = document.getElementById("booleanlist");
+    list.classList.remove("hide");
+    let notes = document.getElementsByClassName("dn");
+    notes[0].classList.add("hide");
+    notes[1].classList.add("hide");
+  };
   return (
     <React.Fragment>
       <textarea
         id="daynotes"
+        className="dn"
         onChange={(e) => editNote(e.target.value)}
         defaultValue={note[0] ? note[0].note : null}
       ></textarea>
-      <SwipeButton addClass="right" />
+      <SwipeButton onClick={() => swapBottom()} addClass="right dn" />
     </React.Fragment>
   );
 }

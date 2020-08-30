@@ -15,6 +15,8 @@ function ScheduleMain() {
     let thisthree = document.getElementsByClassName("timegroup");
     let thisfour = document.getElementById("progressbar");
     let thisone = [thisOne, thistwo, ...thisthree, thisfour];
+    let allhidden = document.getElementsByClassName("hide");
+    console.log(x.matches);
     if (x.matches && thisone[0]) {
       for (let i = 0; i < thisone.length; i++) {
         if (!thisone[i].classList.contains("hide")) {
@@ -25,24 +27,26 @@ function ScheduleMain() {
           //unfinish subtask in reducer
         }
       }
-    } else if (thisone[0]) {
-      for (let i = 0; i < thisone.length; i++) {
-        if (thisone[i].classList.contains("hide")) {
-          thisone[i].classList.remove("hide");
-          //Finish subtask in reducer
+    } else if (x.matches == false) {
+      console.log(allhidden.length);
+      for (let i = 0; i < allhidden.length; i++) {
+        if (allhidden[i].classList.contains("hide")) {
+          allhidden[i].classList.remove("hide");
+          console.log(allhidden);
         }
       }
+    } else {
     }
   }
 
   let x = window.matchMedia("(max-width: 720px)");
   // Call listener function at run time
-  x.addListener(hider);
+  window.addEventListener("resize", hider(x));
   useEffect(() => {
     hider(x);
   }, []);
   return (
-    <div>
+    <div onResize={() => hider(x)}>
       <ScheduleContextProvider>
         <ScheduleHeader />
         <div id="schedulegrid">
