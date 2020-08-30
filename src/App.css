@@ -935,7 +935,8 @@ input:checked + .slider:before {
     left: calc(100% - 1em);
   }
   .swipeButton.left {
-    right: 1.5em;
+    right: -0.25em;
+    bottom: 50%;
     transform: rotateY(180deg);
   }
   .swbt {
