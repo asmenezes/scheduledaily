@@ -7,5 +7,6 @@ export class Task {
   isComplete: boolean;
   taskNotes: string;
   tID: number;
+  isCurrent: boolean; //Add it to the rest of the places
   subtasks: subtask[];
 }

@@ -35,6 +35,7 @@ function insertByTime(state, task) {
       endTime: task.endTime,
       isComplete: false,
       taskNotes: task.taskNotes,
+      isCurrent: false,
       subtasks: task.subtasks,
     },
   ];

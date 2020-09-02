@@ -46,7 +46,7 @@ function ScheduleMain() {
     hider(x);
   }, []);
   return (
-    <div onResize={() => hider(x)}>
+    <div>
       <ScheduleContextProvider>
         <ScheduleHeader />
         <div id="schedulegrid">

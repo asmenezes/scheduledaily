@@ -9,16 +9,33 @@ const swapTop = () => {
   list.classList.remove("hide");
   let curr = document.getElementById("currentdisplay");
   curr.classList.add("hide");
-  console.log(curr);
 };
 function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);
 
-  let currentIndex = tasks.findIndex(
-    (task) =>
-      dateConv(task.startTime.toString()) <= now &&
-      dateConv(task.endTime.toString()) >= now
-  );
+  function findCurrentIndex() {
+    return tasks.findIndex(
+      (task) =>
+        dateConv(task.startTime.toString()) <= now &&
+        dateConv(task.endTime.toString()) >= now
+    );
+  }
+  let currentIndex = findCurrentIndex();
+  let now2 = [{ start: 1 }];
+  function findNextStart() {
+    let x = tasks.findIndex(
+      (task) => dateConv(task.startTime.toString()) >= now
+    );
+    //set timeout here to figure out when to load next task
+    setInterval(() => {
+      now2 = [...now2, { start: 3 }];
+      console.log("b");
+      currentIndex = findCurrentIndex();
+    }, 30000);
+    return x;
+  }
+
+  let nextStart = findNextStart();
   const [note, setNote] = useState(
     currentIndex >= 0 ? tasks[currentIndex.taskNotes] : ""
   );
@@ -51,12 +68,10 @@ function CurrentDisplay() {
     });
   };
   useEffect(() => {
-    currentIndex = tasks.findIndex(
-      (task) =>
-        dateConv(task.startTime.toString()) <= now &&
-        dateConv(task.endTime.toString()) >= now
-    );
-  }, []);
+    currentIndex = findCurrentIndex();
+    nextStart = findNextStart();
+    console.log("in effect" + now);
+  }, [now2]);
   return (
     <div id="currentdisplay">
       <div id="currenttasktop">
