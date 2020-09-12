@@ -1,3 +1,5 @@
+import { dateConv, now } from "../components/scripts/shared";
+
 export const scheduleReducer = (state, action) => {
   let index = state.findIndex((task) => task.tID == action.task.tID);
   switch (action.type) {
@@ -9,14 +11,24 @@ export const scheduleReducer = (state, action) => {
       return state.filter((task) => task.tID !== action.task.tID);
     case "TOGGLE_TASK":
       state[index].isComplete = !state[index].isComplete;
-      console.log(
-        `index is ${state[index].isComplete}, tID is ${action.task.tID}`
-      );
+      // console.log(
+      //   `index is ${state[index].isComplete}, tID is ${action.task.tID}`
+      // );
       return state;
     case "EDIT_TASK_NOTE":
-      console.log(action.task.ind);
+      //  console.log(action.task.ind);
       state[action.task.ind].taskNotes = action.task.note;
       console.log(state[action.task.ind].taskNotes);
+      return [...state];
+    case "MARK_CURRENT":
+      for (let i = 0; i < state.length; i++) {
+        if (i == index) {
+          state[index].isCurrent = true;
+        } else {
+          state[i].isCurrent = false;
+        }
+      }
+      console.log("currentmarked");
       return [...state];
     default:
       return state;

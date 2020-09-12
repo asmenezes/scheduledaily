@@ -45,6 +45,7 @@ function ScheduleMain() {
   useEffect(() => {
     hider(x);
   }, []);
+
   return (
     <div>
       <ScheduleContextProvider>

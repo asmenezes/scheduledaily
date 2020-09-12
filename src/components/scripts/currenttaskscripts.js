@@ -1,9 +1,10 @@
 import { dateConv, now } from "./shared";
 
 export const findCIndex = (tasks) => {
-  return tasks.findIndex(
-    (task) =>
-      dateConv(task.startTime.toString()) <= now &&
-      dateConv(task.endTime.toString()) >= now
+  return tasks.findIndex((task) =>
+    task.isCurrent
+      ? task
+      : dateConv(task.startTime.toString()) <= now &&
+        dateConv(task.endTime.toString()) >= now
   );
 };

@@ -3,39 +3,50 @@ import SubtaskDisplay from "./subtaskdisplay";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
 import { dateConv, now } from "../scripts/shared";
-import { currentIndex } from "../scripts/currenttaskscripts";
+import { findCIndex } from "../scripts/currenttaskscripts";
 const swapTop = () => {
   let list = document.getElementById("upcominglist");
   list.classList.remove("hide");
   let curr = document.getElementById("currentdisplay");
   curr.classList.add("hide");
 };
+
 function CurrentDisplay() {
   const { tasks, dispatch } = useContext(ScheduleContext);
 
-  function findCurrentIndex() {
-    return tasks.findIndex(
+  const updateCurrentIndex = () => {
+    now = new Date();
+    let currentIndexj = {};
+    currentIndexj = tasks.findIndex(
       (task) =>
         dateConv(task.startTime.toString()) <= now &&
         dateConv(task.endTime.toString()) >= now
     );
-  }
-  let currentIndex = findCurrentIndex();
-  let now2 = [{ start: 1 }];
-  function findNextStart() {
-    let x = tasks.findIndex(
-      (task) => dateConv(task.startTime.toString()) >= now
-    );
-    //set timeout here to figure out when to load next task
-    setInterval(() => {
-      now2 = [...now2, { start: 3 }];
-      console.log("b");
-      currentIndex = findCurrentIndex();
-    }, 30000);
-    return x;
-  }
+    console.log(currentIndexj);
+    // dispatch({
+    //   type: "MARK_CURRENT",
+    //   task: { tid: tasks[thisone].tid },
+    // });
+    return currentIndexj;
+  };
 
-  let nextStart = findNextStart();
+  //let currentIndex = findCIndex(tasks);
+  const [currentIndex, setCurrentIndex] = useState(updateCurrentIndex());
+  // let now2 = [{ start: 1 }];
+  // function findNextStart() {
+  //   let x = tasks.findIndex(
+  //     (task) => dateConv(task.startTime.toString()) >= now
+  //   );
+  //   //set timeout here to figure out when to load next task
+  //   setInterval(() => {
+  //     now2 = [...now2, { start: 3 }];
+  //     console.log("b");
+  //     currentIndex = findCIndex(tasks);
+  //   }, 30000);
+  //   return x;
+  // }
+  //
+  // let nextStart = findNextStart();
   const [note, setNote] = useState(
     currentIndex >= 0 ? tasks[currentIndex.taskNotes] : ""
   );
@@ -68,16 +79,16 @@ function CurrentDisplay() {
     });
   };
   useEffect(() => {
-    currentIndex = findCurrentIndex();
-    nextStart = findNextStart();
-    console.log("in effect" + now);
-  }, [now2]);
+    setInterval(() => {
+      setCurrentIndex(updateCurrentIndex());
+    }, 10000);
+  }, []);
   return (
     <div id="currentdisplay">
       <div id="currenttasktop">
         <ul className="inline">
           <h1 id="currentdisplayname" className="">
-            {currentIndex >= 0 ? tasks[currentIndex].taskName : "Break"}
+            {tasks[currentIndex] ? tasks[currentIndex].taskName : "Break"}
           </h1>
         </ul>
         {currentIndex >= 0 ? (
@@ -124,5 +135,5 @@ function CurrentDisplay() {
     </div>
   );
 }
-
+// setInterval(CurrentDisplay(), 1000);
 export default CurrentDisplay;
