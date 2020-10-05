@@ -25,7 +25,7 @@ function UpcomingList() {
           })}
         </ul>
       ) : null}
-      <SwipeButton addClass="left" onClick={() => unswapTop()} />
+      <SwipeButton addClass="left upswipebutt" onClick={() => unswapTop()} />
     </div>
   );
 }

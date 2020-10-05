@@ -28,7 +28,10 @@ function BooleanList() {
           })}
         </ul>
       ) : null}
-      <SwipeButton addClass={"left"} onClick={() => unswapBottom()} />
+      <SwipeButton
+        addClass={"left boolswipebutt"}
+        onClick={() => unswapBottom()}
+      />
     </div>
   );
 }

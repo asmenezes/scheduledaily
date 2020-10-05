@@ -935,9 +935,19 @@ input:checked + .slider:before {
     left: calc(100% - 1em);
   }
   .swipeButton.left {
+    position: absolute;
+    float: left;
     right: -0.25em;
-    bottom: 50%;
+    top: 4em;
     transform: rotateY(180deg);
+  }
+  .swipeButton.upswipebutt {
+    top: 30%;
+    right: 90%;
+  }
+  .swipeButton.boolswipebutt {
+    top: 77%;
+    right: 90%;
   }
   .swbt {
     display: block;
