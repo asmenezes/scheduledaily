@@ -8,9 +8,11 @@ export const booleanReducer = (state, action) => {
           bID: Math.floor(Math.random() * 900000),
           pID: 1,
           isComplete: false,
-        }
-      ]
-
+        },
+      ];
+    case "TOGGLE_BOOL":
+      //state[index].isComplete = !state[index].isComplete;
+      return [...state];
     case "REMOVE_BOOL":
       return state.filter((bool) => bool.bID !== action.bID);
     default:

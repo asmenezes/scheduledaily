@@ -955,6 +955,7 @@ input:checked + .slider:before {
     top: 85vh;
   }
   .swipeButton.mid .swbt {
+    /*Get the text to point up*/
   }
   .swipeButton.upswipebutt {
     top: 30vh;
