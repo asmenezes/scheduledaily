@@ -315,6 +315,10 @@ input[name="indicval"] {
   position: fixed;
   z-index: 0;
 }
+#sideScroller {
+  overflow-y: auto;
+  height: 100vh;
+}
 #createpresetbutton {
   width: 100%;
   padding: 0.8em;
@@ -910,6 +914,9 @@ input:checked + .slider:before {
     margin-top: 0.1em;
     margin-bottom: 0em;
   }
+  currentDisplay {
+    position: absolute;
+  }
   #currentdisplayname {
     font-size: 2em;
   }
@@ -942,12 +949,12 @@ input:checked + .slider:before {
     transform: rotateY(180deg);
   }
   .swipeButton.upswipebutt {
-    top: 30%;
-    right: 90%;
+    top: 30vh;
+    right: 90vw;
   }
   .swipeButton.boolswipebutt {
-    top: 77%;
-    right: 90%;
+    top: 77vh;
+    right: 90vw;
   }
   .swbt {
     display: block;

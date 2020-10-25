@@ -32,79 +32,81 @@ function CreationSidebar() {
   };
   const hideSidebar = (a) => {
     let sb = document.getElementById("schedPreSB");
-    a.target.parentNode.parentNode.classList.add("hide");
+    a.target.parentNode.parentNode.parentNode.classList.add("hide");
     sb.classList.remove("hide");
   };
   return (
     <React.Fragment>
       <div className="sidebar" id="creationsidebar">
-        <div className="sidebarlabel">
-          <p className="lighttext">Preset Schedules:</p>
-          <div className="sidebarlist">
-            {dayPresets.map((preset) => {
-              return (
-                <CreationSelection
-                  selectionname={preset.presetName}
-                  preset={preset}
-                  key={preset.dpID}
-                  onClick={(e) => {
-                    swapTasks(e, preset.taskList);
-                  }}
-                />
-              );
-            })}
-          </div>
-          <button id="createpresetbutton" onClick={handleSubmit}>
-            Create Preset From Current
-          </button>
-          {
-            //do add today to presets here ^^ ie handle submit
-          }
-        </div>
-        <div className="sidebarlabel">
-          <p className="lighttext">Preset Tasks:</p>
-          <div className="sidebarlist">
-            <ul>
-              {tasks.map((task) => {
+        <div id="sideScroller">
+          <div className="sidebarlabel">
+            <p className="lighttext">Preset Schedules:</p>
+            <div className="sidebarlist">
+              {dayPresets.map((preset) => {
                 return (
                   <CreationSelection
-                    selectionname={task.taskName}
-                    key={task.tID}
+                    selectionname={preset.presetName}
+                    preset={preset}
+                    key={preset.dpID}
+                    onClick={(e) => {
+                      swapTasks(e, preset.taskList);
+                    }}
                   />
                 );
               })}
-            </ul>
-
-            <CreationSelectionInput action="ADD_PRESET" />
+            </div>
+            <button id="createpresetbutton" onClick={handleSubmit}>
+              Create Preset From Current
+            </button>
+            {
+              //do add today to presets here ^^ ie handle submit
+            }
           </div>
-        </div>
-        <SwipeButton onClick={(a) => hideSidebar(a)} />
-        <div className="sidebarlabel">
-          <p className="lighttext">Un-Timed Tasks:</p>
-          <div className="sidebarlist">
-            {bools[0] ? (
+          <div className="sidebarlabel">
+            <p className="lighttext">Preset Tasks:</p>
+            <div className="sidebarlist">
               <ul>
-                {bools.map((bool) => {
+                {tasks.map((task) => {
                   return (
                     <CreationSelection
-                      selectionname={bool.boolName}
-                      key={bool.bID}
-                      bool={bool}
+                      selectionname={task.taskName}
+                      key={task.tID}
                     />
                   );
                 })}
               </ul>
-            ) : null}
-            <CreationSelectionInput action="ADD_BOOl" />
+
+              <CreationSelectionInput action="ADD_PRESET" />
+            </div>
           </div>
+          <SwipeButton onClick={(a) => hideSidebar(a)} />
+          <div className="sidebarlabel">
+            <p className="lighttext">Un-Timed Tasks:</p>
+            <div className="sidebarlist">
+              {bools[0] ? (
+                <ul>
+                  {bools.map((bool) => {
+                    return (
+                      <CreationSelection
+                        selectionname={bool.boolName}
+                        key={bool.bID}
+                        bool={bool}
+                      />
+                    );
+                  })}
+                </ul>
+              ) : null}
+              <CreationSelectionInput action="ADD_BOOl" />
+            </div>
+          </div>
+          <textarea
+            cols="28"
+            rows="6"
+            className="dayNotes"
+            onChange={(e) => editNote(e.target.value)}
+            defaultValue={note[0] ? note[0].note : null}
+          ></textarea>
         </div>
-        <textarea
-          cols="28"
-          rows="6"
-          className="dayNotes"
-          onChange={(e) => editNote(e.target.value)}
-          defaultValue={note[0] ? note[0].note : null}
-        ></textarea>
       </div>
     </React.Fragment>
   );
