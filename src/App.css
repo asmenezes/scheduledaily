@@ -948,6 +948,14 @@ input:checked + .slider:before {
     top: 4em;
     transform: rotateY(180deg);
   }
+  .swipeButton.mid {
+    position: absolute;
+    float: left;
+    right: 50vw;
+    top: 85vh;
+  }
+  .swipeButton.mid .swbt {
+  }
   .swipeButton.upswipebutt {
     top: 30vh;
     right: 90vw;

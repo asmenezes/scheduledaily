@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SubtaskPreview from "./subtaskcreator";
+import SwipeButton from "../swipebutton";
 
 function TaskCreator() {
   const { dispatch } = useContext(ScheduleContext);
@@ -62,7 +63,35 @@ function TaskCreator() {
       }
     }
   }
+  const revealCreator = (a) => {
+    let thisOne = document.getElementsByClassName(
+      "tasknotesinput taskcreationinput"
+    );
+    let thistwo = document.getElementsByClassName("creater");
 
+    let thisthree = document.getElementsByClassName("secondpart");
+    let thisone = [...thisOne, ...thistwo, ...thisthree];
+    if (x.matches && thisone[0].classList.contains("hide")) {
+      for (let i = 0; i < thisone.length; i++) {
+        //  console.log(thisone[i]);
+        if (thisone[i].classList.contains("hide")) {
+          thisone[i].classList.remove("hide");
+          //Finish subtask in reducer
+        } else {
+          //thisone[i].classList.remove("hide");
+          //unfinish subtask in reducer
+        }
+      }
+    } else {
+      for (let i = 0; i < thisone.length; i++) {
+        console.log(thisone[i]);
+        if (!thisone[i].classList.contains("hide")) {
+          thisone[i].classList.add("hide");
+          //Finish subtask in reducer
+        }
+      }
+    }
+  };
   let x = window.matchMedia("(max-width: 720px)");
   // Call listener function at run time
   x.addListener(hider);
@@ -199,6 +228,11 @@ function TaskCreator() {
           <input type="submit" value="+" id="creatoradd" />
         </div>
       </form>
+      <SwipeButton
+        id="createrReveal"
+        addClass="mid"
+        onClick={(a) => revealCreator(a)}
+      ></SwipeButton>
     </React.Fragment>
   );
 }
