@@ -22,7 +22,7 @@ const SchedulePreview = (e) => {
       </div>
       <SwipeButton
         id="schedPreSB"
-        addClass="left"
+        addClass="left sp"
         onClick={(a) => revealSidebar(a)}
       />
     </div>

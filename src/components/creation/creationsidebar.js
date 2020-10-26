@@ -79,7 +79,7 @@ function CreationSidebar() {
               <CreationSelectionInput action="ADD_PRESET" />
             </div>
           </div>
-          <SwipeButton onClick={(a) => hideSidebar(a)} />
+          <SwipeButton id="cSideHide" onClick={(a) => hideSidebar(a)} />
           <div className="sidebarlabel">
             <p className="lighttext">Un-Timed Tasks:</p>
             <div className="sidebarlist">

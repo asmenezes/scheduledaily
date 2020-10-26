@@ -952,10 +952,22 @@ input:checked + .slider:before {
     position: absolute;
     float: left;
     right: 50vw;
-    top: 85vh;
+    top: 77vh;
   }
   .swipeButton.mid .swbt {
     /*Get the text to point up*/
+  }
+  #schedPreSB {
+    top: 45vh;
+  }
+  #cSideHide {
+    position: absolute;
+    float: left;
+    left: -0.15em;
+    top: 45vh;
+  }
+  .swipeButton.right.dn {
+    bottom: 20vh;
   }
   .swipeButton.upswipebutt {
     top: 30vh;
