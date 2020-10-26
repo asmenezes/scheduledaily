@@ -87,7 +87,16 @@ function CurrentDisplay() {
     <div id="currentdisplay">
       <div id="currenttasktop">
         <ul className="inline">
-          <h1 id="currentdisplayname" className="">
+          <h1
+            id="currentdisplayname"
+            className={
+              tasks[currentIndex]
+                ? tasks[currentIndex].isComplete
+                  ? "finished"
+                  : ""
+                : ""
+            }
+          >
             {tasks[currentIndex] ? tasks[currentIndex].taskName : "Break"}
           </h1>
         </ul>

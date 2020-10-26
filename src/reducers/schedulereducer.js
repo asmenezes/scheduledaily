@@ -14,7 +14,7 @@ export const scheduleReducer = (state, action) => {
       // console.log(
       //   `index is ${state[index].isComplete}, tID is ${action.task.tID}`
       // );
-      return state;
+      return [...state];
     case "EDIT_TASK_NOTE":
       //  console.log(action.task.ind);
       state[action.task.ind].taskNotes = action.task.note;
