@@ -967,7 +967,9 @@ input:checked + .slider:before {
     top: 45vh;
   }
   .swipeButton.right.dn {
+    position: absolute;
     bottom: 20vh;
+    left: calc(100% - 2em);
   }
   .swipeButton.upswipebutt {
     top: 30vh;
