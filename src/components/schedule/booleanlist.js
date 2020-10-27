@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import SubtaskDisplay from "./subtaskdisplay";
+import BooleanDisplay from "./booleandisplay";
 import { BooleanContext } from "../../contexts/booleancontext";
 import SwipeButton from "../swipebutton";
 
@@ -18,9 +18,9 @@ function BooleanList() {
         <ul>
           {bools.map((bool) => {
             return (
-              <SubtaskDisplay
-                sub={bool}
-                stName={bool.boolName}
+              <BooleanDisplay
+                bool={bool}
+                bName={bool.boolName}
                 key={bool.bID}
                 key2={bool.bID}
               />
