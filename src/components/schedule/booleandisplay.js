@@ -12,7 +12,6 @@ function BooleanDisplay(props) {
         bool: props.bool,
       },
     });
-    //}
   }
   return (
     <div className={classes} key={props.bID} key2={props.bID}>

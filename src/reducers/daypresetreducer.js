@@ -13,12 +13,6 @@ export const DayPresetReducer = (state, action) => {
 
     case "REMOVE_PRESET":
       return state.filter((preset) => preset.dpID !== action.dpID);
-    /*  case "TOGGLE_TASK":
-      state[index].isComplete = !state[index].isComplete;
-      console.log(
-        `index is ${state[index].isComplete}, tID is ${action.task.tID}`
-      );
-      return state;*/
     case "RENAME_PRESET":
       return [...state];
     default:
