@@ -6,4 +6,5 @@ export class SubTask {
   stType: boolean; //False = Check, True = Int
   tID: number;
   stID: number;
+  isComplete: boolean;
 }

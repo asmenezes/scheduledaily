@@ -11,8 +11,9 @@ export const booleanReducer = (state, action) => {
         },
       ];
     case "TOGGLE_BOOL":
-      let index = state.findIndex((bool) => bool.bID !== action.bID);
-      state[index].isComplete = !state[index].isComplete;
+      let index = state.findIndex((bool) => bool.bID == action.bool.bool.bID);
+
+      state[index].isComplete = !action.bool.value
       return [...state];
     case "REMOVE_BOOL":
       return state.filter((bool) => bool.bID !== action.bID);

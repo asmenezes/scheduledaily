@@ -25,6 +25,13 @@ export const scheduleReducer = (state, action) => {
       }
       console.log("currentmarked");
       return [...state];
+    case "TOGGLE_SUB":
+      let stIDcheck = action.task.sub.stID;
+      let stIndex = state[index].subtasks.findIndex(
+        (sub) => sub.stID == stIDcheck
+      );
+      state[index].subtasks[stIndex].isComplete = !action.task.value;
+      return [...state];
     default:
       return state;
   }

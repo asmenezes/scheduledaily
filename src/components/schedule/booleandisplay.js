@@ -10,8 +10,10 @@ function BooleanDisplay(props) {
       type: "TOGGLE_BOOL",
       bool: {
         bool: props.bool,
+        value: props.bool.isComplete,
       },
     });
+    classes = "subtaskdisplay" + (props.bool.isComplete ? " finished" : "");
   }
   return (
     <div className={classes} key={props.bID} key2={props.bID}>

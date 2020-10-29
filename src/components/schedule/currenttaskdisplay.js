@@ -123,6 +123,7 @@ function CurrentDisplay() {
                     sub={subtask}
                     key={subtask.stID}
                     stName={subtask.stName}
+                    task={tasks[currentIndex]}
                   />
                 );
               })
