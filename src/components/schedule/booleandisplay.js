@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { BooleanContext } from "../../contexts/booleancontext";
+import CheckBox from "../checkbox";
 
 function BooleanDisplay(props) {
   const { boolsDispatch } = useContext(BooleanContext);
@@ -17,7 +18,12 @@ function BooleanDisplay(props) {
   }
   return (
     <div className={classes} key={props.bID} key2={props.bID}>
-      <input type="checkbox" className="check" onChange={flipCheck} />
+      <CheckBox
+        type="checkbox"
+        className="check"
+        onClick={flipCheck}
+        value={props.bool.isComplete}
+      ></CheckBox>
       <p>{props.bName}</p>
     </div>
   );

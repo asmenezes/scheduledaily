@@ -587,6 +587,30 @@ input:valid + #tasknamelabel {
   margin-right: -5em;
   background-color: rgb(244, 244, 249);
 }
+/* CheckBox  */
+.checkBox {
+  position: relative;
+  display: inline-block;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: rgb(0, 121, 145);
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+.checkBox.checked {
+  background-color: rgb(0, 121, 145);
+  color: rgb(244, 244, 249);
+}
+.checkBox.unchecked {
+  background-color: rgb(244, 244, 249);
+  color: black;
+}
+div.secondpart div.checkBox,
+div.creater div.checkBox {
+  margin-left: 2em;
+}
 /* Toggle Switch */
 .switch {
   position: relative;

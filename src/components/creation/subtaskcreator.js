@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
+import CheckBox from "../checkbox";
 
 function SubtaskPreview(props) {
   const { dispatch } = useContext(ScheduleContext);
@@ -36,7 +37,12 @@ function SubtaskPreview(props) {
             max={999}
           />
         ) : (
-          <input type="checkbox" name="indicval" unchecked="true" />
+          <CheckBox
+            type="checkbox"
+            className="check"
+            onClick={() => true}
+            value={false}
+          ></CheckBox>
         )}
         <span
           className="stSub"

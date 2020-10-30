@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
+import CheckBox from "../checkbox";
 
 function SubtaskDisplay(props) {
   const { dispatch } = useContext(ScheduleContext);
@@ -19,7 +20,12 @@ function SubtaskDisplay(props) {
   }
   return (
     <div className={classes} key={props.sub.stID} key2={props.sub.stID}>
-      <input type="checkbox" className="check" onChange={flipCheck} />
+      <CheckBox
+        type="checkbox"
+        className="check"
+        onClick={flipCheck}
+        value={props.sub.isComplete}
+      ></CheckBox>
       <p>{props.stName}</p>
 
       {props.sub.stType ? (
@@ -32,6 +38,7 @@ function SubtaskDisplay(props) {
             min={0}
             max={props.sub.goal}
           />
+
           <span>/{props.sub.goal}</span>
         </div>
       ) : null}

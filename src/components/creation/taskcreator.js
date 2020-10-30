@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SubtaskPreview from "./subtaskcreator";
 import SwipeButton from "../swipebutton";
+import CheckBox from "../checkbox";
 
 function TaskCreator() {
   const { dispatch } = useContext(ScheduleContext);
@@ -210,7 +211,12 @@ function TaskCreator() {
                   max={999}
                 />
               ) : (
-                <input type="checkbox" name="indicval" unchecked="true" />
+                <CheckBox
+                  type="checkbox"
+                  className="check"
+                  onClick={() => true}
+                  value={false}
+                ></CheckBox>
               )}
               <span onClick={addST} className="stSub">
                 +
