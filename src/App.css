@@ -234,6 +234,7 @@ input[name="indicval"] {
 
 #daynotes,
 #booleanlist {
+  position: relative;
   height: 120%;
   max-height: 24vh;
   width: 100%;
@@ -938,7 +939,7 @@ input:checked + .slider:before {
     margin-top: 0.1em;
     margin-bottom: 0em;
   }
-  currentDisplay {
+  #currentDisplay {
     position: absolute;
   }
   #currentdisplayname {
@@ -947,6 +948,9 @@ input:checked + .slider:before {
   #nexttaskbutt {
     font-size: 0.8em;
     padding-top: 1.4em;
+  }
+  #dayNotes {
+    /*    position: absolute;*/
   }
   .swipeButton {
     display: block;
@@ -983,6 +987,7 @@ input:checked + .slider:before {
   }
   #schedPreSB {
     top: 45vh;
+    left: 95vw;
   }
   #cSideHide {
     position: absolute;
@@ -997,11 +1002,13 @@ input:checked + .slider:before {
   }
   .swipeButton.upswipebutt {
     top: 30vh;
-    right: 90vw;
+    right: 95vw;
   }
   .swipeButton.boolswipebutt {
     top: 77vh;
-    right: 90vw;
+    right: 95vw;
+    position: fixed;
+    z-index: 3;
   }
   .swbt {
     display: block;

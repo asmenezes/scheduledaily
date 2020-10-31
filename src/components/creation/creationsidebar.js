@@ -32,6 +32,8 @@ function CreationSidebar() {
   };
   const hideSidebar = (a) => {
     let sb = document.getElementById("schedPreSB");
+    let upbutt = document.getElementById("createrReveal");
+    upbutt.classList.remove("hide");
     a.target.parentNode.parentNode.parentNode.classList.add("hide");
     sb.classList.remove("hide");
   };
