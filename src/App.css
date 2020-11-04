@@ -702,7 +702,6 @@ input:checked + .slider:before {
   input[name="indicval"] {
     width: 2em;
     margin-left: 0.75em;
-    font-size: 2em;
   }
 }
 @media only screen and (max-width: 890px) {
@@ -771,6 +770,7 @@ input:checked + .slider:before {
     grid-template-rows: 1fr min-content min-content;
     max-width: 100%;
   }
+
   #creatoradd {
     /* padding: 5%; */
 
@@ -949,8 +949,29 @@ input:checked + .slider:before {
     font-size: 0.8em;
     padding-top: 1.4em;
   }
-  #dayNotes {
-    /*    position: absolute;*/
+  #currentdisplay {
+    position: fixed;
+    width: calc(100vw - 2em);
+    top: 10vh;
+    z-index: 2;
+  }
+  #upcominglist {
+    position: fixed;
+    width: calc(100vw - 2em);
+    top: 10vh;
+    z-index: 1;
+  }
+  #booleanlist {
+    position: fixed;
+    width: calc(100vw - 2em);
+    top: 70vh;
+    z-index: 1;
+  }
+  #daynotes {
+    position: fixed;
+    width: calc(100vw - 3.5em);
+    top: 70vh;
+    z-index: 2;
   }
   .swipeButton {
     display: block;
@@ -965,6 +986,7 @@ input:checked + .slider:before {
     border-color: rgb(184, 219, 217);
     border-style: solid;
     border-width: thin;
+    z-index: 4;
   }
   .swipeButton.right {
     left: calc(100% - 1em);
@@ -1001,8 +1023,10 @@ input:checked + .slider:before {
     left: calc(100% - 2em);
   }
   .swipeButton.upswipebutt {
-    top: 30vh;
-    right: 95vw;
+    position: fixed;
+    top: 40vh;
+    right: 94.5vw;
+    z-index: 4;
   }
   .swipeButton.boolswipebutt {
     top: 77vh;

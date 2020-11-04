@@ -22,11 +22,13 @@ function CurrentDisplay() {
         dateConv(task.startTime.toString()) <= now &&
         dateConv(task.endTime.toString()) >= now
     );
-    console.log(currentIndexj);
-    // dispatch({
-    //   type: "MARK_CURRENT",
-    //   task: { tid: tasks[thisone].tid },
-    // });
+    console.log(tasks[currentIndexj]);
+    if (tasks[currentIndexj] && !tasks[currentIndexj].isCurrent) {
+      dispatch({
+        type: "MARK_CURRENT",
+        task: { tID: tasks[currentIndexj].tID },
+      });
+    }
     return currentIndexj;
   };
 
