@@ -32,23 +32,8 @@ function CurrentDisplay() {
     return currentIndexj;
   };
 
-  //let currentIndex = findCIndex(tasks);
   const [currentIndex, setCurrentIndex] = useState(updateCurrentIndex());
-  // let now2 = [{ start: 1 }];
-  // function findNextStart() {
-  //   let x = tasks.findIndex(
-  //     (task) => dateConv(task.startTime.toString()) >= now
-  //   );
-  //   //set timeout here to figure out when to load next task
-  //   setInterval(() => {
-  //     now2 = [...now2, { start: 3 }];
-  //     console.log("b");
-  //     currentIndex = findCIndex(tasks);
-  //   }, 30000);
-  //   return x;
-  // }
-  //
-  // let nextStart = findNextStart();
+
   const [note, setNote] = useState(
     currentIndex >= 0 ? tasks[currentIndex.taskNotes] : ""
   );
@@ -136,7 +121,7 @@ function CurrentDisplay() {
         <textarea
           className="dayNotes fillup"
           defaultValue={
-            currentIndex >= 0 ? tasks[currentIndex].taskNotes : "Task Notes:"
+            tasks[currentIndex] ? tasks[currentIndex].taskNotes : "Task Notes:"
           }
           onChange={
             currentIndex >= 0 ? (e) => updateNote(e.target.value) : null
