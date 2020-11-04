@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8279f4b41f035118c60ac7da479e83ce",
+    "revision": "f1a79b816101693b276f788d724aaf1d",
     "url": "/scheduledaily/index.html"
   },
   {
-    "revision": "e38b0f2c1966007f14a8",
-    "url": "/scheduledaily/static/css/main.08e608f6.chunk.css"
+    "revision": "e44260dd7c8baf760598",
+    "url": "/scheduledaily/static/css/main.3b284d82.chunk.css"
   },
   {
     "revision": "66cc7a4a34313da841fe",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scheduledaily/static/js/2.c9be1c19.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e38b0f2c1966007f14a8",
-    "url": "/scheduledaily/static/js/main.ac47a670.chunk.js"
+    "revision": "e44260dd7c8baf760598",
+    "url": "/scheduledaily/static/js/main.d8e45eab.chunk.js"
   },
   {
     "revision": "02d5cead4f82971acc84",
