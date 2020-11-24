@@ -1013,7 +1013,7 @@ input:checked + .slider:before {
   }
   #schedPreSB {
     top: 45vh;
-    left: 95vw;
+    left: 90vw;
   }
   #cSideHide {
     position: absolute;
@@ -1028,14 +1028,14 @@ input:checked + .slider:before {
   }
   .swipeButton.upswipebutt {
     position: fixed;
-    top: 40vh;
+    top: 30vh;
     right: 94.5vw;
     z-index: 4;
   }
   .swipeButton.boolswipebutt {
-    top: 77vh;
-    right: 95vw;
     position: fixed;
+    top: 75.5vh;
+    right: 95vw;
     z-index: 3;
   }
   .swbt {
