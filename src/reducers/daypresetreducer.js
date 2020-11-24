@@ -19,4 +19,3 @@ export const DayPresetReducer = (state, action) => {
       return state;
   }
 };
-//Switch all this to day preset relevant code

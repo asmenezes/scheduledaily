@@ -10,21 +10,22 @@ function ScheduleHeader() {
   let index = findCIndex(tasks);
   useEffect(() => {
     index = findCIndex(tasks);
-    if (document.getElementById("progress")) {
-      const prog = document.getElementById("progress");
-      const st = tasks[index] ? dateConv(tasks[index].startTime) : 0;
-      const et = tasks[index] ? dateConv(tasks[index].endTime) : 0;
-      let left = et - now;
-      //use left to set timeout update the state
-      let total = et - st;
-      console.log((left / total) * 100 + "%");
-      prog.style.animationName = "anim";
-      prog.style.width = ((total - left) / total) * 100 + "%";
-      prog.style.animationTimingFunction = "linear";
-      prog.style.animationDuration = left + "ms";
-      prog.style.animationIterationCount = 1;
-    }
-  }, []);
+    // if (document.getElementById("progress")) {
+    //   const prog = document.getElementById("progress");
+    //   const st = tasks[index] ? dateConv(tasks[index].startTime) : 0;
+    //   const et = tasks[index] ? dateConv(tasks[index].endTime) : 0;
+    //   let left = et - now;
+    //   //use left to set timeout update the state
+    //   let total = et - st;
+    //   console.log((left / total) * 100 + "%");
+    //   prog.style.animationName = "anim";
+    //   prog.style.width = ((total - left) / total) * 100 + "%";
+    //   prog.style.maxwidth = "100vw";
+    //   prog.style.animationTimingFunction = "linear";
+    //   prog.style.animationDuration = left + "ms";
+    //   prog.style.animationIterationCount = 1;
+    // }
+  }, [tasks]);
   return (
     <React.Fragment>
       <div className="scheduleheader">

@@ -22,7 +22,7 @@ function CurrentDisplay() {
         dateConv(task.startTime.toString()) <= now &&
         dateConv(task.endTime.toString()) >= now
     );
-    console.log(tasks[currentIndexj]);
+
     if (tasks[currentIndexj] && !tasks[currentIndexj].isCurrent) {
       dispatch({
         type: "MARK_CURRENT",
