@@ -872,6 +872,10 @@ input:checked + .slider:before {
     -ms-transform: translateX(18px);
     transform: translateX(18px);
   }
+  .timegroup {
+    margin-top: -1.8em;
+    margin-bottom: 0.5em;
+  }
 }
 @media only screen and (max-width: 720px) {
   /*layout for phones*/
