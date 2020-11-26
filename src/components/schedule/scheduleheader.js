@@ -30,11 +30,13 @@ function ScheduleHeader() {
     <React.Fragment>
       <div className="scheduleheader">
         <div className="timegroup">
-          <span>
+          <span id="stime">
             {tasks[index] ? disp12Time(tasks[index].startTime) : null}
           </span>
           <span id="currenttimedisplay"></span>
-          <span>{tasks[index] ? disp12Time(tasks[index].endTime) : null}</span>
+          <span id="etime">
+            {tasks[index] ? disp12Time(tasks[index].endTime) : null}
+          </span>
         </div>
         <div className="baseline">
           <span>{today}</span>

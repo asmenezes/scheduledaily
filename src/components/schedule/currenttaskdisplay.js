@@ -29,6 +29,17 @@ function CurrentDisplay() {
         task: { tID: tasks[currentIndexj].tID },
       });
     }
+    //id's etime and stime
+    let etime = document.getElementById("etime");
+    let stime = document.getElementById("stime");
+    if (etime) {
+      etime.innerHTML = tasks[currentIndexj]
+        ? tasks[currentIndexj].endTime.toString()
+        : "";
+      stime.innerHTML = tasks[currentIndexj]
+        ? tasks[currentIndexj].startTime.toString()
+        : "";
+    }
     return currentIndexj;
   };
 
@@ -68,7 +79,7 @@ function CurrentDisplay() {
   useEffect(() => {
     setInterval(() => {
       setCurrentIndex(updateCurrentIndex());
-    }, 10000);
+    }, 100);
   }, []);
   return (
     <div id="currentdisplay">
