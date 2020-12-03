@@ -10,7 +10,7 @@ const ScheduleContextProvider = (props) => {
   });
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    console.log(`Tasks was just set to ${JSON.stringify(tasks)}`);
+    //  console.log(`Tasks was just set to ${JSON.stringify(tasks)}`);
   }, [tasks]);
   return (
     <ScheduleContext.Provider value={{ tasks, dispatch }}>

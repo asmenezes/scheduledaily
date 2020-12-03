@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ScheduleHeader from "./scheduleheader";
 import CurrentDisplay from "./currenttaskdisplay";
 import BooleanList from "./booleanlist";
@@ -9,6 +9,20 @@ import DayNotesContextProvider from "../../contexts/daynotescontext";
 import BooleanContextProvider from "../../contexts/booleancontext";
 
 function ScheduleMain() {
+  /////////
+  //Do the functional Cock here
+  ////////
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    let timerID = setInterval(() => tick(), 1000);
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
   function hider(x) {
     let thisOne = document.getElementById("booleanlist");
     let thistwo = document.getElementById("upcominglist");
@@ -49,10 +63,10 @@ function ScheduleMain() {
   return (
     <div>
       <ScheduleContextProvider>
-        <ScheduleHeader />
+        <ScheduleHeader time={date} />
         <div id="schedulegrid">
-          <CurrentDisplay />
-          <UpcomingList />
+          <CurrentDisplay time={date} />
+          <UpcomingList time={date} />
           <DayNotesContextProvider>
             <DayNotes />
           </DayNotesContextProvider>

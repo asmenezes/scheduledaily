@@ -4,8 +4,7 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 import { dateConv } from "../scripts/shared";
 import SwipeButton from "../swipebutton";
 
-function UpcomingList() {
-  let now = new Date();
+function UpcomingList(props) {
   const { tasks } = useContext(ScheduleContext);
   const unswapTop = () => {
     let list = document.getElementById("upcominglist");
@@ -19,7 +18,9 @@ function UpcomingList() {
       {tasks[0] ? (
         <ul className="scroll">
           {tasks.map((task) => {
-            return dateConv(task.startTime.toString()) > now ? (
+            return dateConv(task.startTime).setMinutes(
+              dateConv(task.startTime).getMinutes() - 1
+            ) > props.time ? (
               <TaskBlock task={task} key={task.tID} />
             ) : null;
           })}

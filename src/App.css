@@ -109,9 +109,9 @@ input[name="indicval"] {
 
 #currenttimedisplay {
   font-size: 2em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  margin-right: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
   text-align: center;
 }
 #currenttimedisplay:hover {
@@ -873,7 +873,6 @@ input:checked + .slider:before {
     transform: translateX(18px);
   }
   .timegroup {
-    margin-top: -1.8em;
     margin-bottom: 0.5em;
   }
 }

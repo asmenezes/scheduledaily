@@ -15,40 +15,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <div id="time"></div>
     <div id="root"></div>
-
-    <script>
-      const disp12Time = (timeString) => {
-        let hours = Number(timeString.substring(0, 2));
-        if (hours > 12) {
-          hours -= 12;
-          let newtime = hours + ":" + timeString.substring(3, 5) + "PM";
-          return newtime;
-        }
-        if (hours == 12) {
-          return timeString + "PM";
-        }
-
-        let newtime = hours + ":" + timeString.substring(3, 5) + "AM";
-        return newtime;
-      };
-      let now = new Date();
-      console.log(window.location.pathname);
-      const clock = document.getElementById("time");
-
-      window.setInterval(() => {
-        if (window.location.pathname == "/dayschedule") {
-          clock.innerHTML = `${disp12Time(now.toTimeString().substring(0, 5))}`;
-          clock.style.color = "black";
-          clock.style.display = "block";
-          now = new Date();
-        } else {
-          clock.innerHTML = `${now.toTimeString().substring(0, 5)}`;
-          clock.style.color = "transparent";
-          clock.style.display = "none";
-        }
-      }, 1);
-    </script>
   </body>
 </html>

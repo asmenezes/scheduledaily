@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import SubtaskDisplay from "./subtaskdisplay";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
-import { dateConv, now } from "../scripts/shared";
+import { dateConv } from "../scripts/shared";
 import { findCIndex } from "../scripts/currenttaskscripts";
 const swapTop = () => {
   let list = document.getElementById("upcominglist");
@@ -11,39 +11,45 @@ const swapTop = () => {
   curr.classList.add("hide");
 };
 
-function CurrentDisplay() {
+function CurrentDisplay(props) {
   const { tasks, dispatch } = useContext(ScheduleContext);
+  let currentIndex = tasks.findIndex(
+    (task) =>
+      dateConv(task.startTime).setMinutes(
+        dateConv(task.startTime).getMinutes() - 1
+      ) <= props.time && dateConv(task.endTime) >= props.time
+  );
+  // const updateCurrentIndex = () => {
+  //   now = new Date();
+  //   let currentIndexj = {};
+  //   currentIndexj = tasks.findIndex(
+  //     (task) =>
+  //       dateConv(task.startTime.toString()) <= now &&
+  //       dateConv(task.endTime.toString()) >= now
+  //   );
+  //   //the faster interval probably messed things up. Fixx THATTTTT
+  //   if (tasks[currentIndexj] && !tasks[currentIndexj].isCurrent) {
+  //     dispatch({
+  //       type: "MARK_CURRENT",
+  //       task: { tID: tasks[currentIndexj].tID },
+  //     });
+  //   }
+  //   //id's etime and stime
+  //   let etime = document.getElementById("etime");
+  //   let stime = document.getElementById("stime");
+  //   if (etime) {
+  //     console.log("timeswap");
+  //     etime.innerHTML = tasks[currentIndexj]
+  //       ? tasks[currentIndexj].endTime.toString()
+  //       : "";
+  //     stime.innerHTML = tasks[currentIndexj]
+  //       ? tasks[currentIndexj].startTime.toString()
+  //       : "";
+  //   }
+  //   return currentIndexj;
+  // };
 
-  const updateCurrentIndex = () => {
-    now = new Date();
-    let currentIndexj = {};
-    currentIndexj = tasks.findIndex(
-      (task) =>
-        dateConv(task.startTime.toString()) <= now &&
-        dateConv(task.endTime.toString()) >= now
-    );
-
-    if (tasks[currentIndexj] && !tasks[currentIndexj].isCurrent) {
-      dispatch({
-        type: "MARK_CURRENT",
-        task: { tID: tasks[currentIndexj].tID },
-      });
-    }
-    //id's etime and stime
-    let etime = document.getElementById("etime");
-    let stime = document.getElementById("stime");
-    if (etime) {
-      etime.innerHTML = tasks[currentIndexj]
-        ? tasks[currentIndexj].endTime.toString()
-        : "";
-      stime.innerHTML = tasks[currentIndexj]
-        ? tasks[currentIndexj].startTime.toString()
-        : "";
-    }
-    return currentIndexj;
-  };
-
-  const [currentIndex, setCurrentIndex] = useState(updateCurrentIndex());
+  //const [currentIndex, setCurrentIndex] = useState(updateCurrentIndex());
 
   const [note, setNote] = useState(
     currentIndex >= 0 ? tasks[currentIndex.taskNotes] : ""
@@ -76,11 +82,11 @@ function CurrentDisplay() {
       },
     });
   };
-  useEffect(() => {
-    setInterval(() => {
-      setCurrentIndex(updateCurrentIndex());
-    }, 100);
-  }, []);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setCurrentIndex(updateCurrentIndex());
+  //   }, 10000);
+  // }, []);
   return (
     <div id="currentdisplay">
       <div id="currenttasktop">
