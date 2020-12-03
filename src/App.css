@@ -956,7 +956,7 @@ input:checked + .slider:before {
   #currentdisplay {
     position: fixed;
     width: calc(100vw - 2em);
-    top: 10vh;
+    top: 12vh;
     z-index: 2;
   }
   #upcominglist {

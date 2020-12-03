@@ -26,9 +26,7 @@ function ScheduleMain() {
   function hider(x) {
     let thisOne = document.getElementById("booleanlist");
     let thistwo = document.getElementById("upcominglist");
-    let thisthree = document.getElementsByClassName("timegroup");
-    let thisfour = document.getElementById("progressbar");
-    let thisone = [thisOne, thistwo, ...thisthree, thisfour];
+    let thisone = [thisOne, thistwo];
     let allhidden = document.getElementsByClassName("hide");
     console.log(x.matches);
     if (x.matches && thisone[0]) {
