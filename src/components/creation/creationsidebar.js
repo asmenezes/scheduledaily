@@ -60,11 +60,9 @@ function CreationSidebar() {
             <button id="createpresetbutton" onClick={handleSubmit}>
               Create Preset From Current
             </button>
-            {
-              //do add today to presets here ^^ ie handle submit
-            }
           </div>
-          <div className="sidebarlabel">
+          {/*
+     <div className="sidebarlabel">
             <p className="lighttext">Preset Tasks:</p>
             <div className="sidebarlist">
               <ul>
@@ -81,6 +79,7 @@ function CreationSidebar() {
               <CreationSelectionInput action="ADD_PRESET" />
             </div>
           </div>
+    */}
           <SwipeButton id="cSideHide" onClick={(a) => hideSidebar(a)} />
           <div className="sidebarlabel">
             <p className="lighttext">Un-Timed Tasks:</p>
