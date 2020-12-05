@@ -24,30 +24,33 @@ function ScheduleMain() {
     setDate(new Date());
   }
   function hider(x) {
-    let thisOne = document.getElementById("booleanlist");
-    let thistwo = document.getElementById("upcominglist");
-    let thisone = [thisOne, thistwo];
+    let boolist = document.getElementById("booleanlist");
+    let uplist = document.getElementById("upcominglist");
+    let curtask = document.getElementById("currentdisplay");
+    let dayNo = document.getElementById("daynotes");
+    //need to get the other things and check that instead
     let allhidden = document.getElementsByClassName("hide");
     console.log(x.matches);
-    if (x.matches && thisone[0]) {
-      for (let i = 0; i < thisone.length; i++) {
-        if (!thisone[i].classList.contains("hide")) {
-          thisone[i].classList.add("hide");
-          //Finish subtask in reducer
-        } else {
-          //thisone[i].classList.remove("hide");
-          //unfinish subtask in reducer
-        }
+    if (x.matches && uplist && curtask) {
+      if (
+        !uplist.classList.contains("hide") &&
+        !curtask.classList.contains("hide")
+      ) {
+        uplist.classList.add("hide");
       }
-    } else if (x.matches == false) {
-      console.log(allhidden.length);
-      for (let i = 0; i < allhidden.length; i++) {
-        if (allhidden[i].classList.contains("hide")) {
-          allhidden[i].classList.remove("hide");
-          console.log(allhidden);
-        }
+    }
+    if (x.matches && dayNo && boolist) {
+      if (
+        !boolist.classList.contains("hide") &&
+        !dayNo.classList.contains("hide")
+      ) {
+        console.log("Hide bools");
+        boolist.classList.add("hide");
+      } else if (dayNo.classList.contains("hide")) {
+        boolist.classList.remove("hide");
+        console.log("unhide bools");
+      } else {
       }
-    } else {
     }
   }
 

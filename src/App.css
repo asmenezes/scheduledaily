@@ -962,7 +962,7 @@ input:checked + .slider:before {
   #upcominglist {
     position: fixed;
     width: calc(100vw - 2em);
-    top: 10vh;
+    top: 12vh;
     z-index: 1;
   }
   #booleanlist {
