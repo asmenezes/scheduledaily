@@ -246,9 +246,10 @@ input[name="indicval"] {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 #daynotes {
   padding: 0.75em;
-  height: calc(100% - 0.5em);
+  height: calc(100% - 1.5em);
   width: calc(100% - 1.5em);
   resize: none;
   color: rgba(0, 0, 0, 0.95);
