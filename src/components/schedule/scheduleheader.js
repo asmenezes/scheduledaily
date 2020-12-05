@@ -7,7 +7,9 @@ import { findCIndex } from "../scripts/currenttaskscripts";
 function ScheduleHeader(props) {
   const { tasks } = useContext(ScheduleContext);
   let todayTime = disp12Time(
-    props.time.getHours() + ":" + props.time.getMinutes()
+    props.time.getHours().toString().padStart(2, "0") +
+      ":" +
+      props.time.getMinutes().toString().padStart(2, "0")
   );
   let index = tasks.findIndex(
     (task) =>
@@ -15,27 +17,7 @@ function ScheduleHeader(props) {
         dateConv(task.startTime).getMinutes() - 1
       ) <= props.time && dateConv(task.endTime) >= props.time
   );
-  console.log(tasks[index]);
-  console.log(props.time);
-  console.log(dateConv(tasks[1].startTime));
-  // useEffect(() => {
-  //   index = findCIndex(tasks);
-  //   // if (document.getElementById("progress")) {
-  //   //   const prog = document.getElementById("progress");
-  //   //   const st = tasks[index] ? dateConv(tasks[index].startTime) : 0;
-  //   //   const et = tasks[index] ? dateConv(tasks[index].endTime) : 0;
-  //   //   let left = et - now;
-  //   //   //use left to set timeout update the state
-  //   //   let total = et - st;
-  //   //   console.log((left / total) * 100 + "%");
-  //   //   prog.style.animationName = "anim";
-  //   //   prog.style.width = ((total - left) / total) * 100 + "%";
-  //   //   prog.style.maxwidth = "100vw";
-  //   //   prog.style.animationTimingFunction = "linear";
-  //   //   prog.style.animationDuration = left + "ms";
-  //   //   prog.style.animationIterationCount = 1;
-  //   // }
-  // }, [tasks]);
+
   return (
     <React.Fragment>
       <div className="scheduleheader">
@@ -55,7 +37,7 @@ function ScheduleHeader(props) {
           </Link>
         </div>
         <div id="progressbar">
-          <div id="progress"></div>
+          <div id="progress" style={{}}></div>
         </div>
       </div>
     </React.Fragment>

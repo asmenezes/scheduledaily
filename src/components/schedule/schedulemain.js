@@ -66,7 +66,7 @@ function ScheduleMain() {
           <CurrentDisplay time={date} />
           <UpcomingList time={date} />
           <DayNotesContextProvider>
-            <DayNotes />
+            <DayNotes time={date} />
           </DayNotesContextProvider>
           <BooleanContextProvider>
             <BooleanList />

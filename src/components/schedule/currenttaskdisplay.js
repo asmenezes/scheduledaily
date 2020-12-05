@@ -4,6 +4,7 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
 import { dateConv } from "../scripts/shared";
 import { findCIndex } from "../scripts/currenttaskscripts";
+//probably gotta fix the swap top to get it working
 const swapTop = () => {
   let list = document.getElementById("upcominglist");
   list.classList.remove("hide");

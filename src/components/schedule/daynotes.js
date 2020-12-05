@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { DayNotesContext } from "../../contexts/daynotescontext";
 import SwipeButton from "../swipebutton";
 
-function DayNotes() {
+function DayNotes(props) {
   const { note, editNote } = useContext(DayNotesContext);
+
   const swapBottom = () => {
     let list = document.getElementById("booleanlist");
     list.classList.remove("hide");
@@ -11,6 +12,7 @@ function DayNotes() {
     notes[0].classList.add("hide");
     notes[1].classList.add("hide");
   };
+
   return (
     <React.Fragment>
       <textarea
