@@ -17,7 +17,20 @@ function ScheduleHeader(props) {
         dateConv(task.startTime).getMinutes() - 1
       ) <= props.time && dateConv(task.endTime) >= props.time
   );
-
+  let percent = 0;
+  if (tasks[index]) {
+    let total =
+      dateConv(tasks[index].endTime) -
+      dateConv(tasks[index].startTime).setMinutes(
+        dateConv(tasks[index].startTime).getMinutes() - 1
+      );
+    let part =
+      props.time -
+      dateConv(tasks[index].startTime).setMinutes(
+        dateConv(tasks[index].startTime).getMinutes() - 1
+      );
+    percent = (part / total) * 100;
+  }
   return (
     <React.Fragment>
       <div className="scheduleheader">
@@ -37,11 +50,11 @@ function ScheduleHeader(props) {
           </Link>
         </div>
         <div id="progressbar">
-          <div id="progress" style={{}}></div>
+          <div id="progress" style={{ width: `${percent}%` }}></div>
         </div>
       </div>
     </React.Fragment>
   );
 }
-
+//
 export default ScheduleHeader;
