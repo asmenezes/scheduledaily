@@ -30,7 +30,7 @@ function ScheduleMain() {
     let dayNo = document.getElementById("daynotes");
     //need to get the other things and check that instead
     let allhidden = document.getElementsByClassName("hide");
-    console.log(x.matches);
+    //console.log(x.matches);
     if (x.matches && uplist && curtask) {
       if (
         !uplist.classList.contains("hide") &&

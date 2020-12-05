@@ -1008,8 +1008,10 @@ input:checked + .slider:before {
     right: 50vw;
     top: 77vh;
   }
-  .swipeButton.mid .swbt {
+  #createrReveal .swbt {
     /*Get the text to point up*/
+    writing-mode: vertical-lr;
+    padding-top: 0.25em;
   }
   #schedPreSB {
     top: 45vh;

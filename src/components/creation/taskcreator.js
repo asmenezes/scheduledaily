@@ -45,7 +45,7 @@ function TaskCreator() {
     let thisone = [...thisOne, ...thistwo, ...thisthree];
     if (x.matches) {
       for (let i = 0; i < thisone.length; i++) {
-        console.log(thisone[i]);
+        //console.log(thisone[i]);
         if (!thisone[i].classList.contains("hide")) {
           thisone[i].classList.add("hide");
           //Finish subtask in reducer
@@ -56,7 +56,7 @@ function TaskCreator() {
       }
     } else {
       for (let i = 0; i < thisone.length; i++) {
-        console.log(thisone[i]);
+        //console.log(thisone[i]);
         if (thisone[i].classList.contains("hide")) {
           thisone[i].classList.remove("hide");
           //Finish subtask in reducer
@@ -85,7 +85,7 @@ function TaskCreator() {
       }
     } else {
       for (let i = 0; i < thisone.length; i++) {
-        console.log(thisone[i]);
+        //console.log(thisone[i]);
         if (!thisone[i].classList.contains("hide")) {
           thisone[i].classList.add("hide");
           //Finish subtask in reducer
