@@ -377,6 +377,10 @@ input[name="indicval"] {
 
 .selectionname {
   margin-left: 0.5em;
+  max-width: calc(100% - 1.5em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* Creation Selection INput  */
 .selectioninput {

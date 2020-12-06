@@ -24,7 +24,7 @@ function BooleanDisplay(props) {
         onClick={flipCheck}
         value={props.bool.isComplete}
       ></CheckBox>
-      <p>{props.bName}</p>
+      <p className="selectionname">{props.bName}</p>
     </div>
   );
 }
