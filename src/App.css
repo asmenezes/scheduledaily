@@ -173,7 +173,11 @@ input[name="indicval"] {
 #currentdisplayname {
   color: rgba(255, 255, 255, 0.95);
   font-size: 3em;
-  display: inline;
+  display: inline-block;
+  max-width: calc(100% - 3.5em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #currenttasktop {
   padding: 1em;
