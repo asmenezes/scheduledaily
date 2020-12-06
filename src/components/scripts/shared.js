@@ -24,3 +24,22 @@ export const disp12Time = (timeString) => {
 };
 
 export let now = new Date();
+
+export const isToday = () => {
+  const date = localStorage.getItem("date");
+  let today = new Date();
+  let oldDate = date ? new Date(date) : new Date();
+  if (
+    oldDate.getMonth() < today.getMonth() ||
+    oldDate.getDay() < today.getDay() ||
+    oldDate.getFullYear() < today.getFullYear()
+  ) {
+    localStorage.setItem("date", today.toDateString());
+    console.log("Is today false");
+    return false;
+  } else {
+    console.log("Is today true");
+    localStorage.setItem("date", today.toDateString());
+    return true;
+  }
+};
