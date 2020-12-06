@@ -98,7 +98,7 @@ function TaskCreator() {
   x.addListener(hider);
   useEffect(() => {
     hider(x);
-  }, []);
+  });
   const addST = (e) => {
     setSubtasks([
       ...subtasks,
@@ -181,15 +181,19 @@ function TaskCreator() {
                 </ul>
               ) : null}
             </div>
-
-            <input
-              className="subtasknameinput taskcreationinput creater"
-              placeholder="Subtask Name"
-              type="text"
-              onChange={(e) => setstName(e.target.value)}
-              value={stName}
-            />
-
+            <div>
+              <input
+                className="subtasknameinput taskcreationinput creater"
+                placeholder="Subtask Name"
+                type="text"
+                onChange={(e) => setstName(e.target.value)}
+                value={stName}
+                name="subTaskName"
+              />
+              <label class="subtasknamelabel" htmlFor="subTaskName">
+                Subtask Name
+              </label>
+            </div>
             <div className="secondpart">
               <label className="switch" id="typeselector">
                 <input

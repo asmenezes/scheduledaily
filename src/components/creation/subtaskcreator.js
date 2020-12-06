@@ -16,7 +16,6 @@ function SubtaskPreview(props) {
           onChange={(e) => setName(e.target.value)}
           type="text"
         />
-
         <label className="switch" id="typeselector">
           <input
             type="checkbox"
