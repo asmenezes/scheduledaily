@@ -54,9 +54,9 @@ function CurrentDisplay(props) {
   };
   if (currentIndex >= 0) {
     let curr = document.getElementById("currentdisplay");
-    if (!tasks[currentIndex].subtasks) {
+    if (!tasks[currentIndex].subtasks && curr) {
       curr.classList.add("noSub");
-    } else {
+    } else if (curr) {
       curr.classList.remove("noSub");
     }
   }
