@@ -485,6 +485,10 @@ input.deletebutton {
   padding: 0.5em;
   padding-top: 1em;
   font-size: 1.3em;
+  max-width: calc(100%-3em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #timeinput {
   grid-area: 1 / 2 / 2 / 3;
