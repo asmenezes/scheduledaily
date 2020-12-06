@@ -669,11 +669,11 @@ input:checked + .slider:before {
   .schedulepreviewcontainer {
     column-count: 1;
     margin-bottom: 1em;
-    height: 60vh;
+    height: 55vh;
   }
 
   .schedulepreview {
-    min-height: 60vh;
+    min-height: 55vh;
     overflow-y: scroll;
     display: block;
   }
