@@ -52,9 +52,16 @@ function CurrentDisplay(props) {
       },
     });
   };
-
+  if (currentIndex >= 0) {
+    let curr = document.getElementById("currentdisplay");
+    if (!tasks[currentIndex].subtasks) {
+      curr.classList.add("noSub");
+    } else {
+      curr.classList.remove("noSub");
+    }
+  }
   return (
-    <div id="currentdisplay">
+    <div id="currentdisplay" className="noSub">
       <div id="currenttasktop">
         <ul className="inline">
           <h1

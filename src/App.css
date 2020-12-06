@@ -150,7 +150,7 @@ input[name="indicval"] {
   grid-template-areas: ". ." ". .";
   padding: 1em;
 }
-/* Current Main Display add iff statement for when there is no subtasks to fix grid of notes */
+
 #currentdisplay {
   height: 55vh;
   width: 100%;
@@ -164,7 +164,9 @@ input[name="indicval"] {
   grid-template-rows: min-content minmax(0% 40%) 100%;
   grid-template-areas: "top" "sub" "note";
 }
-
+#currentdisplay.noSub {
+  grid-template-rows: min-content 0px calc(100% - 5em);
+}
 #currentdisplayname.finished {
   color: rgba(184, 219, 217, 0.95);
 }
@@ -959,6 +961,9 @@ input:checked + .slider:before {
     width: calc(100vw - 2em);
     top: 12vh;
     z-index: 2;
+  }
+  #currentdisplay.noSub {
+    grid-template-rows: min-content 0px calc(100% - 4em);
   }
   #upcominglist {
     position: fixed;
