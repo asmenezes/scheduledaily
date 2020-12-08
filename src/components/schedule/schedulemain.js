@@ -29,7 +29,7 @@ function ScheduleMain() {
     let curtask = document.getElementById("currentdisplay");
     let dayNo = document.getElementById("daynotes");
     //need to get the other things and check that instead
-    let allhidden = document.getElementsByClassName("hide");
+    //let allhidden = document.getElementsByClassName("hide");
     //console.log(x.matches);
     if (x.matches && uplist && curtask) {
       if (
@@ -59,7 +59,7 @@ function ScheduleMain() {
   window.addEventListener("resize", hider(x));
   useEffect(() => {
     hider(x);
-  }, []);
+  });
 
   return (
     <div>

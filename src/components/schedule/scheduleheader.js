@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import { dateConv, disp12Time } from "../scripts/shared.js";
-import { findCIndex } from "../scripts/currenttaskscripts";
 
 function ScheduleHeader(props) {
   const { tasks } = useContext(ScheduleContext);

@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import SubtaskDisplay from "./subtaskdisplay";
 import { ScheduleContext } from "../../contexts/schedulecontext";
 import SwipeButton from "../swipebutton";
 import { dateConv } from "../scripts/shared";
-import { findCIndex } from "../scripts/currenttaskscripts";
+
 //probably gotta fix the swap top to get it working
 const swapTop = () => {
   let list = document.getElementById("upcominglist");
@@ -37,7 +37,7 @@ function CurrentDisplay(props) {
   };
   function markText() {
     let currentName = document.getElementById("currentdisplayname");
-    if (currentName.className == "") {
+    if (currentName.className === "") {
       currentName.className = "finished";
     } else {
       currentName.className = "";

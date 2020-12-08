@@ -1,9 +1,7 @@
 import React from "react";
 
 function CheckBox(props) {
-  let check = props.value;
   const swap = () => {
-    check = props.value;
     props.onClick();
   };
   return (

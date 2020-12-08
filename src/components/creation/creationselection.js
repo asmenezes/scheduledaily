@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { BooleanContext } from "../../contexts/booleancontext";
 import { DayPresetContext } from "../../contexts/daypresetcontext";
-import { ScheduleContext } from "../../contexts/schedulecontext";
 
 function CreationSelection(props) {
   //Possibly also do one that renames the thing
   const { boolsDispatch } = useContext(BooleanContext);
-  const { dispatch } = useContext(ScheduleContext);
   const { dayDispatch } = useContext(DayPresetContext);
   function deleteSelection(e) {
     e.preventDefault();

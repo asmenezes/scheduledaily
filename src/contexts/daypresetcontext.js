@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import { DayPresetReducer } from "../reducers/daypresetreducer";
 export const DayPresetContext = createContext();
 

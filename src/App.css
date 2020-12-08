@@ -564,6 +564,10 @@ input.deletebutton {
 }
 .subBarName {
   padding-right: 2em;
+  max-width: calc(40%-2em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .subBarList {
   overflow-x: hidden;

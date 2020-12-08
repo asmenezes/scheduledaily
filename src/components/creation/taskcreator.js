@@ -190,7 +190,7 @@ function TaskCreator() {
                 value={stName}
                 name="subTaskName"
               />
-              <label class="subtasknamelabel" htmlFor="subTaskName">
+              <label className="subtasknamelabel" htmlFor="subTaskName">
                 Subtask Name
               </label>
             </div>

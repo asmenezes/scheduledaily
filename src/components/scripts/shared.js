@@ -11,11 +11,11 @@ export const disp12Time = (timeString) => {
     let newtime = hours + ":" + timeString.substring(3, 5) + "pm";
     return newtime;
   }
-  if (hours == 12) {
+  if (hours === 12) {
     let newtime = hours + ":" + timeString.substring(3, 5) + "pm";
     return newtime;
   }
-  if (hours == 0) {
+  if (hours === 0) {
     hours = 12;
   }
   let newtime = hours + ":" + timeString.substring(3, 5) + "am";

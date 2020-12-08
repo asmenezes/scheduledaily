@@ -1,7 +1,5 @@
-import { dateConv, now } from "../components/scripts/shared";
-
 export const scheduleReducer = (state, action) => {
-  let index = state.findIndex((task) => task.tID == action.task.tID);
+  let index = state.findIndex((task) => task.tID === action.task.tID);
   switch (action.type) {
     case "ADD_TASK":
       return insertByTime(state, action.task);
@@ -17,7 +15,7 @@ export const scheduleReducer = (state, action) => {
       return [...state];
     case "MARK_CURRENT":
       for (let i = 0; i < state.length; i++) {
-        if (i == index) {
+        if (i === index) {
           state[index].isCurrent = true;
         } else {
           state[i].isCurrent = false;
@@ -28,7 +26,7 @@ export const scheduleReducer = (state, action) => {
     case "TOGGLE_SUB":
       let stIDcheck = action.task.sub.stID;
       let stIndex = state[index].subtasks.findIndex(
-        (sub) => sub.stID == stIDcheck
+        (sub) => sub.stID === stIDcheck
       );
       state[index].subtasks[stIndex].isComplete = !action.task.value;
       return [...state];

@@ -24,17 +24,15 @@ function TaskBlock({ task }) {
           <ul className="subBarList">
             <span className="subBar" key={Math.floor(Math.random() * 900000)}>
               {task.subtasks.map((st) => {
-                {
-                  return (
-                    <span
-                      className="subBarName"
-                      key={Math.floor(Math.random() * 900000)}
-                    >
-                      {st.stName}
-                      {"\t"}
-                    </span>
-                  );
-                }
+                return (
+                  <span
+                    className="subBarName"
+                    key={Math.floor(Math.random() * 900000)}
+                  >
+                    {st.stName}
+                    {"\t"}
+                  </span>
+                );
               })}
             </span>
           </ul>
