@@ -26,7 +26,7 @@ function SubtaskDisplay(props) {
         onClick={flipCheck}
         value={props.sub.isComplete}
       ></CheckBox>
-      <p>{props.stName}</p>
+      <p className="stdName">{props.stName}</p>
 
       {props.sub.stType ? (
         <div>
