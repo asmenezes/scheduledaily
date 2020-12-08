@@ -25,7 +25,18 @@ export const disp12Time = (timeString) => {
 
 export let now = new Date();
 
+export let checker = false;
+
 export const isToday = () => {
+  if (!checker) {
+    checker = true;
+    return isToday2();
+  } else {
+    return true;
+  }
+};
+
+const isToday2 = () => {
   const date = localStorage.getItem("date");
   let today = new Date();
   let oldDate = date ? new Date(date) : new Date();
