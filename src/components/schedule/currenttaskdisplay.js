@@ -111,7 +111,9 @@ function CurrentDisplay(props) {
         <textarea
           className="dayNotes fillup"
           defaultValue={
-            tasks[currentIndex] ? tasks[currentIndex].taskNotes : "Task Notes:"
+            tasks[currentIndex] >= 0
+              ? tasks[currentIndex].taskNotes
+              : "Task Notes:"
           }
           onChange={
             currentIndex >= 0 ? (e) => updateNote(e.target.value) : null
