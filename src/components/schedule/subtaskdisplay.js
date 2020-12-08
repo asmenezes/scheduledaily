@@ -31,6 +31,7 @@ function SubtaskDisplay(props) {
       {props.sub.stType ? (
         <div>
           <input
+            className="stCountIn"
             type="number"
             name="indicval"
             onChange={(e) => setValue(e.target.value)}

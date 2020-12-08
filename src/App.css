@@ -645,6 +645,9 @@ input:focus + .subtasknamelabel {
 
   background-color: rgb(244, 244, 249);
 }
+.stCountIn {
+  background-color: transparent;
+}
 /* CheckBox  */
 .checkBox {
   position: relative;
