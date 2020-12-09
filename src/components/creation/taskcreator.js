@@ -39,13 +39,19 @@ function TaskCreator() {
     let thisOne = document.getElementsByClassName(
       "tasknotesinput taskcreationinput"
     );
+    let taskcreator = document.getElementById("taskcreator");
     let thistwo = document.getElementsByClassName("creater");
-
+    let createrreveal = document.getElementById("createrReveal");
     let thisthree = document.getElementsByClassName("secondpart");
     let thisone = [...thisOne, ...thistwo, ...thisthree];
-    if (x.matches) {
+    if (
+      x.matches &&
+      (createrreveal.getAttribute("opened") == "false" ||
+        !createrreveal.hasAttribute("opened"))
+    ) {
       for (let i = 0; i < thisone.length; i++) {
         //console.log(thisone[i]);
+        //if taht down there and creater is not in focus
         if (!thisone[i].classList.contains("hide")) {
           thisone[i].classList.add("hide");
           //Finish subtask in reducer
@@ -54,6 +60,7 @@ function TaskCreator() {
           //unfinish subtask in reducer
         }
       }
+      createrreveal.setAttribute("opened", "false");
     } else {
       for (let i = 0; i < thisone.length; i++) {
         //console.log(thisone[i]);
@@ -69,10 +76,14 @@ function TaskCreator() {
       "tasknotesinput taskcreationinput"
     );
     let thistwo = document.getElementsByClassName("creater");
-
+    let createrreveal = document.getElementById("createrReveal");
     let thisthree = document.getElementsByClassName("secondpart");
     let thisone = [...thisOne, ...thistwo, ...thisthree];
-    if (x.matches && thisone[0].classList.contains("hide")) {
+    if (
+      x.matches &&
+      (createrreveal.getAttribute("opened") == "false" ||
+        !createrreveal.hasAttribute("opened"))
+    ) {
       for (let i = 0; i < thisone.length; i++) {
         //  console.log(thisone[i]);
         if (thisone[i].classList.contains("hide")) {
@@ -83,6 +94,7 @@ function TaskCreator() {
           //unfinish subtask in reducer
         }
       }
+      createrreveal.setAttribute("opened", "true");
     } else {
       for (let i = 0; i < thisone.length; i++) {
         //console.log(thisone[i]);
@@ -91,6 +103,7 @@ function TaskCreator() {
           //Finish subtask in reducer
         }
       }
+      createrreveal.setAttribute("opened", "false");
     }
   };
   let x = window.matchMedia("(max-width: 720px)");
