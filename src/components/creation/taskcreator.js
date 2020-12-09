@@ -143,9 +143,11 @@ function TaskCreator() {
                 <input
                   className="taskcreationinput timeinput"
                   type="time"
+                  placeholder="00:00"
                   name="starttime"
                   onChange={(e) => setStartTime(e.target.value)}
                   value={startTime}
+                  title="24hr time - 00:01-23:59"
                   pattern="[0-9]{2}:[0-9]{2}"
                   required
                 />
@@ -160,7 +162,9 @@ function TaskCreator() {
                   name="endtime"
                   onChange={(e) => setEndTime(e.target.value)}
                   value={endTime}
+                  placeholder="00:00"
                   pattern="[0-9]{2}:[0-9]{2}"
+                  title="24hr time - 00:01-23:59"
                   min={startTime}
                   required
                 />
