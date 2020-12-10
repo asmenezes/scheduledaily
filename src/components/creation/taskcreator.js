@@ -39,14 +39,14 @@ function TaskCreator() {
     let thisOne = document.getElementsByClassName(
       "tasknotesinput taskcreationinput"
     );
-    let taskcreator = document.getElementById("taskcreator");
+    //let taskcreator = document.getElementById("taskcreator");
     let thistwo = document.getElementsByClassName("creater");
     let createrreveal = document.getElementById("createrReveal");
     let thisthree = document.getElementsByClassName("secondpart");
     let thisone = [...thisOne, ...thistwo, ...thisthree];
     if (
       x.matches &&
-      (createrreveal.getAttribute("opened") == "false" ||
+      (createrreveal.getAttribute("opened") === "false" ||
         !createrreveal.hasAttribute("opened"))
     ) {
       for (let i = 0; i < thisone.length; i++) {
@@ -81,7 +81,7 @@ function TaskCreator() {
     let thisone = [...thisOne, ...thistwo, ...thisthree];
     if (
       x.matches &&
-      (createrreveal.getAttribute("opened") == "false" ||
+      (createrreveal.getAttribute("opened") === "false" ||
         !createrreveal.hasAttribute("opened"))
     ) {
       for (let i = 0; i < thisone.length; i++) {

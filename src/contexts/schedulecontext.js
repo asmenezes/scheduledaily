@@ -13,6 +13,7 @@ const ScheduleContextProvider = (props) => {
     return localData && isToday() ? JSON.parse(localData) : [];
   });
   useEffect(() => {
+    //Add a check in here to see if tasks should be cleared or not
     localStorage.setItem("tasks", JSON.stringify(tasks));
     //  console.log(`Tasks was just set to ${JSON.stringify(tasks)}`);
   }, [tasks]);
