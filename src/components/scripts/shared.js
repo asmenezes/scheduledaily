@@ -6,19 +6,28 @@ export const dateConv = (time) => {
 };
 export const disp12Time = (timeString) => {
   let hours = Number(timeString.substring(0, 2));
-  if (hours > 12) {
+  let minutes = Number(timeString.substring(3, 5));
+  if (minutes > 59) {
+    minutes %= 60;
+  }
+  minutes = minutes.toString().padStart(2, "0");
+  if (hours > 12 && hours <= 23) {
     hours -= 12;
-    let newtime = hours + ":" + timeString.substring(3, 5) + "pm";
+    let newtime = hours + ":" + minutes + "pm";
     return newtime;
   }
+  if (hours > 12) {
+    hours %= 12;
+  }
+
   if (hours === 12) {
-    let newtime = hours + ":" + timeString.substring(3, 5) + "pm";
+    let newtime = hours + ":" + minutes + "pm";
     return newtime;
   }
   if (hours === 0) {
     hours = 12;
   }
-  let newtime = hours + ":" + timeString.substring(3, 5) + "am";
+  let newtime = hours + ":" + minutes + "am";
 
   return newtime;
 };

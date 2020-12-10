@@ -14,6 +14,7 @@ function TaskCreator() {
   const [stName, setstName] = useState("");
   const [indic, setIndic] = useState(false);
   const [indicVal, setIndicVal] = useState(2);
+  //Change Safari time in here too
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
