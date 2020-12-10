@@ -47,6 +47,7 @@ const isToday2 = () => {
   ) {
     localStorage.setItem("date", today.toDateString());
     console.log("Is today false");
+    console.log(`oldDate is  ${oldDate}`);
     return false;
   } else {
     console.log("Is today true");

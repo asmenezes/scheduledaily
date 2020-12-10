@@ -625,7 +625,7 @@ input:valid + #tasknamelabel {
   float: left;
   max-width: 100%;
   margin: 0;
-  z-index: 2;
+  z-index: 0;
   margin-right: -5em;
   background-color: rgb(244, 244, 249);
 }
@@ -641,7 +641,7 @@ input:focus + .subtasknamelabel {
   max-width: 100%;
   margin: 0;
   margin-bottom: 0.25em;
-  z-index: 2;
+  z-index: 0;
 
   background-color: rgb(244, 244, 249);
 }
@@ -918,7 +918,7 @@ input:checked + .slider:before {
     float: left;
     max-width: 100%;
     margin: 0;
-    z-index: 2;
+    z-index: 0;
     margin-right: -5em;
     background-color: rgb(244, 244, 249);
   }
@@ -1098,7 +1098,7 @@ input:checked + .slider:before {
     top: 45vh;
   }
   .swipeButton.right.dn {
-    position: absolute;
+    position: fixed;
     bottom: 20vh;
     left: calc(100% - 2em);
   }
@@ -1126,3 +1126,4 @@ input:checked + .slider:before {
     display: block;
   }
 }
+/*Need a 350 x 600 resolution thingy */
