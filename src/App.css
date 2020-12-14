@@ -1126,4 +1126,39 @@ input:checked + .slider:before {
     display: block;
   }
 }
+@media only screen and (max-width: 400px) {
+  .timegroup {
+    text-align: center;
+    display: block;
+    font-size: 1em;
+  }
+  .toplink {
+    margin-top: -2em;
+    font-size: 0.8em;
+  }
+  .timeinput {
+    width: 5em;
+  }
+  .stSub {
+    margin-right: 0;
+    margin-left: 0.5em;
+    float: none;
+    display: inline-block;
+  }
+
+  div.secondpart div.checkBox,
+  div.creater div.checkBox {
+    margin-left: 1em;
+  }
+  #currenttimedisplay {
+    font-size: 1.5em;
+  }
+  #topDate {
+    display: block;
+    margin: auto;
+    text-align: center;
+
+    font-size: 1em;
+  }
+}
 /*Need a 350 x 600 resolution thingy */

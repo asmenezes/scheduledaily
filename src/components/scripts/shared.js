@@ -55,6 +55,9 @@ const isToday2 = () => {
     oldDate.getFullYear() < today.getFullYear()
   ) {
     localStorage.setItem("date", today.toDateString());
+    localStorage.setItem("tasks", []);
+    localStorage.setItem("bools", []);
+    localStorage.setItem("note", "");
     console.log("Is today false");
     console.log(`oldDate is  ${oldDate}`);
     return false;
