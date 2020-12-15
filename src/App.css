@@ -57,10 +57,14 @@ input[name="indicval"] {
 
 ::-webkit-scrollbar {
   background-color: transparent;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(184, 219, 217);
   border-radius: 5px;
+  width: 6px;
+  height: 6px;
 }
 .doubler {
   display: grid;
@@ -1014,7 +1018,7 @@ input:checked + .slider:before {
     margin-bottom: 0em;
   }
   #currentDisplay {
-    position: absolute;
+    position: fixed;
   }
   #currentdisplayname {
     font-size: 2em;
@@ -1067,14 +1071,21 @@ input:checked + .slider:before {
     z-index: 4;
   }
   .swipeButton.right {
-    left: calc(100% - 1em);
+    left: calc(100% - 2em);
   }
   .swipeButton.left {
-    position: absolute;
-    float: left;
-    right: -0.25em;
+    position: fixed;
+    right: calc(100% - 2em);
     top: 4em;
-    transform: rotateY(180deg);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  .currswipe {
+    position: fixed;
+    top: 30vh;
   }
   .swipeButton.mid {
     position: absolute;
@@ -1086,32 +1097,38 @@ input:checked + .slider:before {
     /*Get the text to point up*/
     writing-mode: vertical-lr;
     padding-top: 0.25em;
+    text-align: center;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
   }
   #schedPreSB {
     top: 45vh;
     left: 90vw;
   }
   #cSideHide {
-    position: absolute;
+    position: fixed;
     float: left;
     left: -0.15em;
     top: 45vh;
   }
   .swipeButton.right.dn {
     position: fixed;
-    bottom: 20vh;
+    top: 75vh;
     left: calc(100% - 2em);
   }
   .swipeButton.upswipebutt {
     position: fixed;
     top: 30vh;
-    right: 94.5vw;
+    right: calc(100% - 2em);
     z-index: 4;
   }
   .swipeButton.boolswipebutt {
     position: fixed;
     top: 75.5vh;
-    right: 95vw;
+    right: calc(100% - 2em);
     z-index: 3;
   }
   .swbt {

@@ -120,7 +120,7 @@ function CurrentDisplay(props) {
           }
         ></textarea>
       </div>
-      <SwipeButton onClick={() => swapTop()} addClass="right" />
+      <SwipeButton onClick={() => swapTop()} addClass="right currswipe" />
     </div>
   );
 }
