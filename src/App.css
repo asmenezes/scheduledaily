@@ -1148,6 +1148,7 @@ input:checked + .slider:before {
     text-align: center;
     display: block;
     font-size: 1em;
+    margin-bottom: 0.8em;
   }
   .toplink {
     margin-top: -2em;
