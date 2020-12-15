@@ -1110,8 +1110,8 @@ input:checked + .slider:before {
   }
   #cSideHide {
     position: fixed;
-    float: left;
-    left: -0.15em;
+
+    right: calc(100% - 2em);
     top: 45vh;
   }
   .swipeButton.right.dn {
