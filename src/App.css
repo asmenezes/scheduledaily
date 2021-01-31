@@ -392,7 +392,7 @@ input[name="indicval"] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* Creation Selection INput  */
+/* Creation Selection Input  */
 .selectioninput {
   display: inline-block;
   margin-left: 1.1em;
@@ -432,12 +432,15 @@ input[name="indicval"] {
   margin: -0.5em;
   background-color: transparent;
   color: transparent;
+
 }
 input.deletebutton {
-  height: auto;
-  margin-top: -1.65em;
+  height: 200%;
+  margin-top: -1.85em;
   padding: 0.5em 0.5em;
   font-weight: normal;
+  overflow-y: hidden;
+  border-radius: 5px 0 0 5px;
 }
 .deletebutton:hover {
   color: black;
@@ -957,7 +960,7 @@ input:checked + .slider:before {
   }
   .topLink {
     float: right;
-    margin-top: -1.15em;
+    margin-top: -1.25em;
   }
   #topDate {
     display: block;
