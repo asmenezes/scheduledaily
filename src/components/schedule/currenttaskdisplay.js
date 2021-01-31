@@ -111,7 +111,7 @@ function CurrentDisplay(props) {
         <textarea
           className="dayNotes fillup"
           defaultValue={
-            tasks[currentIndex] >= 0
+            currentIndex >= 0
               ? tasks[currentIndex].taskNotes
               : "Task Notes:"
           }
