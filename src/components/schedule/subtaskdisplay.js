@@ -7,6 +7,21 @@ function SubtaskDisplay(props) {
   const [value, setValue] = useState(props.sub.value);
   let classes = "subtaskdisplay" + (props.sub.isComplete ? " finished" : "");
   //Actually Change in Reducer with an edit subtask action
+  function setCurValue(e){
+    setValue(e);
+    console.log(value);
+    console.log(e);
+    dispatch(
+      {
+        type: "CHANGE_SUB_VALUE",
+        task: {
+          value: e,
+          tID: props.task.tID,
+          sub: props.sub,
+        },
+      }
+    )
+  }
   function flipCheck() {
     dispatch({
       type: "TOGGLE_SUB",
@@ -34,8 +49,8 @@ function SubtaskDisplay(props) {
             className="stCountIn"
             type="number"
             name="indicval"
-            onChange={(e) => setValue(e.target.value)}
-            value={value ? value : 0}
+            onChange={(e) => setCurValue(e.target.value)}
+            value={value >= 0 ? value : 0}
             min={0}
             max={props.sub.goal}
           />

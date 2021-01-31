@@ -30,6 +30,13 @@ export const scheduleReducer = (state, action) => {
       );
       state[index].subtasks[stIndex].isComplete = !action.task.value;
       return [...state];
+    case "CHANGE_SUB_VALUE":
+      let stIDchecker = action.task.sub.stID;
+      let stIndexB = state[index].subtasks.findIndex(
+        (sub) => sub.stID === stIDchecker
+      );
+      state[index].subtasks[stIndexB].value = action.task.value;
+    return [...state];
     default:
       return state;
   }
