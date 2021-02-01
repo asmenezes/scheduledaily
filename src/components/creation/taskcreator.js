@@ -45,7 +45,7 @@ function TaskCreator() {
     let createrreveal = document.getElementById("createrReveal");
     let thisthree = document.getElementsByClassName("secondpart");
     let thisone = [...thisOne, ...thistwo, ...thisthree];
-    if (
+    if (createrreveal &&
       x.matches &&
       (createrreveal.getAttribute("opened") === "false" ||
         !createrreveal.hasAttribute("opened"))
