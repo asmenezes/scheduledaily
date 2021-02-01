@@ -6,7 +6,9 @@
   border-style: none;
   font-weight: 300;
   line-height: 0.9;
+  -webkit-appearance: none;
 }
+
 body {
   background-color: #d8ebea;
 }
@@ -220,7 +222,6 @@ input[name="indicval"] {
 }
 .stdName {
   display: inline-block;
-  overflow-x: hidden;
   max-width: 100%;
   text-overflow: ellipsis;
   margin-top: .25em;
