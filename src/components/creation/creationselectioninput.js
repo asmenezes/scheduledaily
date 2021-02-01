@@ -17,6 +17,7 @@ function CreationSelectionInput(props) {
   return (
     <div className="creationselection">
       <form onSubmit={handleSubmit}>
+              <input type="submit" value="+" className="deletebutton" />
         <input
           className="selectioninput"
           placeholder="New"
@@ -26,7 +27,7 @@ function CreationSelectionInput(props) {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <input type="submit" value="+" className="deletebutton" />
+
       </form>
     </div>
   );

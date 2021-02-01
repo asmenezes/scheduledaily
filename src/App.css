@@ -124,7 +124,7 @@ input[name="indicval"] {
   cursor: default;
 }
 .baseline {
-  margin-top: -1.6em;
+  margin-top: -1em;
   padding: 0 1em;
 }
 
@@ -208,6 +208,7 @@ input[name="indicval"] {
 .subtaskdisplay {
   background-color: rgb(244, 244, 249);
   padding: 0.75em;
+  padding-bottom: .2em;
   margin: 0.5em 1em;
   border-radius: 8px;
   border-color: rgb(184, 219, 217);
@@ -222,6 +223,8 @@ input[name="indicval"] {
   overflow-x: hidden;
   max-width: 100%;
   text-overflow: ellipsis;
+  margin-top: .25em;
+  margin-bottom: -1.25em;
 }
 
 .subtaskdisplay.finished {
@@ -386,7 +389,10 @@ input[name="indicval"] {
   display: grid;
   grid-template-columns: 0.75em auto;
 }
-
+.creationselection form{
+  display: grid;
+  grid-template-columns: min-content max-content;
+}
 .selectionname {
   margin-left: 0.5em;
   max-width: calc(100% - 1.75em);
@@ -397,7 +403,7 @@ input[name="indicval"] {
 /* Creation Selection Input  */
 .selectioninput {
   display: inline-block;
-  margin-left: 1.1em;
+  margin-left: .75em;
   font-size: 1em;
   max-width: 10em;
   background-color: transparent;
@@ -430,15 +436,13 @@ input[name="indicval"] {
 .deletebutton {
   height: auto;
   font-size: 1em;
-  float: left;
+  display: inline-block;
   margin: -0.5em;
   background-color: transparent;
   color: transparent;
 
 }
 input.deletebutton {
-  height: 200%;
-  margin-top: -1.85em;
   padding: 0.5em 0.5em;
   font-weight: normal;
   overflow-y: hidden;
