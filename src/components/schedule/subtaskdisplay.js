@@ -6,7 +6,7 @@ function SubtaskDisplay(props) {
   const { dispatch } = useContext(ScheduleContext);
   const [value, setValue] = useState(props.sub.value);
   let classes = "subtaskdisplay" + (props.sub.isComplete ? " finished" : "");
-  //Actually Change in Reducer with an edit subtask action
+  
   function setCurValue(e){
     setValue(e);
     console.log(value);
