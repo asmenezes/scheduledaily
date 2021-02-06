@@ -20,13 +20,13 @@ function ScheduleHeader(props) {
   if (tasks[index]) {
     let total =
       dateConv(tasks[index].endTime) -
-      dateConv(tasks[index].startTime).setMinutes(
-        dateConv(tasks[index].startTime).getMinutes() - 1
+      dateConv(tasks[index].startTime).setSeconds(
+        dateConv(tasks[index].startTime).getSeconds() - 60
       );
     let part =
       props.time -
-      dateConv(tasks[index].startTime).setMinutes(
-        dateConv(tasks[index].startTime).getMinutes() - 1
+      dateConv(tasks[index].startTime).setSeconds(
+        dateConv(tasks[index].startTime).getSeconds() - 60
       );
     percent = (part / total) * 100;
   }
