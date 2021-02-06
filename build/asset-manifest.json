@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/scheduledaily/static/css/main.4351af60.chunk.css",
-    "main.js": "/scheduledaily/static/js/main.dd84dbd0.chunk.js",
-    "main.js.map": "/scheduledaily/static/js/main.dd84dbd0.chunk.js.map",
-    "runtime-main.js": "/scheduledaily/static/js/runtime-main.cc7aabd2.js",
-    "runtime-main.js.map": "/scheduledaily/static/js/runtime-main.cc7aabd2.js.map",
-    "static/js/2.aa01e860.chunk.js": "/scheduledaily/static/js/2.aa01e860.chunk.js",
-    "static/js/2.aa01e860.chunk.js.map": "/scheduledaily/static/js/2.aa01e860.chunk.js.map",
-    "index.html": "/scheduledaily/index.html",
-    "precache-manifest.e35564df4fa57d992df000fba1c7a19e.js": "/scheduledaily/precache-manifest.e35564df4fa57d992df000fba1c7a19e.js",
-    "service-worker.js": "/scheduledaily/service-worker.js",
-    "static/css/main.4351af60.chunk.css.map": "/scheduledaily/static/css/main.4351af60.chunk.css.map",
-    "static/js/2.aa01e860.chunk.js.LICENSE.txt": "/scheduledaily/static/js/2.aa01e860.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.4351af60.chunk.css",
+    "main.js": "/static/js/main.dd84dbd0.chunk.js",
+    "main.js.map": "/static/js/main.dd84dbd0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cc7aabd2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cc7aabd2.js.map",
+    "static/js/2.aa01e860.chunk.js": "/static/js/2.aa01e860.chunk.js",
+    "static/js/2.aa01e860.chunk.js.map": "/static/js/2.aa01e860.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e35564df4fa57d992df000fba1c7a19e.js": "/precache-manifest.e35564df4fa57d992df000fba1c7a19e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.4351af60.chunk.css.map": "/static/css/main.4351af60.chunk.css.map",
+    "static/js/2.aa01e860.chunk.js.LICENSE.txt": "/static/js/2.aa01e860.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cc7aabd2.js",
