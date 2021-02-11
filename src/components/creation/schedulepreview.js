@@ -13,6 +13,13 @@ const SchedulePreview = (e) => {
     a.target.parentNode.classList.add("hide");
     upbutt.classList.add("hide");
   };
+  if(tasks[0] == null){
+    return(<div className="schedulepreviewcontainer">
+    <div className="onBox">
+    <h1 className="onHead">The Tasks You Create Will Show Up Here,<br/>You Can Delete Them Later If You Change Your Mind.</h1>
+    </div>
+    </div>);
+  }else{
   return (
     <div className="schedulepreviewcontainer">
       <div className="schedulepreview">
@@ -30,5 +37,5 @@ const SchedulePreview = (e) => {
     </div>
   );
 };
-
+}
 export default SchedulePreview;

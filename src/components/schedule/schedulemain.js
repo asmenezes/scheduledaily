@@ -64,7 +64,7 @@ function ScheduleMain() {
   return (
     <div>
       <ScheduleContextProvider>
-        <ScheduleHeader time={date} />
+        <ScheduleHeader time={date}  />
         <div id="schedulegrid">
           <CurrentDisplay time={date} />
           <UpcomingList time={date} />

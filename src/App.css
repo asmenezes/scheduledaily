@@ -242,6 +242,22 @@ input[name="indicval"] {
   margin-bottom: -0.5em;
   color: rgba(0, 0, 0, 0.95);
 }
+/*Base onboarding stuff*/
+.onBox{
+  border-radius: 10px;
+  background-color: rgb(244, 244, 249);
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(184, 219, 217);
+}
+.onHead{
+text-align: center;
+padding: 10%;
+opacity: .5;
+max-height: 100%;
+padding-bottom: 2.5%;
+font-size: 175%;
+}
 /* UpcomingList display */
 #upcominglist {
   height: 55vh;

@@ -43,8 +43,8 @@ function CreationSidebar() {
         <div id="sideScroller">
           <div className="sidebarlabel">
             <p className="lighttext">Preset Schedules:</p>
-            <div className="sidebarlist">
-              {dayPresets.map((preset) => {
+            <div className="sidebarlist">{dayPresets[0]?
+              dayPresets.map((preset) => {
                 return (
                   <CreationSelection
                     selectionname={preset.presetName}
@@ -55,7 +55,7 @@ function CreationSidebar() {
                     }}
                   />
                 );
-              })}
+              }):<h1 className="onHead">Click Below To Create A Preset.</h1>}
             </div>
             <button id="createpresetbutton" onClick={handleSubmit}>
               Create Preset From Current
@@ -98,6 +98,7 @@ function CreationSidebar() {
                 </ul>
               ) : null}
               <CreationSelectionInput action="ADD_BOOl" />
+              {bools[0]? null:<h1 className="onHead">These Tasks Are Not Scheduled.</h1>}
             </div>
           </div>
           <textarea
