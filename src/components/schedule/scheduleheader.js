@@ -10,25 +10,25 @@ function ScheduleHeader(props) {
       ":" +
       props.time.getMinutes().toString().padStart(2, "0")
   );
+  //finds the inddx of the current task if there is one
   let index = tasks.findIndex(
+    //for some reason provides index if I use just getMinutes no -1
+    //dont know why it needs to be one minute before, look at task creation
     (task) =>
-      dateConv(task.startTime).setMinutes(
-        dateConv(task.startTime).getMinutes() - 1
-      ) <= props.time && dateConv(task.endTime) >= props.time
+      dateConv(task.startTime)<= props.time && dateConv(task.endTime) >= props.time
   );
   let percent = 0;
+  //calculating the amount of time left in a task
   if (tasks[index]) {
     let total =
       dateConv(tasks[index].endTime) -
-      dateConv(tasks[index].startTime).setSeconds(
-        dateConv(tasks[index].startTime).getSeconds() - 60
-      );
+      dateConv(tasks[index].startTime)
     let part =
       props.time -
-      dateConv(tasks[index].startTime).setSeconds(
-        dateConv(tasks[index].startTime).getSeconds() - 60
-      );
+      dateConv(tasks[index].startTime)
+
     percent = (part / total) * 100;
+    console.log(`Percent = ${percent}`)
   }
   return (
     <React.Fragment>

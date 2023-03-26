@@ -18,9 +18,7 @@ function UpcomingList(props) {
       {tasks[0] ? (
         <ul className="scroll">
           {tasks.map((task) => {
-            return dateConv(task.startTime).setMinutes(
-              dateConv(task.startTime).getMinutes() - 1
-            ) > props.time ? (
+            return dateConv(task.startTime) > props.time ? (
               <TaskBlock task={task} key={task.tID} />
             ) : null;
           })}

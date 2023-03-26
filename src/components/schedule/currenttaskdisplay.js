@@ -16,9 +16,7 @@ function CurrentDisplay(props) {
   const { tasks, dispatch } = useContext(ScheduleContext);
   let currentIndex = tasks.findIndex(
     (task) =>
-      dateConv(task.startTime).setMinutes(
-        dateConv(task.startTime).getMinutes() - 1
-      ) <= props.time && dateConv(task.endTime) >= props.time
+      dateConv(task.startTime) <= props.time && dateConv(task.endTime) >= props.time
   );
 
   const [note, setNote] = useState(
