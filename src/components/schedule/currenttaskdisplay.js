@@ -85,7 +85,13 @@ function CurrentDisplay(props) {
               console.log("toggle clicked");
             }}
           >
-            Mark Complete
+            {
+              tasks[currentIndex]
+                ? tasks[currentIndex].isComplete
+                  ? "Mark Incomplete"
+                  : "Mark Complete"
+                : ""
+            }
           </button>
         ) : null}
       </div>
