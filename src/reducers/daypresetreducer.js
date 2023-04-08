@@ -6,6 +6,8 @@ export const DayPresetReducer = (state, action) => {
         ...state,
         {
           presetName: action.preset.presetName,
+          //going to need to more deeply copy tasks and subtasks
+          //need to mark everything as incomplete and count at 0
           taskList: action.preset.presetTasks,
           dpID: Math.floor(Math.random() * 900000),
         },
