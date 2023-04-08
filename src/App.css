@@ -169,7 +169,7 @@ input[name="indicval"] {
   border-color: rgb(184, 219, 217);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content minmax(0% 40%) 100%;
+  grid-template-rows: min-content minmax(0%, 40%) minmax(20%,90%);
   grid-template-areas: "top" "sub" "note";
 }
 #currentdisplay.noSub {
@@ -186,10 +186,11 @@ input[name="indicval"] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.1;
 }
 #currenttasktop {
   padding: 1em;
-  grid-area: "top";
+  grid-area: top;
 }
 #nexttaskbutt {
   background-color: transparent;
@@ -202,7 +203,7 @@ input[name="indicval"] {
   margin: -0.75em;
 }
 #currentdiplaysub {
-  grid-area: "sub";
+  grid-area: sub;
   overflow-y: auto;
   border-radius: 8px;
   margin-top: -1em;
@@ -225,7 +226,8 @@ input[name="indicval"] {
   max-width: 100%;
   text-overflow: ellipsis;
   margin-top: .25em;
-  margin-bottom: -1.25em;
+  margin-bottom: 0.25em;
+  line-height: 1.1;
 }
 
 .subtaskdisplay.finished {
@@ -234,7 +236,7 @@ input[name="indicval"] {
 
 #currentdisplaynotes {
   padding: 1em;
-  grid-area: "note";
+  grid-area: note;
   height: 100%;
   margin-right: 1em;
   border-radius: 10px;
@@ -604,6 +606,7 @@ input.deletebutton {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.1;
 }
 .subBarName {
   padding-right: 2em;
