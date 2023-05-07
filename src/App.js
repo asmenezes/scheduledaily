@@ -2,25 +2,21 @@ import React from "react";
 import "./App.css";
 import Main from "./components/creation/main.js";
 import ScheduleMain from "./components/schedule/schedulemain.js";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScheduleContextProvider from "./contexts/schedulecontext";
 
 function App() {
   return (
+    <ScheduleContextProvider>
     <Router baseline="{process.env.PUBLIC_URL + '/'}">
-      <Switch>
-        <Route path="/dayschedule">
-          <ScheduleContextProvider>
-            <ScheduleMain />
-          </ScheduleContextProvider>
-        </Route>
-        <Route path="/">
-          <ScheduleContextProvider>
-            <Main />
-          </ScheduleContextProvider>
-        </Route>
-      </Switch>
+      <Routes>
+
+        <Route path="/dayschedule" element={  <ScheduleMain />}/>
+          <Route path="/" element={<Main />}/>
+
+      </Routes>
     </Router>
+    </ScheduleContextProvider>   
   );
 }
 
