@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 export const DayPresetReducer = (state, action) => {
   //let index = state.findIndex((task) => task.tID == action.task.tID);
   switch (action.type) {
@@ -9,7 +10,7 @@ export const DayPresetReducer = (state, action) => {
           //going to need to more deeply copy tasks and subtasks
           //need to mark everything as incomplete and count at 0
           taskList: action.preset.presetTasks,
-          dpID: Math.floor(Math.random() * 900000),
+          dpID: uuidv4(),
         },
       ]);
 

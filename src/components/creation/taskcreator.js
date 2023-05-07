@@ -3,6 +3,7 @@ import { ScheduleContext } from "../../contexts/schedulecontext";
 import SubtaskPreview from "./subtaskcreator";
 import SwipeButton from "../swipebutton";
 import CheckBox from "../checkbox";
+const { v4: uuidv4 } = require('uuid');
 
 function TaskCreator() {
   const { dispatch } = useContext(ScheduleContext);
@@ -120,7 +121,7 @@ function TaskCreator() {
         stName,
         stType: indic,
         goal: indicVal,
-        stID: Math.floor(Math.random() * 900000),
+        stID:uuidv4(),
         value: "0",
         isComplete: false,
       },

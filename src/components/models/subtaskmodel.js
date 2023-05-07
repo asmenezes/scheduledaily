@@ -1,10 +1,10 @@
 export class SubTask {
   stName: string;
-  pID: number;
+  pID: string;
   goal: number;
   value: number;
   stType: boolean; //False = Check, True = Int
-  tID: number;
+  tID: string;
   stID: number;
   isComplete: boolean;
 }

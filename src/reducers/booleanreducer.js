@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 export const booleanReducer = (state, action) => {
   switch (action.type) {
     case "ADD_BOOL":
@@ -5,7 +6,7 @@ export const booleanReducer = (state, action) => {
         ...state,
         {
           boolName: action.bool.boolName,
-          bID: Math.floor(Math.random() * 900000),
+          bID: uuidv4(),
           pID: 1,
           isComplete: false,
         },

@@ -10,13 +10,11 @@ function App() {
     <ScheduleContextProvider>
     <Router baseline="{process.env.PUBLIC_URL + '/'}">
       <Routes>
-
         <Route path="/dayschedule" element={  <ScheduleMain />}/>
           <Route path="/" element={<Main />}/>
-
       </Routes>
     </Router>
-    </ScheduleContextProvider>   
+    </ScheduleContextProvider>
   );
 }
 

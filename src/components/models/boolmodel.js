@@ -1,6 +1,6 @@
 export class Bool {
   boolName: string;
-  pID: number;
+  pID: string;
   isComplete: boolean;
-  bID: number;
+  bID: string;
 }

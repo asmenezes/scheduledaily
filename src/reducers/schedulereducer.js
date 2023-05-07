@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require('uuid');
+
 export const scheduleReducer = (state, action) => {
   let index = state.findIndex((task) => task.tID === action.task.tID);
   switch (action.type) {
@@ -48,7 +50,7 @@ function insertByTime(state, task) {
     ...state,
     {
       taskName: task.taskName,
-      tID: Math.floor(Math.random() * 900000),
+      tID: uuidv4(),
       pID: 1,
       startTime: task.startTime,
       endTime: task.endTime,
